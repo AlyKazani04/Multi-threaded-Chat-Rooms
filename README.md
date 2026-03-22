@@ -6,7 +6,7 @@
 ## Group Members
 
 | Name | ID |
-|---|---|---|
+|---|---|
 | Aly Muhammad Kazani | 24K-0512 |
 | Sana Munir Alam | 24K-0573 |
 | Adeena Asif | 24K-0628 | 
@@ -138,7 +138,7 @@ Expected output:
 The visualizer opens a 1280×860 window with 4 panels:
 
 - **Room A / B / C panels** — live feed of messages in each chat room, prefixed with thread ID and timestamp
-- **Private Messages panel** (purple) — §9.2 direct thread-to-thread messages, bypasses room buffers
+- **Private Messages panel** (purple) — 9.2 direct thread-to-thread messages, bypasses room buffers
 - **Thread Status table** — one row per worker thread showing ID, state (IDLE/ACTIVE/WAITING), room assigned, messages sent, and PM inbox count
 - **System Monitor** — semaphore progress bar, counters, arrival rate slider, rate limit slider, Pause/Resume button, Export Log button
 
