@@ -9,16 +9,30 @@
 #   make helgrind  → run under Valgrind Helgrind (race-condition detector)
 #   make memcheck  → run under Valgrind Memcheck  (memory leak checker)
 #
-# Prerequisites (install via setup.sh):
-#   sudo apt install libraylib-dev   (or build from source – see README)
-#   raygui.h must be in src/  (single-header, no separate install)
+# Prerequisites:
+#   - Raylib development package:
+#       Ubuntu/Debian: sudo apt install libraylib-dev
+#       Arch Linux:    sudo pacman -S raylib
+#   - raygui.h must be placed in src/ (single‑header, no separate install)
 # ─────────────────────────────────────────────────────────────────────────────
 
 CC      = gcc
 CFLAGS  = -std=c11 -Wall -Wextra -O2 -g \
           -D_POSIX_C_SOURCE=200809L \
           -I./src
-LDFLAGS = -lraylib -lm -lpthread -lGL -ldl -lrt -lX11
+
+# Try to obtain Raylib flags via pkg-config (works on both Ubuntu and Arch)
+RAYLIB_CFLAGS  := $(shell pkg-config --cflags raylib 2>/dev/null)
+RAYLIB_LDFLAGS := $(shell pkg-config --libs raylib 2>/dev/null)
+
+# Fallback manual flags if pkg-config fails (e.g., on systems without .pc file)
+ifeq ($(RAYLIB_LDFLAGS),)
+    RAYLIB_CFLAGS  =
+    RAYLIB_LDFLAGS = -lraylib -lm -lpthread -lGL -ldl -lrt -lX11
+endif
+
+CFLAGS  += $(RAYLIB_CFLAGS)
+LDFLAGS = $(RAYLIB_LDFLAGS) -lpthread   # -lpthread is essential for threading
 
 # Source files
 SRCS = src/main.c \
@@ -48,7 +62,6 @@ run: all
 	./$(TARGET) --threads 8 --clients 30 --duration 60
 
 # ── Race-condition detection (Helgrind) ──────────────────────────────────
-# Must disable screen output for headless Helgrind run; use a short duration
 helgrind: all
 	valgrind --tool=helgrind --log-file=helgrind.log \
 	    ./$(TARGET) --threads 5 --clients 20 --duration 10 &
