@@ -49,6 +49,8 @@ void parse_args(int argc, char **argv, SimConfig *cfg)
                                (v > MAX_CLIENTS) ? MAX_CLIENTS : v;
             i++;
         } else if (strcmp(argv[i], "--rooms") == 0) {
+            int v = atoi(argv[i + 1]);
+            cfg->num_rooms = (v < 1) ? 1 : (v > NUM_ROOMS) ? NUM_ROOMS : v;
             i++;
         } else if (strcmp(argv[i], "--duration") == 0) {
             int v = atoi(argv[i + 1]);

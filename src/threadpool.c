@@ -275,8 +275,9 @@ static void *worker_thread(void *arg)
                        sent,
                        t.sender);
         } else {
-            /* Failed to send - don't count it */
+            /* Failed to send - count it as a dropped message */
             char room_char = t.is_private ? 'P' : ('A' + t.room_id);
+            atomic_fetch_add(&g_sim.total_dropped, 1);
             logger_log(idx, LOG_MSG_DROPPED, room_char, -1, 0,
                        atomic_load(&self->msgs_sent), "send failed");
         }

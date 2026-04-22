@@ -98,10 +98,12 @@ void logger_log(int thread_id, LogEventType event, char room,
     e->msg_len      = msg_len;
     e->msgs_sent    = msgs_sent;
 
-    if (detail)
+    if (detail) {
         strncpy(e->detail, detail, sizeof(e->detail) - 1);
-    else
+        e->detail[sizeof(e->detail) - 1] = '\0';
+    } else {
         e->detail[0] = '\0';
+    }
 
     /* Advance ring head (overwrites oldest when full) */
     g_sim.log_head = (g_sim.log_head + 1) % MAX_LOG_ENTRIES;

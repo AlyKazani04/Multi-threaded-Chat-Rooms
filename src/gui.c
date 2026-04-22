@@ -42,7 +42,6 @@ static Rectangle r_chat[NUM_ROOMS];   /* One chat area per room           */
 static Rectangle r_thread_panel;      /* Thread status table              */
 static Rectangle r_monitor_panel;     /* System monitor                   */
 static Rectangle r_pm_panel;          /* §9.2 – Private messages panel    */
-static int last_room_for_thread[MAX_WORKERS];
 
 /* ── Colour helpers ────────────────────────────────────────────────────── */
 static Color STATE_COLOR[3] = {
@@ -196,8 +195,11 @@ static void draw_thread_panel(Rectangle panel)
         DrawRectangleLines(hx + 28, y, 90, FONT_SIZE_BODY + 2, sc);
         DrawText(STATE_LABEL[st], hx + 32, y + 1, FONT_SIZE_SMALL, sc);
 
-        /* Get last room from worker struct directly */
-        int last_room = w->last_room_used;
+        /* Copy worker state protected by state_mutex before rendering */
+        int last_room;
+        pthread_mutex_lock(&w->state_mutex);
+        last_room = w->last_room_used;
+        pthread_mutex_unlock(&w->state_mutex);
 
         char room_str[16];
         if (st == THREAD_ACTIVE && room_ass == -2) {
@@ -329,10 +331,15 @@ static void draw_monitor_panel(Rectangle panel)
     DrawText("Arrival Rate (req/s):", x, y, FONT_SIZE_BODY, WHITE);
     y += FONT_SIZE_BODY + 4;
 
-    float speed = g_sim.config.arrival_rate;
+    float speed;
+    pthread_mutex_lock(&state_mutex);
+    speed = g_sim.config.arrival_rate;
+    pthread_mutex_unlock(&state_mutex);
     Rectangle slider_rect = { (float)x, (float)y, (float)pw, 20.0f };
     GuiSlider(slider_rect, "1", "50", &speed, 1.0f, 50.0f);
+    pthread_mutex_lock(&state_mutex);
     g_sim.config.arrival_rate = speed;
+    pthread_mutex_unlock(&state_mutex);
     y += 30;
 
     char sp_txt[32];
@@ -344,10 +351,15 @@ static void draw_monitor_panel(Rectangle panel)
     DrawText("Rate Limit (msg/s/client):", x, y, FONT_SIZE_BODY, WHITE);
     y += FONT_SIZE_BODY + 4;
 
-    float rl_val = (float)g_sim.config.rate_limit_per_sec;
+    float rl_val;
+    pthread_mutex_lock(&state_mutex);
+    rl_val = (float)g_sim.config.rate_limit_per_sec;
+    pthread_mutex_unlock(&state_mutex);
     Rectangle rl_slider = { (float)x, (float)y, (float)pw, 20.0f };
     GuiSlider(rl_slider, "1", "100", &rl_val, 1.0f, 100.0f);
+    pthread_mutex_lock(&state_mutex);
     g_sim.config.rate_limit_per_sec = (int)rl_val;
+    pthread_mutex_unlock(&state_mutex);
     y += 30;
 
     char rl_txt[48];

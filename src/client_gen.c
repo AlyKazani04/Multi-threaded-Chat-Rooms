@@ -97,8 +97,13 @@ void *client_generator_thread(void *arg)
 
         /* FIX-P: pause loop with 10 ms sleep and running re-check */
         if (atomic_load(&g_sim.paused)) {
-            struct timespec ts = { .tv_sec = 0, .tv_nsec = 500000000L }; /* 500ms changed from 10ms that was 10000000L */
-            nanosleep(&ts, NULL);
+            struct timespec ts = { .tv_sec = 0, .tv_nsec = 10000000L };
+            while (atomic_load(&g_sim.running) && atomic_load(&g_sim.paused)) {
+                nanosleep(&ts, NULL);
+            }
+            if (!atomic_load(&g_sim.running)) {
+                break;
+            }
             continue;
         }
 
@@ -162,10 +167,12 @@ void *client_generator_thread(void *arg)
 
         client_seq++;
 
-        /* FIX-O: read speed_multiplier under state_mutex to avoid torn reads */
+        /* Read runtime-adjustable timing parameters under state_mutex. */
         pthread_mutex_lock(&g_sim.state_mutex);
-        float speed = g_sim.speed_multiplier;
+        float speed        = g_sim.speed_multiplier;
+        float arrival_rate = cfg->arrival_rate;
         pthread_mutex_unlock(&g_sim.state_mutex);
+        float rate  = arrival_rate > 0 ? arrival_rate : 5.0f;
 
         float rate  = cfg->arrival_rate > 0 ? cfg->arrival_rate : 5.0f;
         float delay = (1.0f / rate) / speed;
