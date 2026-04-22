@@ -247,8 +247,7 @@ static void *worker_thread(void *arg)
         if (!t.is_private) {
             self->last_room_used = t.room_id;
         }
-        strncpy(self->current_sender, t.sender, sizeof(self->current_sender) - 1);
-        self->current_sender[sizeof(self->current_sender) - 1] = '\0';
+        snprintf(self->current_sender, sizeof(self->current_sender), "%s", t.sender);
         self->last_active_us = now_us();
         pthread_mutex_unlock(&g_sim.state_mutex);
 

@@ -32,7 +32,7 @@ ifeq ($(RAYLIB_LDFLAGS),)
 endif
 
 CFLAGS  += $(RAYLIB_CFLAGS)
-LDFLAGS = $(RAYLIB_LDFLAGS) -lpthread   # -lpthread is essential for threading
+LDFLAGS = $(RAYLIB_LDFLAGS) -lpthread -lm
 
 # Source files
 SRCS = src/main.c \

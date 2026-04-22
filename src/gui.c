@@ -17,16 +17,19 @@
  * ─────────────────────────────────────────────────────────────────────── */
 #include "raylib.h"
 
-/* Fix for raygui 4.x using TextToFloat which was removed from raylib 5.x */
-static inline float TextToFloat(const char *text)
-{
-    float value = 0.0f;
-    if (text != NULL) value = strtof(text, NULL);
-    return value;
-}
+// /* Fix for raygui 4.x using TextToFloat which was removed from raylib 5.x */
+// static inline float TextToFloat(const char *text)
+// {
+//     float value = 0.0f;
+//     if (text != NULL) value = strtof(text, NULL);
+//     return value;
+// }
 
 #define RAYGUI_IMPLEMENTATION
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 #include "raygui.h"
+#pragma GCC diagnostic pop
 
 /* ── Layout constants ──────────────────────────────────────────────────── */
 #define WIN_W           1780
@@ -161,6 +164,7 @@ static void draw_thread_panel(Rectangle panel)
         pthread_mutex_lock(&g_sim.state_mutex);
         ThreadState st    = w->state;
         int room_ass      = w->room_assigned;
+        int last_room     = w->last_room_used;
         int msgs          = atomic_load(&w->msgs_sent);
         char client[32];
         strncpy(client, w->current_sender, 31);
@@ -194,12 +198,6 @@ static void draw_thread_panel(Rectangle panel)
         DrawRectangle(hx + 28, y, 90, FONT_SIZE_BODY + 2, (Color){sc.r,sc.g,sc.b,60});
         DrawRectangleLines(hx + 28, y, 90, FONT_SIZE_BODY + 2, sc);
         DrawText(STATE_LABEL[st], hx + 32, y + 1, FONT_SIZE_SMALL, sc);
-
-        /* Copy worker state protected by state_mutex before rendering */
-        int last_room;
-        pthread_mutex_lock(&w->state_mutex);
-        last_room = w->last_room_used;
-        pthread_mutex_unlock(&w->state_mutex);
 
         char room_str[16];
         if (st == THREAD_ACTIVE && room_ass == -2) {
@@ -332,14 +330,14 @@ static void draw_monitor_panel(Rectangle panel)
     y += FONT_SIZE_BODY + 4;
 
     float speed;
-    pthread_mutex_lock(&state_mutex);
+    pthread_mutex_lock(&g_sim.state_mutex);
     speed = g_sim.config.arrival_rate;
-    pthread_mutex_unlock(&state_mutex);
+    pthread_mutex_unlock(&g_sim.state_mutex);
     Rectangle slider_rect = { (float)x, (float)y, (float)pw, 20.0f };
     GuiSlider(slider_rect, "1", "50", &speed, 1.0f, 50.0f);
-    pthread_mutex_lock(&state_mutex);
+    pthread_mutex_lock(&g_sim.state_mutex);
     g_sim.config.arrival_rate = speed;
-    pthread_mutex_unlock(&state_mutex);
+    pthread_mutex_unlock(&g_sim.state_mutex);
     y += 30;
 
     char sp_txt[32];
@@ -352,14 +350,14 @@ static void draw_monitor_panel(Rectangle panel)
     y += FONT_SIZE_BODY + 4;
 
     float rl_val;
-    pthread_mutex_lock(&state_mutex);
+    pthread_mutex_lock(&g_sim.state_mutex);
     rl_val = (float)g_sim.config.rate_limit_per_sec;
-    pthread_mutex_unlock(&state_mutex);
+    pthread_mutex_unlock(&g_sim.state_mutex);
     Rectangle rl_slider = { (float)x, (float)y, (float)pw, 20.0f };
     GuiSlider(rl_slider, "1", "100", &rl_val, 1.0f, 100.0f);
-    pthread_mutex_lock(&state_mutex);
+    pthread_mutex_lock(&g_sim.state_mutex);
     g_sim.config.rate_limit_per_sec = (int)rl_val;
-    pthread_mutex_unlock(&state_mutex);
+    pthread_mutex_unlock(&g_sim.state_mutex);
     y += 30;
 
     char rl_txt[48];

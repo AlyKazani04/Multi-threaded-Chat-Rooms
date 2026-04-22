@@ -174,7 +174,6 @@ void *client_generator_thread(void *arg)
         pthread_mutex_unlock(&g_sim.state_mutex);
         float rate  = arrival_rate > 0 ? arrival_rate : 5.0f;
 
-        float rate  = cfg->arrival_rate > 0 ? cfg->arrival_rate : 5.0f;
         float delay = (1.0f / rate) / speed;
         if (delay < 0.005f) delay = 0.005f;
 

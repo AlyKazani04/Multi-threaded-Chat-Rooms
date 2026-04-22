@@ -32,7 +32,7 @@ detect_distro() {
     elif command -v pacman &>/dev/null; then
         PKG_MANAGER="pacman"
         INSTALL_CMD="sudo pacman -S --noconfirm --needed"
-        UPDATE_CMD="sudo pacman -Sy --noconfirm"
+        UPDATE_CMD=""
     else
         echo "ERROR: Unsupported package manager. Only apt and pacman are supported."
         exit 1
