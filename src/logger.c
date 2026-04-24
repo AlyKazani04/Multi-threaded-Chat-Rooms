@@ -84,7 +84,7 @@ void logger_export(void) {
 
     /* ── Throughput CSV ─────────────────────────────────────────────────────
      * Format: clients, threads, second, msgs_per_sec
-     * Appends to throughput.csv so multiple runs (10/50/100 clients) stack
+     * Appends to throughput.csv so multiple runs (10/25/50 clients) stack
      * into one comparative file without overwriting previous results.
      * ──────────────────────────────────────────────────────────────────── */
     int   n_clients = g_sim.config.num_clients;
