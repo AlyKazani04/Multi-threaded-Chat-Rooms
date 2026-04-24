@@ -48,16 +48,9 @@ for CLIENTS in 10 25 50; do
         --duration "$DURATION"  \
         --rate     "$RATE"      \
         --ratelimit "$RATELIMIT" \
-        2>/dev/null | tee "run_${CLIENTS}clients.log" >/dev/null
+        2>/dev/null | tee "run_${CLIENTS}clients.log" | \
+        grep -E '^\[CONFIG\]|SIMULATION COMPLETE|Total messages|Peak|avg|Throughput CSV' || true
 
-    if grep -E '^\[CONFIG\]|SIMULATION COMPLETE|Total messages|Peak|avg|Throughput CSV' "run_${CLIENTS}clients.log"; then
-        :
-    else
-        grep_status=$?
-        if [[ $grep_status -ne 1 ]]; then
-            exit "$grep_status"
-        fi
-    fi
     echo ""
 done
 
