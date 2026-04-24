@@ -11,7 +11,9 @@ void rooms_init(void){
         ChatRoom *room = &g_sim.rooms[r];
 
         strncpy(room->name,  names[r],  sizeof(room->name)  - 1);
+        room->name[sizeof(room->name) - 1] = '\0';
         strncpy(room->label, labels[r], sizeof(room->label) - 1);
+        room->label[sizeof(room->label) - 1] = '\0';
 
         room->head           = 0;
         room->tail           = 0;
