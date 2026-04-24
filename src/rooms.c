@@ -121,7 +121,7 @@ bool room_write(int room_id, const char *sender, const char *msg, int thread_id)
     char      room_char = 'A' + room_id;
 
     struct timespec t1, t2;
-    clock_gettime(CLOCK_MONOTONIC, &t1);        // this is highlighted due to Intelligen issue...cause it's still working so ignore the highlight
+    clock_gettime(CLOCK_MONOTONIC, &t1);        // Use a monotonic clock to measure mutex wait time reliably, unaffected by system clock changes.
     pthread_mutex_lock(&room->mutex);
     clock_gettime(CLOCK_MONOTONIC, &t2);
     long wait_ns = (long)((t2.tv_sec - t1.tv_sec) * 1e9) + (t2.tv_nsec - t1.tv_nsec);
