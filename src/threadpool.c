@@ -47,10 +47,15 @@ void threadpool_init(int num_workers) {
         w->rate_last_us = now_us();
 
         int *idx = malloc(sizeof(int));
+        if (idx == NULL) {
+            fprintf(stderr, "[FATAL] malloc failed for worker index %d\n", i);
+            exit(EXIT_FAILURE);
+        }
         *idx = i;
 
         int rc = pthread_create(&w->tid, NULL, worker_thread, idx);
         if (rc != 0) {
+            free(idx);
             fprintf(stderr, "[FATAL] pthread_create failed for worker %d (rc=%d)\n", i, rc);
             exit(EXIT_FAILURE);
         }
