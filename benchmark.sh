@@ -2,7 +2,7 @@
 # =============================================================
 #  benchmark.sh — CS2006 OS Chat Server  |  Throughput Evaluation
 #
-#  Runs the simulator at 10, 50, and 100 clients (§10.4) and
+#  Runs the simulator at 10, 25, and 50 clients (§10.4) and
 #  accumulates all results into a single throughput.csv so the
 #  marker can compare performance across client counts.
 #
