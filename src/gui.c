@@ -105,6 +105,7 @@ static void draw_thread_panel(Rectangle panel) {
         int msgs          = atomic_load(&w->msgs_sent);
         char client[32];
         strncpy(client, w->current_sender, 31);
+        client[31] = '\0';
         pthread_mutex_unlock(&g_sim.state_mutex);
 
         /* Track last room for display (even after thread goes idle) */
