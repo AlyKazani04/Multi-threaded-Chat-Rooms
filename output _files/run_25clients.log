@@ -1,0 +1,593 @@
+=============================================================
+  OS-Level Chat Server Using Thread Pools
+  CS2006 Operating Systems  |  Spring 2026
+  Group: Aly Kazani [24K-0512]  Sana Alam [24K-0573]  Adeena Asif [24K-0628]
+=============================================================
+
+[CONFIG] threads=8  clients=25  rooms=3  duration=30s  rate=50.0/s  ratelimit=1000 msg/s
+
+[INFO] 3 chat rooms initialised: Room A (General), Room B (Priority), Room C (Private)
+[INFO] Private message inboxes initialised (10 threads × 32 slots)
+[0000.001] Thread pool initialized: 8 workers, semaphore=50
+[INFO] 3 SLOW consumer threads started (500ms per message).
+[INFO] Messages will remain visible in GUI for ~25 seconds each.
+[INFO] Consumer for Room B started (slow mode: 2 msg/sec max)
+[INFO] Consumer for Room C started (slow mode: 2 msg/sec max)
+
+[GUI] Opening visualizer window... close to stop simulation.
+
+INFO: Initializing raylib 5.0
+INFO: Platform backend: DESKTOP (GLFW)
+INFO: Supported raylib modules:
+INFO:     > rcore:..... loaded (mandatory)
+INFO:     > rlgl:...... loaded (mandatory)
+INFO:     > rshapes:... loaded (optional)
+INFO:     > rtextures:. loaded (optional)
+INFO:     > rtext:..... loaded (optional)
+INFO:     > rmodels:... loaded (optional)
+INFO:     > raudio:.... loaded (optional)
+[INFO] Consumer for Room A started (slow mode: 2 msg/sec max)
+[0000.004] Client-0 (Alice) >> Room A: '[C000] Alice: Hello everyone!'
+[0000.028] Client-1 (Bob) >> Room B: '[C001] Bob: Attention: deploy in 5 min.'
+[0000.049] Client-2 (Charlie) >> Room C: '[C002] Charlie: This is confidential.'
+[0000.069] Client-3 (Diana) >> Room A: '[C003] Diana: Anyone here?'
+[0000.090] Client-4 (Eve) >> Room B: '[C004] Eve: Critical update needed.'
+[0000.111] Client-5 (Frank) >> Room C: '[C005] Frank: Eyes only.'
+[0000.135] Client-6 (Grace) >> Room A: '[C006] Grace: Nice weather today.'
+[0000.163] Client-7 (Hank) >> Room B: '[C007] Hank: This is a priority message.'
+[0000.183] [PM-GEN] Client-8 (Iris, T6) -> T1 (private)
+[0000.184] [PM] T6 (Iris) -> T1: '[DM to T1] Hey T1, private message from Iris (#8)'
+[0000.204] Client-9 (Jack) >> Room A: '[C009] Jack: This is the general channel.'
+[0000.231] Client-10 (Karen) >> Room B: '[C010] Karen: HIGH PRIORITY: server is slow.'
+[0000.251] Client-11 (Leo) >> Room C: '[C011] Leo: Just between us...'
+[0000.272] Client-12 (Mia) >> Room A: '[C012] Mia: Good morning!'
+[0000.340] Client-13 (Nick) >> Room B: '[C013] Nick: Priority task assigned.'
+INFO: DISPLAY: Device initialized successfully
+INFO:     > Display size: 2047 x 1123
+INFO:     > Screen size:  1980 x 1040
+INFO:     > Render size:  1980 x 1040
+INFO:     > Viewport offsets: 0, 0
+INFO: GLAD: OpenGL extensions loaded successfully
+INFO: GL: Supported extensions count: 229
+INFO: GL: OpenGL device information:
+INFO:     > Vendor:   Mesa
+INFO:     > Renderer: llvmpipe (LLVM 20.1.2, 256 bits)
+INFO:     > Version:  4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.1
+INFO:     > GLSL:     4.50
+INFO: GL: VAO extension detected, VAO functions loaded successfully
+INFO: GL: NPOT textures extension detected, full NPOT textures supported
+INFO: GL: DXT compressed textures supported
+INFO: GL: ETC2/EAC compressed textures supported
+INFO: PLATFORM: DESKTOP (GLFW): Initialized successfully
+INFO: TEXTURE: [ID 1] Texture loaded successfully (1x1 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 1] Default texture loaded successfully
+[0000.365] Client-14 (Olivia) >> Room C: '[C014] Olivia: Secure channel active.'
+INFO: SHADER: [ID 1] Vertex shader compiled successfully
+INFO: SHADER: [ID 2] Fragment shader compiled successfully
+INFO: SHADER: [ID 3] Program shader loaded successfully
+INFO: SHADER: [ID 3] Default shader loaded successfully
+INFO: RLGL: Render batch vertex buffers loaded successfully in RAM (CPU)
+INFO: RLGL: Render batch vertex buffers loaded successfully in VRAM (GPU)
+INFO: RLGL: Default OpenGL state initialized successfully
+INFO: TEXTURE: [ID 2] Texture loaded successfully (128x128 | GRAY_ALPHA | 1 mipmaps)
+INFO: FONT: Default font loaded successfully (224 glyphs)
+INFO: TIMER: Target time per frame: 33.333 milliseconds
+[0000.395] Client-15 (Paul) >> Room A: '[C015] Paul: Happy to be here!'
+[0000.422] [PM-GEN] Client-16 (Quinn, T4) -> T1 (private)
+[0000.422] [PM] T4 (Quinn) -> T1: '[DM to T1] Hey T1, private message from Quinn (#16)'
+[0000.442] Client-17 (Rose) >> Room C: '[C017] Rose: For your eyes only.'
+[0000.462] Client-18 (Sam) >> Room A: '[C018] Sam: Great to see you all.'
+[0000.485] Client-19 (Tina) >> Room B: '[C019] Tina: Flagging for review.'
+[0000.511] Client-20 (Alice) >> Room C: '[C020] Alice: Private message sent.'
+[0000.531] Client-21 (Bob) >> Room A: '[C021] Bob: What's up?'
+[0000.552] Client-22 (Charlie) >> Room B: '[C022] Charlie: URGENT: Bug in production.'
+[0000.578] Client-23 (Diana) >> Room C: '[C023] Diana: Off the record.'
+[0000.605] [PM-GEN] Client-24 (Eve, T5) -> T0 (private)
+[0000.605] [PM] T5 (Eve) -> T0: '[DM to T0] Hey T0, private message from Eve (#24)'
+[0000.638] Client-25 (Frank) >> Room B: '[C025] Frank: Escalating this issue.'
+[0000.672] Client-26 (Grace) >> Room C: '[C026] Grace: Private briefing time.'
+[0000.695] Client-27 (Hank) >> Room A: '[C027] Hank: Let's get started.'
+[0000.717] Client-28 (Iris) >> Room B: '[C028] Iris: Action required immediately.'
+[0000.740] Client-29 (Jack) >> Room C: '[C029] Jack: Private sync done.'
+[0000.768] Client-30 (Karen) >> Room A: '[C030] Karen: Hello everyone!'
+[0000.792] Client-31 (Leo) >> Room B: '[C031] Leo: Attention: deploy in 5 min.'
+[0000.813] [PM-GEN] Client-32 (Mia, T7) -> T1 (private)
+[0000.814] [PM] T7 (Mia) -> T1: '[DM to T1] Hey T1, private message from Mia (#32)'
+[0000.836] Client-33 (Nick) >> Room A: '[C033] Nick: Anyone here?'
+[0000.857] Client-34 (Olivia) >> Room B: '[C034] Olivia: Critical update needed.'
+[0000.879] Client-35 (Paul) >> Room C: '[C035] Paul: Eyes only.'
+[0000.909] Client-36 (Quinn) >> Room A: '[C036] Quinn: Nice weather today.'
+[0000.929] Client-37 (Rose) >> Room B: '[C037] Rose: This is a priority message.'
+[0000.952] Client-38 (Sam) >> Room C: '[C038] Sam: Restricted access note.'
+[0000.981] Client-39 (Tina) >> Room A: '[C039] Tina: This is the general channel.'
+[0001.002] [PM-GEN] Client-40 (Alice, T7) -> T0 (private)
+[0001.003] [PM] T7 (Alice) -> T0: '[DM to T0] Hey T0, private message from Alice (#40)'
+[0001.034] Client-41 (Bob) >> Room C: '[C041] Bob: Just between us...'
+[0001.061] Client-42 (Charlie) >> Room A: '[C042] Charlie: Good morning!'
+[0001.091] Client-43 (Diana) >> Room B: '[C043] Diana: Priority task assigned.'
+[0001.112] Client-44 (Eve) >> Room C: '[C044] Eve: Secure channel active.'
+[0001.138] Client-45 (Frank) >> Room A: '[C045] Frank: Happy to be here!'
+[0001.159] Client-46 (Grace) >> Room B: '[C046] Grace: Please respond ASAP.'
+[0001.179] Client-47 (Hank) >> Room C: '[C047] Hank: For your eyes only.'
+[0001.200] [PM-GEN] Client-48 (Iris, T5) -> T2 (private)
+[0001.200] [PM] T5 (Iris) -> T2: '[DM to T2] Hey T2, private message from Iris (#48)'
+[0001.221] Client-49 (Jack) >> Room B: '[C049] Jack: Flagging for review.'
+[0001.249] Client-50 (Karen) >> Room C: '[C050] Karen: Private message sent.'
+[0001.271] Client-51 (Leo) >> Room A: '[C051] Leo: What's up?'
+[0001.293] Client-52 (Mia) >> Room B: '[C052] Mia: URGENT: Bug in production.'
+[0001.315] Client-53 (Nick) >> Room C: '[C053] Nick: Off the record.'
+[0001.338] Client-54 (Olivia) >> Room A: '[C054] Olivia: How's it going?'
+[0001.364] Client-55 (Paul) >> Room B: '[C055] Paul: Escalating this issue.'
+[0001.392] [PM-GEN] Client-56 (Quinn, T4) -> T2 (private)
+[0001.398] [PM] T4 (Quinn) -> T2: '[DM to T2] Hey T2, private message from Quinn (#56)'
+[0001.417] Client-57 (Rose) >> Room A: '[C057] Rose: Let's get started.'
+[0001.438] Client-58 (Sam) >> Room B: '[C058] Sam: Action required immediately.'
+[0001.461] Client-59 (Tina) >> Room C: '[C059] Tina: Private sync done.'
+[0001.481] Client-60 (Alice) >> Room A: '[C060] Alice: Hello everyone!'
+[0001.504] Client-61 (Bob) >> Room B: '[C061] Bob: Attention: deploy in 5 min.'
+[0001.539] Client-62 (Charlie) >> Room C: '[C062] Charlie: This is confidential.'
+[0001.567] Client-63 (Diana) >> Room A: '[C063] Diana: Anyone here?'
+[0001.595] [PM-GEN] Client-64 (Eve, T7) -> T5 (private)
+[0001.595] [PM] T7 (Eve) -> T5: '[DM to T5] Hey T5, private message from Eve (#64)'
+[0001.616] Client-65 (Frank) >> Room C: '[C065] Frank: Eyes only.'
+[0001.645] Client-66 (Grace) >> Room A: '[C066] Grace: Nice weather today.'
+[0001.666] Client-67 (Hank) >> Room B: '[C067] Hank: This is a priority message.'
+[0001.693] Client-68 (Iris) >> Room C: '[C068] Iris: Restricted access note.'
+[0001.719] Client-69 (Jack) >> Room A: '[C069] Jack: This is the general channel.'
+[0001.739] Client-70 (Karen) >> Room B: '[C070] Karen: HIGH PRIORITY: server is slow.'
+[0001.766] Client-71 (Leo) >> Room C: '[C071] Leo: Just between us...'
+[0001.799] [PM-GEN] Client-72 (Mia, T4) -> T1 (private)
+[0001.800] [PM] T4 (Mia) -> T1: '[DM to T1] Hey T1, private message from Mia (#72)'
+[0001.823] Client-73 (Nick) >> Room B: '[C073] Nick: Priority task assigned.'
+[0001.844] Client-74 (Olivia) >> Room C: '[C074] Olivia: Secure channel active.'
+[0001.865] Client-75 (Paul) >> Room A: '[C075] Paul: Happy to be here!'
+[0001.891] Client-76 (Quinn) >> Room B: '[C076] Quinn: Please respond ASAP.'
+[0001.912] Client-77 (Rose) >> Room C: '[C077] Rose: For your eyes only.'
+[0001.937] Client-78 (Sam) >> Room A: '[C078] Sam: Great to see you all.'
+[0001.958] Client-79 (Tina) >> Room B: '[C079] Tina: Flagging for review.'
+[0001.980] [PM-GEN] Client-80 (Alice, T7) -> T5 (private)
+[0001.984] [PM] T7 (Alice) -> T5: '[DM to T5] Hey T5, private message from Alice (#80)'
+[0002.012] Client-81 (Bob) >> Room A: '[C081] Bob: What's up?'
+[0002.043] Client-82 (Charlie) >> Room B: '[C082] Charlie: URGENT: Bug in production.'
+[0002.063] Client-83 (Diana) >> Room C: '[C083] Diana: Off the record.'
+[0002.089] Client-84 (Eve) >> Room A: '[C084] Eve: How's it going?'
+[0002.119] Client-85 (Frank) >> Room B: '[C085] Frank: Escalating this issue.'
+[0002.143] Client-86 (Grace) >> Room C: '[C086] Grace: Private briefing time.'
+[0002.164] Client-87 (Hank) >> Room A: '[C087] Hank: Let's get started.'
+[0002.187] [PM-GEN] Client-88 (Iris, T6) -> T3 (private)
+[0002.187] [PM] T6 (Iris) -> T3: '[DM to T3] Hey T3, private message from Iris (#88)'
+[0002.208] Client-89 (Jack) >> Room C: '[C089] Jack: Private sync done.'
+[0002.228] Client-90 (Karen) >> Room A: '[C090] Karen: Hello everyone!'
+[0002.249] Client-91 (Leo) >> Room B: '[C091] Leo: Attention: deploy in 5 min.'
+[0002.270] Client-92 (Mia) >> Room C: '[C092] Mia: This is confidential.'
+[0002.294] Client-93 (Nick) >> Room A: '[C093] Nick: Anyone here?'
+[0002.314] Client-94 (Olivia) >> Room B: '[C094] Olivia: Critical update needed.'
+[0002.339] Client-95 (Paul) >> Room C: '[C095] Paul: Eyes only.'
+[0002.364] [PM-GEN] Client-96 (Quinn, T3) -> T1 (private)
+[0002.372] [PM] T3 (Quinn) -> T1: '[DM to T1] Hey T1, private message from Quinn (#96)'
+[0002.385] Client-97 (Rose) >> Room B: '[C097] Rose: This is a priority message.'
+[0002.421] Client-98 (Sam) >> Room C: '[C098] Sam: Restricted access note.'
+[0002.448] Client-99 (Tina) >> Room A: '[C099] Tina: This is the general channel.'
+[0002.469] Client-100 (Alice) >> Room B: '[C100] Alice: HIGH PRIORITY: server is slow.'
+[0002.491] Client-101 (Bob) >> Room C: '[C101] Bob: Just between us...'
+[0002.511] Client-102 (Charlie) >> Room A: '[C102] Charlie: Good morning!'
+[0002.532] Client-103 (Diana) >> Room B: '[C103] Diana: Priority task assigned.'
+[0002.556] [PM-GEN] Client-104 (Eve, T1) -> T5 (private)
+[0002.556] [PM] T1 (Eve) -> T5: '[DM to T5] Hey T5, private message from Eve (#104)'
+[0002.579] Client-105 (Frank) >> Room A: '[C105] Frank: Happy to be here!'
+[0002.602] Client-106 (Grace) >> Room B: '[C106] Grace: Please respond ASAP.'
+[0002.630] Client-107 (Hank) >> Room C: '[C107] Hank: For your eyes only.'
+[0002.653] Client-108 (Iris) >> Room A: '[C108] Iris: Great to see you all.'
+[0002.682] Client-109 (Jack) >> Room B: '[C109] Jack: Flagging for review.'
+[0002.702] Client-110 (Karen) >> Room C: '[C110] Karen: Private message sent.'
+[0002.724] Client-111 (Leo) >> Room A: '[C111] Leo: What's up?'
+[0002.745] [PM-GEN] Client-112 (Mia, T0) -> T6 (private)
+[0002.745] [PM] T0 (Mia) -> T6: '[DM to T6] Hey T6, private message from Mia (#112)'
+[0002.777] Client-113 (Nick) >> Room C: '[C113] Nick: Off the record.'
+[0002.797] Client-114 (Olivia) >> Room A: '[C114] Olivia: How's it going?'
+[0002.820] Client-115 (Paul) >> Room B: '[C115] Paul: Escalating this issue.'
+[0002.843] Client-116 (Quinn) >> Room C: '[C116] Quinn: Private briefing time.'
+[0002.864] Client-117 (Rose) >> Room A: '[C117] Rose: Let's get started.'
+[0002.886] Client-118 (Sam) >> Room B: '[C118] Sam: Action required immediately.'
+[0002.922] Client-119 (Tina) >> Room C: '[C119] Tina: Private sync done.'
+[0002.951] [PM-GEN] Client-120 (Alice, T3) -> T1 (private)
+[0002.952] [PM] T3 (Alice) -> T1: '[DM to T1] Hey T1, private message from Alice (#120)'
+[0002.972] Client-121 (Bob) >> Room B: '[C121] Bob: Attention: deploy in 5 min.'
+[0003.026] Client-122 (Charlie) >> Room C: '[C122] Charlie: This is confidential.'
+[0003.086] Client-123 (Diana) >> Room A: '[C123] Diana: Anyone here?'
+[0003.171] Client-124 (Eve) >> Room B: '[C124] Eve: Critical update needed.'
+[0003.264] Client-125 (Frank) >> Room C: '[C125] Frank: Eyes only.'
+[0003.362] Client-126 (Grace) >> Room A: '[C126] Grace: Nice weather today.'
+[0003.453] Client-127 (Hank) >> Room B: '[C127] Hank: This is a priority message.'
+[0003.546] [PM-GEN] Client-128 (Iris, T4) -> T6 (private)
+[0003.546] [PM] T4 (Iris) -> T6: '[DM to T6] Hey T6, private message from Iris (#128)'
+[0003.644] Client-129 (Jack) >> Room A: '[C129] Jack: This is the general channel.'
+[0003.746] Client-130 (Karen) >> Room B: '[C130] Karen: HIGH PRIORITY: server is slow.'
+[0003.840] Client-131 (Leo) >> Room C: '[C131] Leo: Just between us...'
+[0003.939] Client-132 (Mia) >> Room A: '[C132] Mia: Good morning!'
+[0004.035] Client-133 (Nick) >> Room B: '[C133] Nick: Priority task assigned.'
+[0004.128] Client-134 (Olivia) >> Room C: '[C134] Olivia: Secure channel active.'
+[0004.229] Client-135 (Paul) >> Room A: '[C135] Paul: Happy to be here!'
+[0004.330] [PM-GEN] Client-136 (Quinn, T5) -> T1 (private)
+[0004.330] [PM] T5 (Quinn) -> T1: '[DM to T1] Hey T1, private message from Quinn (#136)'
+[0004.428] Client-137 (Rose) >> Room C: '[C137] Rose: For your eyes only.'
+[0004.521] Client-138 (Sam) >> Room A: '[C138] Sam: Great to see you all.'
+[0004.613] Client-139 (Tina) >> Room B: '[C139] Tina: Flagging for review.'
+[0004.705] Client-140 (Alice) >> Room C: '[C140] Alice: Private message sent.'
+[0004.799] Client-141 (Bob) >> Room A: '[C141] Bob: What's up?'
+[0004.897] Client-142 (Charlie) >> Room B: '[C142] Charlie: URGENT: Bug in production.'
+[0004.990] Client-143 (Diana) >> Room C: '[C143] Diana: Off the record.'
+[0005.084] [PM-GEN] Client-144 (Eve, T6) -> T4 (private)
+[0005.085] [PM] T6 (Eve) -> T4: '[DM to T4] Hey T4, private message from Eve (#144)'
+[0005.179] Client-145 (Frank) >> Room B: '[C145] Frank: Escalating this issue.'
+[0005.272] Client-146 (Grace) >> Room C: '[C146] Grace: Private briefing time.'
+[0005.365] Client-147 (Hank) >> Room A: '[C147] Hank: Let's get started.'
+[0005.459] Client-148 (Iris) >> Room B: '[C148] Iris: Action required immediately.'
+[0005.557] Client-149 (Jack) >> Room C: '[C149] Jack: Private sync done.'
+[0005.655] Client-150 (Karen) >> Room A: '[C150] Karen: Hello everyone!'
+[0005.746] Client-151 (Leo) >> Room B: '[C151] Leo: Attention: deploy in 5 min.'
+[0005.843] [PM-GEN] Client-152 (Mia, T3) -> T6 (private)
+[0005.844] [PM] T3 (Mia) -> T6: '[DM to T6] Hey T6, private message from Mia (#152)'
+[0005.944] Client-153 (Nick) >> Room A: '[C153] Nick: Anyone here?'
+[0006.035] Client-154 (Olivia) >> Room B: '[C154] Olivia: Critical update needed.'
+[0006.127] Client-155 (Paul) >> Room C: '[C155] Paul: Eyes only.'
+[0006.227] Client-156 (Quinn) >> Room A: '[C156] Quinn: Nice weather today.'
+[0006.323] Client-157 (Rose) >> Room B: '[C157] Rose: This is a priority message.'
+[0006.414] Client-158 (Sam) >> Room C: '[C158] Sam: Restricted access note.'
+[0006.506] Client-159 (Tina) >> Room A: '[C159] Tina: This is the general channel.'
+[0006.599] [PM-GEN] Client-160 (Alice, T3) -> T5 (private)
+[0006.600] [PM] T3 (Alice) -> T5: '[DM to T5] Hey T5, private message from Alice (#160)'
+[0006.695] Client-161 (Bob) >> Room C: '[C161] Bob: Just between us...'
+[0006.790] Client-162 (Charlie) >> Room A: '[C162] Charlie: Good morning!'
+[0006.883] Client-163 (Diana) >> Room B: '[C163] Diana: Priority task assigned.'
+[0006.987] Client-164 (Eve) >> Room C: '[C164] Eve: Secure channel active.'
+[0007.079] Client-165 (Frank) >> Room A: '[C165] Frank: Happy to be here!'
+[0007.175] Client-166 (Grace) >> Room B: '[C166] Grace: Please respond ASAP.'
+[0007.267] Client-167 (Hank) >> Room C: '[C167] Hank: For your eyes only.'
+[0007.360] [PM-GEN] Client-168 (Iris, T7) -> T5 (private)
+[0007.360] [PM] T7 (Iris) -> T5: '[DM to T5] Hey T5, private message from Iris (#168)'
+[0007.457] Client-169 (Jack) >> Room B: '[C169] Jack: Flagging for review.'
+[0007.552] Client-170 (Karen) >> Room C: '[C170] Karen: Private message sent.'
+[0007.648] Client-171 (Leo) >> Room A: '[C171] Leo: What's up?'
+[0007.747] Client-172 (Mia) >> Room B: '[C172] Mia: URGENT: Bug in production.'
+[0007.839] Client-173 (Nick) >> Room C: '[C173] Nick: Off the record.'
+[0007.934] Client-174 (Olivia) >> Room A: '[C174] Olivia: How's it going?'
+[0008.032] Client-175 (Paul) >> Room B: '[C175] Paul: Escalating this issue.'
+[0008.124] [PM-GEN] Client-176 (Quinn, T4) -> T1 (private)
+[0008.124] [PM] T4 (Quinn) -> T1: '[DM to T1] Hey T1, private message from Quinn (#176)'
+[0008.221] Client-177 (Rose) >> Room A: '[C177] Rose: Let's get started.'
+[0008.313] Client-178 (Sam) >> Room B: '[C178] Sam: Action required immediately.'
+[0008.405] Client-179 (Tina) >> Room C: '[C179] Tina: Private sync done.'
+[0008.500] Client-180 (Alice) >> Room A: '[C180] Alice: Hello everyone!'
+[0008.602] Client-181 (Bob) >> Room B: '[C181] Bob: Attention: deploy in 5 min.'
+[0008.695] Client-182 (Charlie) >> Room C: '[C182] Charlie: This is confidential.'
+[0008.791] Client-183 (Diana) >> Room A: '[C183] Diana: Anyone here?'
+[0008.884] [PM-GEN] Client-184 (Eve, T5) -> T3 (private)
+[0008.884] [PM] T5 (Eve) -> T3: '[DM to T3] Hey T3, private message from Eve (#184)'
+[0008.976] Client-185 (Frank) >> Room C: '[C185] Frank: Eyes only.'
+[0009.068] Client-186 (Grace) >> Room A: '[C186] Grace: Nice weather today.'
+[0009.163] Client-187 (Hank) >> Room B: '[C187] Hank: This is a priority message.'
+[0009.255] Client-188 (Iris) >> Room C: '[C188] Iris: Restricted access note.'
+[0009.349] Client-189 (Jack) >> Room A: '[C189] Jack: This is the general channel.'
+[0009.444] Client-190 (Karen) >> Room B: '[C190] Karen: HIGH PRIORITY: server is slow.'
+[0009.539] Client-191 (Leo) >> Room C: '[C191] Leo: Just between us...'
+[0009.639] [PM-GEN] Client-192 (Mia, T6) -> T4 (private)
+[0009.642] [PM] T6 (Mia) -> T4: '[DM to T4] Hey T4, private message from Mia (#192)'
+[0009.732] Client-193 (Nick) >> Room B: '[C193] Nick: Priority task assigned.'
+[0009.824] Client-194 (Olivia) >> Room C: '[C194] Olivia: Secure channel active.'
+[0009.916] Client-195 (Paul) >> Room A: '[C195] Paul: Happy to be here!'
+[0010.020] Client-196 (Quinn) >> Room B: '[C196] Quinn: Please respond ASAP.'
+[0010.126] Client-197 (Rose) >> Room C: '[C197] Rose: For your eyes only.'
+[0010.224] Client-198 (Sam) >> Room A: '[C198] Sam: Great to see you all.'
+[0010.317] Client-199 (Tina) >> Room B: '[C199] Tina: Flagging for review.'
+[0010.411] [PM-GEN] Client-200 (Alice, T7) -> T2 (private)
+[0010.412] [PM] T7 (Alice) -> T2: '[DM to T2] Hey T2, private message from Alice (#200)'
+[0010.503] Client-201 (Bob) >> Room A: '[C201] Bob: What's up?'
+[0010.598] Client-202 (Charlie) >> Room B: '[C202] Charlie: URGENT: Bug in production.'
+[0010.697] Client-203 (Diana) >> Room C: '[C203] Diana: Off the record.'
+[0010.798] Client-204 (Eve) >> Room A: '[C204] Eve: How's it going?'
+[0010.893] Client-205 (Frank) >> Room B: '[C205] Frank: Escalating this issue.'
+[0010.989] Client-206 (Grace) >> Room C: '[C206] Grace: Private briefing time.'
+[0011.080] Client-207 (Hank) >> Room A: '[C207] Hank: Let's get started.'
+[0011.172] [PM-GEN] Client-208 (Iris, T5) -> T0 (private)
+[0011.172] [PM] T5 (Iris) -> T0: '[DM to T0] Hey T0, private message from Iris (#208)'
+[0011.271] Client-209 (Jack) >> Room C: '[C209] Jack: Private sync done.'
+[0011.363] Client-210 (Karen) >> Room A: '[C210] Karen: Hello everyone!'
+[0011.470] Client-211 (Leo) >> Room B: '[C211] Leo: Attention: deploy in 5 min.'
+[0011.562] Client-212 (Mia) >> Room C: '[C212] Mia: This is confidential.'
+[0011.655] Client-213 (Nick) >> Room A: '[C213] Nick: Anyone here?'
+[0011.755] Client-214 (Olivia) >> Room B: '[C214] Olivia: Critical update needed.'
+[0011.850] Client-215 (Paul) >> Room C: '[C215] Paul: Eyes only.'
+[0011.943] [PM-GEN] Client-216 (Quinn, T7) -> T6 (private)
+[0011.948] [PM] T7 (Quinn) -> T6: '[DM to T6] Hey T6, private message from Quinn (#216)'
+[0012.039] Client-217 (Rose) >> Room B: '[C217] Rose: This is a priority message.'
+[0012.133] Client-218 (Sam) >> Room C: '[C218] Sam: Restricted access note.'
+[0012.232] Client-219 (Tina) >> Room A: '[C219] Tina: This is the general channel.'
+[0012.328] Client-220 (Alice) >> Room B: '[C220] Alice: HIGH PRIORITY: server is slow.'
+[0012.414] Client-221 (Bob) >> Room C: '[C221] Bob: Just between us...'
+[0012.503] Client-222 (Charlie) >> Room A: '[C222] Charlie: Good morning!'
+[0012.590] Client-223 (Diana) >> Room B: '[C223] Diana: Priority task assigned.'
+[0012.671] [PM-GEN] Client-224 (Eve, T6) -> T2 (private)
+[0012.672] [PM] T6 (Eve) -> T2: '[DM to T2] Hey T2, private message from Eve (#224)'
+[0012.749] Client-225 (Frank) >> Room A: '[C225] Frank: Happy to be here!'
+[0012.822] Client-226 (Grace) >> Room B: '[C226] Grace: Please respond ASAP.'
+[0012.897] Client-227 (Hank) >> Room C: '[C227] Hank: For your eyes only.'
+[0012.972] Client-228 (Iris) >> Room A: '[C228] Iris: Great to see you all.'
+[0013.043] Client-229 (Jack) >> Room B: '[C229] Jack: Flagging for review.'
+[0013.122] Client-230 (Karen) >> Room C: '[C230] Karen: Private message sent.'
+[0013.193] Client-231 (Leo) >> Room A: '[C231] Leo: What's up?'
+[0013.265] [PM-GEN] Client-232 (Mia, T7) -> T2 (private)
+[0013.265] [PM] T7 (Mia) -> T2: '[DM to T2] Hey T2, private message from Mia (#232)'
+[0013.336] Client-233 (Nick) >> Room C: '[C233] Nick: Off the record.'
+[0013.412] Client-234 (Olivia) >> Room A: '[C234] Olivia: How's it going?'
+[0013.482] Client-235 (Paul) >> Room B: '[C235] Paul: Escalating this issue.'
+[0013.553] Client-236 (Quinn) >> Room C: '[C236] Quinn: Private briefing time.'
+[0013.608] Client-237 (Rose) >> Room A: '[C237] Rose: Let's get started.'
+[0013.656] Client-238 (Sam) >> Room B: '[C238] Sam: Action required immediately.'
+[0013.701] Client-239 (Tina) >> Room C: '[C239] Tina: Private sync done.'
+[0013.744] [PM-GEN] Client-240 (Alice, T7) -> T5 (private)
+[0013.744] [PM] T7 (Alice) -> T5: '[DM to T5] Hey T5, private message from Alice (#240)'
+[0013.783] Client-241 (Bob) >> Room B: '[C241] Bob: Attention: deploy in 5 min.'
+[0013.826] Client-242 (Charlie) >> Room C: '[C242] Charlie: This is confidential.'
+[0013.878] Client-243 (Diana) >> Room A: '[C243] Diana: Anyone here?'
+[0013.918] Client-244 (Eve) >> Room B: '[C244] Eve: Critical update needed.'
+[0013.958] Client-245 (Frank) >> Room C: '[C245] Frank: Eyes only.'
+[0013.995] Client-246 (Grace) >> Room A: '[C246] Grace: Nice weather today.'
+[0014.033] Client-247 (Hank) >> Room B: '[C247] Hank: This is a priority message.'
+[0014.072] [PM-GEN] Client-248 (Iris, T0) -> T4 (private)
+[0014.072] [PM] T0 (Iris) -> T4: '[DM to T4] Hey T4, private message from Iris (#248)'
+[0014.110] Client-249 (Jack) >> Room A: '[C249] Jack: This is the general channel.'
+[0014.154] Client-250 (Karen) >> Room B: '[C250] Karen: HIGH PRIORITY: server is slow.'
+[0014.194] Client-251 (Leo) >> Room C: '[C251] Leo: Just between us...'
+[0014.233] Client-252 (Mia) >> Room A: '[C252] Mia: Good morning!'
+[0014.278] Client-253 (Nick) >> Room B: '[C253] Nick: Priority task assigned.'
+[0014.318] Client-254 (Olivia) >> Room C: '[C254] Olivia: Secure channel active.'
+[0014.358] Client-255 (Paul) >> Room A: '[C255] Paul: Happy to be here!'
+[0014.399] [PM-GEN] Client-256 (Quinn, T4) -> T3 (private)
+[0014.400] [PM] T4 (Quinn) -> T3: '[DM to T3] Hey T3, private message from Quinn (#256)'
+[0014.437] Client-257 (Rose) >> Room C: '[C257] Rose: For your eyes only.'
+[0014.475] Client-258 (Sam) >> Room A: '[C258] Sam: Great to see you all.'
+[0014.512] Client-259 (Tina) >> Room B: '[C259] Tina: Flagging for review.'
+[0014.550] Client-260 (Alice) >> Room C: '[C260] Alice: Private message sent.'
+[0014.588] Client-261 (Bob) >> Room A: '[C261] Bob: What's up?'
+[0014.634] Client-262 (Charlie) >> Room B: '[C262] Charlie: URGENT: Bug in production.'
+[0014.672] Client-263 (Diana) >> Room C: '[C263] Diana: Off the record.'
+[0014.709] [PM-GEN] Client-264 (Eve, T2) -> T0 (private)
+[0014.709] [PM] T2 (Eve) -> T0: '[DM to T0] Hey T0, private message from Eve (#264)'
+[0014.747] Client-265 (Frank) >> Room B: '[C265] Frank: Escalating this issue.'
+[0014.788] Client-266 (Grace) >> Room C: '[C266] Grace: Private briefing time.'
+[0014.826] Client-267 (Hank) >> Room A: '[C267] Hank: Let's get started.'
+[0014.863] Client-268 (Iris) >> Room B: '[C268] Iris: Action required immediately.'
+[0014.901] Client-269 (Jack) >> Room C: '[C269] Jack: Private sync done.'
+[0014.944] Client-270 (Karen) >> Room A: '[C270] Karen: Hello everyone!'
+[0014.985] Client-271 (Leo) >> Room B: '[C271] Leo: Attention: deploy in 5 min.'
+[0015.028] [PM-GEN] Client-272 (Mia, T6) -> T5 (private)
+[0015.028] [PM] T6 (Mia) -> T5: '[DM to T5] Hey T5, private message from Mia (#272)'
+[0015.070] Client-273 (Nick) >> Room A: '[C273] Nick: Anyone here?'
+[0015.116] Client-274 (Olivia) >> Room B: '[C274] Olivia: Critical update needed.'
+[0015.153] Client-275 (Paul) >> Room C: '[C275] Paul: Eyes only.'
+[0015.200] Client-276 (Quinn) >> Room A: '[C276] Quinn: Nice weather today.'
+[0015.239] Client-277 (Rose) >> Room B: '[C277] Rose: This is a priority message.'
+[0015.278] Client-278 (Sam) >> Room C: '[C278] Sam: Restricted access note.'
+[0015.317] Client-279 (Tina) >> Room A: '[C279] Tina: This is the general channel.'
+[0015.358] [PM-GEN] Client-280 (Alice, T5) -> T2 (private)
+[0015.358] [PM] T5 (Alice) -> T2: '[DM to T2] Hey T2, private message from Alice (#280)'
+[0015.399] Client-281 (Bob) >> Room C: '[C281] Bob: Just between us...'
+[0015.439] Client-282 (Charlie) >> Room A: '[C282] Charlie: Good morning!'
+[0015.486] Client-283 (Diana) >> Room B: '[C283] Diana: Priority task assigned.'
+[0015.534] Client-284 (Eve) >> Room C: '[C284] Eve: Secure channel active.'
+[0015.572] Client-285 (Frank) >> Room A: '[C285] Frank: Happy to be here!'
+[0015.609] Client-286 (Grace) >> Room B: '[C286] Grace: Please respond ASAP.'
+[0015.647] Client-287 (Hank) >> Room C: '[C287] Hank: For your eyes only.'
+[0015.684] [PM-GEN] Client-288 (Iris, T2) -> T1 (private)
+[0015.686] [PM] T2 (Iris) -> T1: '[DM to T1] Hey T1, private message from Iris (#288)'
+[0015.722] Client-289 (Jack) >> Room B: '[C289] Jack: Flagging for review.'
+[0015.760] Client-290 (Karen) >> Room C: '[C290] Karen: Private message sent.'
+[0015.797] Client-291 (Leo) >> Room A: '[C291] Leo: What's up?'
+[0015.847] Client-292 (Mia) >> Room B: '[C292] Mia: URGENT: Bug in production.'
+[0015.893] Client-293 (Nick) >> Room C: '[C293] Nick: Off the record.'
+[0015.936] Client-294 (Olivia) >> Room A: '[C294] Olivia: How's it going?'
+[0015.975] Client-295 (Paul) >> Room B: '[C295] Paul: Escalating this issue.'
+[0016.014] [PM-GEN] Client-296 (Quinn, T3) -> T7 (private)
+[0016.051] Client-297 (Rose) >> Room A: '[C297] Rose: Let's get started.'
+[0016.090] Client-298 (Sam) >> Room B: '[C298] Sam: Action required immediately.'
+[0016.129] Client-299 (Tina) >> Room C: '[C299] Tina: Private sync done.'
+[0016.177] Client-300 (Alice) >> Room A: '[C300] Alice: Hello everyone!'
+[0016.217] Client-301 (Bob) >> Room B: '[C301] Bob: Attention: deploy in 5 min.'
+[0016.256] Client-302 (Charlie) >> Room C: '[C302] Charlie: This is confidential.'
+[0016.298] Client-303 (Diana) >> Room A: '[C303] Diana: Anyone here?'
+[0016.339] [PM-GEN] Client-304 (Eve, T5) -> T2 (private)
+[0016.384] Client-305 (Frank) >> Room C: '[C305] Frank: Eyes only.'
+[0016.426] Client-306 (Grace) >> Room A: '[C306] Grace: Nice weather today.'
+[0016.466] Client-307 (Hank) >> Room B: '[C307] Hank: This is a priority message.'
+[0016.504] Client-308 (Iris) >> Room C: '[C308] Iris: Restricted access note.'
+[0016.544] Client-309 (Jack) >> Room A: '[C309] Jack: This is the general channel.'
+[0016.582] Client-310 (Karen) >> Room B: '[C310] Karen: HIGH PRIORITY: server is slow.'
+[0016.623] Client-311 (Leo) >> Room C: '[C311] Leo: Just between us...'
+[0016.665] [PM-GEN] Client-312 (Mia, T3) -> T4 (private)
+[0016.707] Client-313 (Nick) >> Room B: '[C313] Nick: Priority task assigned.'
+[0016.748] Client-314 (Olivia) >> Room C: '[C314] Olivia: Secure channel active.'
+[0016.788] Client-315 (Paul) >> Room A: '[C315] Paul: Happy to be here!'
+[0016.825] Client-316 (Quinn) >> Room B: '[C316] Quinn: Please respond ASAP.'
+[0016.864] Client-317 (Rose) >> Room C: '[C317] Rose: For your eyes only.'
+[0016.902] Client-318 (Sam) >> Room A: '[C318] Sam: Great to see you all.'
+[0016.939] Client-319 (Tina) >> Room B: '[C319] Tina: Flagging for review.'
+[0016.977] [PM-GEN] Client-320 (Alice, T4) -> T1 (private)
+[0017.015] Client-321 (Bob) >> Room A: '[C321] Bob: What's up?'
+[0017.060] Client-322 (Charlie) >> Room B: '[C322] Charlie: URGENT: Bug in production.'
+[0017.098] Client-323 (Diana) >> Room C: '[C323] Diana: Off the record.'
+[0017.148] Client-324 (Eve) >> Room A: '[C324] Eve: How's it going?'
+[0017.157] [PM] T3 (Quinn) -> T7: '[DM to T7] Hey T7, private message from Quinn (#296)'
+[0017.187] Client-325 (Frank) >> Room B: '[C325] Frank: Escalating this issue.'
+[0017.229] Client-326 (Grace) >> Room C: '[C326] Grace: Private briefing time.'
+[0017.271] Client-327 (Hank) >> Room A: '[C327] Hank: Let's get started.'
+[0017.349] [PM-GEN] Client-328 (Iris, T4) -> T3 (private)
+[0017.428] Client-329 (Jack) >> Room C: '[C329] Jack: Private sync done.'
+[0017.510] Client-330 (Karen) >> Room A: '[C330] Karen: Hello everyone!'
+[0017.587] Client-331 (Leo) >> Room B: '[C331] Leo: Attention: deploy in 5 min.'
+[0017.661] Client-332 (Mia) >> Room C: '[C332] Mia: This is confidential.'
+[0017.742] Client-333 (Nick) >> Room A: '[C333] Nick: Anyone here?'
+[0017.824] Client-334 (Olivia) >> Room B: '[C334] Olivia: Critical update needed.'
+[0017.899] Client-335 (Paul) >> Room C: '[C335] Paul: Eyes only.'
+[0017.974] [PM-GEN] Client-336 (Quinn, T7) -> T3 (private)
+[0018.054] Client-337 (Rose) >> Room B: '[C337] Rose: This is a priority message.'
+[0018.129] Client-338 (Sam) >> Room C: '[C338] Sam: Restricted access note.'
+[0018.161] [PM] T5 (Eve) -> T2: '[DM to T2] Hey T2, private message from Eve (#304)'
+[0018.210] Client-339 (Tina) >> Room A: '[C339] Tina: This is the general channel.'
+[0018.288] Client-340 (Alice) >> Room B: '[C340] Alice: HIGH PRIORITY: server is slow.'
+[0018.365] Client-341 (Bob) >> Room C: '[C341] Bob: Just between us...'
+[0018.440] Client-342 (Charlie) >> Room A: '[C342] Charlie: Good morning!'
+[0018.515] Client-343 (Diana) >> Room B: '[C343] Diana: Priority task assigned.'
+[0018.589] [PM-GEN] Client-344 (Eve, T6) -> T5 (private)
+[0018.674] Client-345 (Frank) >> Room A: '[C345] Frank: Happy to be here!'
+[0018.758] Client-346 (Grace) >> Room B: '[C346] Grace: Please respond ASAP.'
+[0018.833] Client-347 (Hank) >> Room C: '[C347] Hank: For your eyes only.'
+[0018.908] Client-348 (Iris) >> Room A: '[C348] Iris: Great to see you all.'
+[0018.988] Client-349 (Jack) >> Room B: '[C349] Jack: Flagging for review.'
+[0019.063] Client-350 (Karen) >> Room C: '[C350] Karen: Private message sent.'
+[0019.139] Client-351 (Leo) >> Room A: '[C351] Leo: What's up?'
+[0019.223] [PM-GEN] Client-352 (Mia, T5) -> T4 (private)
+[0019.224] [PM] T3 (Mia) -> T4: '[DM to T4] Hey T4, private message from Mia (#312)'
+[0019.300] Client-353 (Nick) >> Room C: '[C353] Nick: Off the record.'
+[0019.377] Client-354 (Olivia) >> Room A: '[C354] Olivia: How's it going?'
+[0019.452] Client-355 (Paul) >> Room B: '[C355] Paul: Escalating this issue.'
+[0019.527] Client-356 (Quinn) >> Room C: '[C356] Quinn: Private briefing time.'
+[0019.609] Client-357 (Rose) >> Room A: '[C357] Rose: Let's get started.'
+[0019.689] Client-358 (Sam) >> Room B: '[C358] Sam: Action required immediately.'
+[0019.764] Client-359 (Tina) >> Room C: '[C359] Tina: Private sync done.'
+[0019.842] [PM-GEN] Client-360 (Alice, T5) -> T0 (private)
+[0019.922] Client-361 (Bob) >> Room B: '[C361] Bob: Attention: deploy in 5 min.'
+[0020.000] Client-362 (Charlie) >> Room C: '[C362] Charlie: This is confidential.'
+[0020.079] Client-363 (Diana) >> Room A: '[C363] Diana: Anyone here?'
+[0020.154] Client-364 (Eve) >> Room B: '[C364] Eve: Critical update needed.'
+[0020.230] Client-365 (Frank) >> Room C: '[C365] Frank: Eyes only.'
+[0020.306] Client-366 (Grace) >> Room A: '[C366] Grace: Nice weather today.'
+[0020.382] Client-367 (Hank) >> Room B: '[C367] Hank: This is a priority message.'
+[0020.462] [PM-GEN] Client-368 (Iris, T2) -> T1 (private)
+[0020.590] Client-369 (Jack) >> Room A: '[C369] Jack: This is the general channel.'
+[0020.663] [PM] T4 (Alice) -> T1: '[DM to T1] Hey T1, private message from Alice (#320)'
+[0020.720] Client-370 (Karen) >> Room B: '[C370] Karen: HIGH PRIORITY: server is slow.'
+[0020.853] Client-371 (Leo) >> Room C: '[C371] Leo: Just between us...'
+[0020.983] Client-372 (Mia) >> Room A: '[C372] Mia: Good morning!'
+[0021.114] Client-373 (Nick) >> Room B: '[C373] Nick: Priority task assigned.'
+[0021.250] Client-374 (Olivia) >> Room C: '[C374] Olivia: Secure channel active.'
+[0021.391] Client-375 (Paul) >> Room A: '[C375] Paul: Happy to be here!'
+[0021.522] [PM-GEN] Client-376 (Quinn, T2) -> T7 (private)
+[0021.651] Client-377 (Rose) >> Room C: '[C377] Rose: For your eyes only.'
+[0021.670] [PM] T4 (Iris) -> T3: '[DM to T3] Hey T3, private message from Iris (#328)'
+[0021.786] Client-378 (Sam) >> Room A: '[C378] Sam: Great to see you all.'
+[0021.921] Client-379 (Tina) >> Room B: '[C379] Tina: Flagging for review.'
+[0022.059] Client-380 (Alice) >> Room C: '[C380] Alice: Private message sent.'
+[0022.190] Client-381 (Bob) >> Room A: '[C381] Bob: What's up?'
+[0022.317] Client-382 (Charlie) >> Room B: '[C382] Charlie: URGENT: Bug in production.'
+[0022.445] Client-383 (Diana) >> Room C: '[C383] Diana: Off the record.'
+[0022.572] [PM-GEN] Client-384 (Eve, T7) -> T5 (private)
+[0022.704] Client-385 (Frank) >> Room B: '[C385] Frank: Escalating this issue.'
+[0022.750] [PM] T7 (Quinn) -> T3: '[DM to T3] Hey T3, private message from Quinn (#336)'
+[0022.836] Client-386 (Grace) >> Room C: '[C386] Grace: Private briefing time.'
+[0022.972] Client-387 (Hank) >> Room A: '[C387] Hank: Let's get started.'
+[0023.099] Client-388 (Iris) >> Room B: '[C388] Iris: Action required immediately.'
+[0023.226] Client-389 (Jack) >> Room C: '[C389] Jack: Private sync done.'
+[0023.365] Client-390 (Karen) >> Room A: '[C390] Karen: Hello everyone!'
+[0023.492] Client-391 (Leo) >> Room B: '[C391] Leo: Attention: deploy in 5 min.'
+[0023.621] [PM-GEN] Client-392 (Mia, T1) -> T6 (private)
+[0023.749] Client-393 (Nick) >> Room A: '[C393] Nick: Anyone here?'
+[0023.883] Client-394 (Olivia) >> Room B: '[C394] Olivia: Critical update needed.'
+[0024.011] Client-395 (Paul) >> Room C: '[C395] Paul: Eyes only.'
+[0024.143] Client-396 (Quinn) >> Room A: '[C396] Quinn: Nice weather today.'
+[0024.185] [PM] T6 (Eve) -> T5: '[DM to T5] Hey T5, private message from Eve (#344)'
+[0024.271] Client-397 (Rose) >> Room B: '[C397] Rose: This is a priority message.'
+[0024.398] Client-398 (Sam) >> Room C: '[C398] Sam: Restricted access note.'
+[0024.529] Client-399 (Tina) >> Room A: '[C399] Tina: This is the general channel.'
+[0024.658] [PM-GEN] Client-400 (Alice, T4) -> T1 (private)
+[0024.785] Client-401 (Bob) >> Room C: '[C401] Bob: Just between us...'
+[0024.914] Client-402 (Charlie) >> Room A: '[C402] Charlie: Good morning!'
+[0025.041] Client-403 (Diana) >> Room B: '[C403] Diana: Priority task assigned.'
+[0025.172] Client-404 (Eve) >> Room C: '[C404] Eve: Secure channel active.'
+[0025.188] [PM] T5 (Mia) -> T4: '[DM to T4] Hey T4, private message from Mia (#352)'
+[0025.310] Client-405 (Frank) >> Room A: '[C405] Frank: Happy to be here!'
+[0025.441] Client-406 (Grace) >> Room B: '[C406] Grace: Please respond ASAP.'
+[0025.577] Client-407 (Hank) >> Room C: '[C407] Hank: For your eyes only.'
+[0025.708] [PM-GEN] Client-408 (Iris, T3) -> T6 (private)
+[0025.837] Client-409 (Jack) >> Room B: '[C409] Jack: Flagging for review.'
+[0025.965] Client-410 (Karen) >> Room C: '[C410] Karen: Private message sent.'
+[0026.098] Client-411 (Leo) >> Room A: '[C411] Leo: What's up?'
+[0026.230] Client-412 (Mia) >> Room B: '[C412] Mia: URGENT: Bug in production.'
+[0026.285] [PM] T5 (Alice) -> T0: '[DM to T0] Hey T0, private message from Alice (#360)'
+[0026.356] Client-413 (Nick) >> Room C: '[C413] Nick: Off the record.'
+[0026.498] Client-414 (Olivia) >> Room A: '[C414] Olivia: How's it going?'
+[0026.627] Client-415 (Paul) >> Room B: '[C415] Paul: Escalating this issue.'
+[0026.755] [PM-GEN] Client-416 (Quinn, T4) -> T7 (private)
+[0026.882] Client-417 (Rose) >> Room A: '[C417] Rose: Let's get started.'
+[0027.010] Client-418 (Sam) >> Room B: '[C418] Sam: Action required immediately.'
+[0027.140] Client-419 (Tina) >> Room C: '[C419] Tina: Private sync done.'
+[0027.272] Client-420 (Alice) >> Room A: '[C420] Alice: Hello everyone!'
+[0027.402] Client-421 (Bob) >> Room B: '[C421] Bob: Attention: deploy in 5 min.'
+[0027.537] Client-422 (Charlie) >> Room C: '[C422] Charlie: This is confidential.'
+[0027.669] Client-423 (Diana) >> Room A: '[C423] Diana: Anyone here?'
+[0027.705] [PM] T2 (Iris) -> T1: '[DM to T1] Hey T1, private message from Iris (#368)'
+[0027.798] [PM-GEN] Client-424 (Eve, T2) -> T5 (private)
+[0027.929] Client-425 (Frank) >> Room C: '[C425] Frank: Eyes only.'
+[0028.059] Client-426 (Grace) >> Room A: '[C426] Grace: Nice weather today.'
+[0028.186] Client-427 (Hank) >> Room B: '[C427] Hank: This is a priority message.'
+[0028.319] Client-428 (Iris) >> Room C: '[C428] Iris: Restricted access note.'
+[0028.452] Client-429 (Jack) >> Room A: '[C429] Jack: This is the general channel.'
+[0028.581] Client-430 (Karen) >> Room B: '[C430] Karen: HIGH PRIORITY: server is slow.'
+[0028.711] Client-431 (Leo) >> Room C: '[C431] Leo: Just between us...'
+[0028.711] [PM] T2 (Quinn) -> T7: '[DM to T7] Hey T7, private message from Quinn (#376)'
+[0028.839] [PM-GEN] Client-432 (Mia, T4) -> T6 (private)
+[0028.967] Client-433 (Nick) >> Room B: '[C433] Nick: Priority task assigned.'
+[0029.096] Client-434 (Olivia) >> Room C: '[C434] Olivia: Secure channel active.'
+[0029.232] Client-435 (Paul) >> Room A: '[C435] Paul: Happy to be here!'
+[0029.360] Client-436 (Quinn) >> Room B: '[C436] Quinn: Please respond ASAP.'
+[0029.504] Client-437 (Rose) >> Room C: '[C437] Rose: For your eyes only.'
+[0029.632] Client-438 (Sam) >> Room A: '[C438] Sam: Great to see you all.'
+[0029.759] Client-439 (Tina) >> Room B: '[C439] Tina: Flagging for review.'
+[0029.794] [PM] T7 (Eve) -> T5: '[DM to T5] Hey T5, private message from Eve (#384)'
+[0029.891] [PM-GEN] Client-440 (Alice, T4) -> T7 (private)
+[0030.027] Duration elapsed – stopping client generator.
+INFO: TEXTURE: [ID 2] Unloaded texture data from VRAM (GPU)
+INFO: SHADER: [ID 3] Default shader unloaded successfully
+INFO: TEXTURE: [ID 1] Default texture unloaded successfully
+INFO: Window closed successfully
+[INFO] Thread pool shut down cleanly.
+[INFO] Consumer for Room A exited. Total consumed: 110
+[INFO] Consumer thread for Room A joined. Drained 110 messages.
+[INFO] Consumer for Room B exited. Total consumed: 110
+[INFO] Consumer thread for Room B joined. Drained 110 messages.
+[INFO] Consumer for Room C exited. Total consumed: 110
+[INFO] Consumer thread for Room C joined. Drained 110 messages.
+[INFO] Log exported → chat_sim.log.txt  (2678 entries)
+[INFO] Throughput CSV → throughput.csv (clients=25  threads=8  peak=41 msg/s  avg=13.2 msg/s)
+
+=============================================================
+  SIMULATION COMPLETE
+=============================================================
+  Total messages sent  : 378
+  Private messages     : 48  (direct thread-to-thread)
+  Rate-limited drops   : 0  (token-bucket throttle)
+  Total dropped msgs   : 8  (rate-limited drops)
+  Duration             : 55.55 s
+  Worker threads used  : 8
+  Rate limit setting   : 43 msg/sec per client
+
+  Per-thread message counts:
+    Thread-0 : 42 msgs sent, 5 PMs received
+    Thread-1 : 50 msgs sent, 11 PMs received
+    Thread-2 : 43 msgs sent, 7 PMs received
+    Thread-3 : 51 msgs sent, 5 PMs received
+    Thread-4 : 48 msgs sent, 5 PMs received
+    Thread-5 : 46 msgs sent, 9 PMs received
+    Thread-6 : 51 msgs sent, 4 PMs received
+    Thread-7 : 47 msgs sent, 2 PMs received
+
+  Per-room totals:
+    Room A (General) : written=110  consumed=110  in_buffer=0
+    Room B (Priority) : written=110  consumed=110  in_buffer=0
+    Room C (Private) : written=110  consumed=110  in_buffer=0
+    Room A: avg mutex wait = 1.49 µs (over 113 acquisitions)
+    Room B: avg mutex wait = 1.75 µs (over 113 acquisitions)
+    Room C: avg mutex wait = 0.57 µs (over 112 acquisitions)
+
+  Log exported to: chat_sim.log.txt
+=============================================================

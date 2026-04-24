@@ -1,0 +1,2283 @@
+EVENT_LOG | OS-Level Chat Server | 2026-04-24 02:38:11
+----------------------------------------------------------------
+LINE  TIMESTAMP_MS   EVENT              TID    ROOM   SEM    MSGS   DETAIL
+----------------------------------------------------------------
+1             1.273  THREAD_CREATE      tid=0   room=-  sem=50   msgs=0    Alice
+2             1.350  THREAD_CREATE      tid=1   room=-  sem=50   msgs=0    Bob
+3             1.737  THREAD_CREATE      tid=2   room=-  sem=50   msgs=0    Charlie
+4             1.939  THREAD_CREATE      tid=3   room=-  sem=50   msgs=0    Diana
+5             2.325  THREAD_CREATE      tid=4   room=-  sem=50   msgs=0    Eve
+6             2.388  THREAD_CREATE      tid=5   room=-  sem=50   msgs=0    Frank
+7             2.428  THREAD_CREATE      tid=6   room=-  sem=50   msgs=0    Grace
+8             2.479  THREAD_CREATE      tid=7   room=-  sem=50   msgs=0    Hank
+9             6.344  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+10            6.346  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+11            6.347  ACQUIRED_LOCK      tid=0   room=A  sem=-1   msgs=0    Alice
+12            6.348  RELEASED_LOCK      tid=0   room=A  sem=-1   msgs=0    Alice
+13            6.348  MSG_BROADCAST      tid=0   room=A  sem=49   msgs=1    Alice
+14            6.348  SEM_POST           tid=0   room=-  sem=50   msgs=1    Alice
+15           38.041  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+16           38.050  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+17           38.052  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Bob
+18           38.170  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Bob
+19           38.171  MSG_BROADCAST      tid=2   room=B  sem=49   msgs=1    Bob
+20           38.171  SEM_POST           tid=2   room=-  sem=50   msgs=1    Bob
+21           52.470  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+22           52.475  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+23           52.477  ACQUIRED_LOCK      tid=3   room=C  sem=-1   msgs=0    Charlie
+24           52.576  RELEASED_LOCK      tid=3   room=C  sem=-1   msgs=0    Charlie
+25           52.577  MSG_BROADCAST      tid=3   room=C  sem=49   msgs=1    Charlie
+26           52.577  SEM_POST           tid=3   room=-  sem=50   msgs=1    Charlie
+27           74.737  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+28           74.738  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+29           74.740  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Diana
+30           74.741  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Diana
+31           74.741  MSG_BROADCAST      tid=4   room=A  sem=49   msgs=1    Diana
+32           74.741  SEM_POST           tid=4   room=-  sem=50   msgs=1    Diana
+33          115.487  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+34          115.489  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+35          115.490  ACQUIRED_LOCK      tid=5   room=B  sem=-1   msgs=0    Eve
+36          115.491  RELEASED_LOCK      tid=5   room=B  sem=-1   msgs=0    Eve
+37          115.491  MSG_BROADCAST      tid=5   room=B  sem=49   msgs=1    Eve
+38          115.491  SEM_POST           tid=5   room=-  sem=50   msgs=1    Eve
+39          136.694  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+40          136.697  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+41          136.699  ACQUIRED_LOCK      tid=0   room=C  sem=-1   msgs=0    Frank
+42          136.699  RELEASED_LOCK      tid=0   room=C  sem=-1   msgs=0    Frank
+43          136.699  MSG_BROADCAST      tid=0   room=C  sem=49   msgs=2    Frank
+44          136.700  SEM_POST           tid=0   room=-  sem=50   msgs=2    Frank
+45          160.611  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+46          160.614  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+47          160.616  ACQUIRED_LOCK      tid=1   room=A  sem=-1   msgs=0    Grace
+48          160.617  RELEASED_LOCK      tid=1   room=A  sem=-1   msgs=0    Grace
+49          160.617  MSG_BROADCAST      tid=1   room=A  sem=49   msgs=1    Grace
+50          160.617  SEM_POST           tid=1   room=-  sem=50   msgs=1    Grace
+51          188.560  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+52          188.567  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+53          188.569  ACQUIRED_LOCK      tid=6   room=B  sem=-1   msgs=0    Hank
+54          188.570  RELEASED_LOCK      tid=6   room=B  sem=-1   msgs=0    Hank
+55          188.570  MSG_BROADCAST      tid=6   room=B  sem=49   msgs=1    Hank
+56          188.571  SEM_POST           tid=6   room=-  sem=50   msgs=1    Hank
+57          202.551  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+58          202.555  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+59          202.557  PRIVATE_MSG        tid=7   room=-  sem=-1   msgs=0    T7->T6 Iris
+60          202.561  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=1    Iris
+61          202.561  SEM_POST           tid=7   room=-  sem=50   msgs=1    Iris
+62          233.036  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+63          233.039  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+64          233.041  ACQUIRED_LOCK      tid=2   room=A  sem=-1   msgs=0    Jack
+65          233.042  RELEASED_LOCK      tid=2   room=A  sem=-1   msgs=0    Jack
+66          233.042  MSG_BROADCAST      tid=2   room=A  sem=49   msgs=2    Jack
+67          233.042  SEM_POST           tid=2   room=-  sem=50   msgs=2    Jack
+68          253.406  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+69          253.408  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+70          253.410  ACQUIRED_LOCK      tid=3   room=B  sem=-1   msgs=0    Karen
+71          253.410  RELEASED_LOCK      tid=3   room=B  sem=-1   msgs=0    Karen
+72          253.410  MSG_BROADCAST      tid=3   room=B  sem=49   msgs=2    Karen
+73          253.411  SEM_POST           tid=3   room=-  sem=50   msgs=2    Karen
+74          291.467  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+75          291.470  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+76          291.472  ACQUIRED_LOCK      tid=4   room=C  sem=-1   msgs=0    Leo
+77          291.473  RELEASED_LOCK      tid=4   room=C  sem=-1   msgs=0    Leo
+78          291.473  MSG_BROADCAST      tid=4   room=C  sem=49   msgs=2    Leo
+79          291.473  SEM_POST           tid=4   room=-  sem=50   msgs=2    Leo
+80          318.309  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+81          318.313  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+82          318.314  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Mia
+83          318.315  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Mia
+84          318.315  MSG_BROADCAST      tid=5   room=A  sem=49   msgs=2    Mia
+85          318.315  SEM_POST           tid=5   room=-  sem=50   msgs=2    Mia
+86          338.874  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+87          338.876  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+88          338.878  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Nick
+89          338.878  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Nick
+90          338.878  MSG_BROADCAST      tid=0   room=B  sem=49   msgs=3    Nick
+91          338.879  SEM_POST           tid=0   room=-  sem=50   msgs=3    Nick
+92          359.334  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+93          359.340  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+94          359.343  ACQUIRED_LOCK      tid=1   room=C  sem=-1   msgs=0    Olivia
+95          359.344  RELEASED_LOCK      tid=1   room=C  sem=-1   msgs=0    Olivia
+96          359.344  MSG_BROADCAST      tid=1   room=C  sem=49   msgs=2    Olivia
+97          359.344  SEM_POST           tid=1   room=-  sem=50   msgs=2    Olivia
+98          379.938  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+99          379.940  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+100         379.942  ACQUIRED_LOCK      tid=6   room=A  sem=-1   msgs=0    Paul
+101         379.943  RELEASED_LOCK      tid=6   room=A  sem=-1   msgs=0    Paul
+102         379.943  MSG_BROADCAST      tid=6   room=A  sem=49   msgs=2    Paul
+103         379.943  SEM_POST           tid=6   room=-  sem=50   msgs=2    Paul
+104         416.484  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+105         416.486  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+106         416.489  PRIVATE_MSG        tid=1   room=-  sem=-1   msgs=0    T1->T3 Quinn
+107         416.492  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=2    Quinn
+108         416.492  SEM_POST           tid=7   room=-  sem=50   msgs=2    Quinn
+109         436.254  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+110         436.257  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+111         436.257  ACQUIRED_LOCK      tid=2   room=C  sem=-1   msgs=0    Rose
+112         436.258  RELEASED_LOCK      tid=2   room=C  sem=-1   msgs=0    Rose
+113         436.258  MSG_BROADCAST      tid=2   room=C  sem=49   msgs=3    Rose
+114         436.258  SEM_POST           tid=2   room=-  sem=50   msgs=3    Rose
+115         457.118  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+116         457.121  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+117         457.123  ACQUIRED_LOCK      tid=3   room=A  sem=-1   msgs=0    Sam
+118         457.124  RELEASED_LOCK      tid=3   room=A  sem=-1   msgs=0    Sam
+119         457.124  MSG_BROADCAST      tid=3   room=A  sem=49   msgs=3    Sam
+120         457.124  SEM_POST           tid=3   room=-  sem=50   msgs=3    Sam
+121         484.954  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+122         484.960  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+123         484.961  ACQUIRED_LOCK      tid=4   room=B  sem=-1   msgs=0    Tina
+124         484.962  RELEASED_LOCK      tid=4   room=B  sem=-1   msgs=0    Tina
+125         484.962  MSG_BROADCAST      tid=4   room=B  sem=49   msgs=3    Tina
+126         484.962  SEM_POST           tid=4   room=-  sem=50   msgs=3    Tina
+127         506.261  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+128         506.264  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+129         506.266  ACQUIRED_LOCK      tid=5   room=C  sem=-1   msgs=0    Alice
+130         506.267  RELEASED_LOCK      tid=5   room=C  sem=-1   msgs=0    Alice
+131         506.267  MSG_BROADCAST      tid=5   room=C  sem=49   msgs=3    Alice
+132         506.267  SEM_POST           tid=5   room=-  sem=50   msgs=3    Alice
+133         531.217  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+134         531.224  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+135         531.226  ACQUIRED_LOCK      tid=0   room=A  sem=-1   msgs=0    Bob
+136         531.227  RELEASED_LOCK      tid=0   room=A  sem=-1   msgs=0    Bob
+137         531.227  MSG_BROADCAST      tid=0   room=A  sem=49   msgs=4    Bob
+138         531.228  SEM_POST           tid=0   room=-  sem=50   msgs=4    Bob
+139         563.448  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+140         563.450  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+141         563.451  ACQUIRED_LOCK      tid=1   room=B  sem=-1   msgs=0    Charlie
+142         563.452  RELEASED_LOCK      tid=1   room=B  sem=-1   msgs=0    Charlie
+143         563.452  MSG_BROADCAST      tid=1   room=B  sem=49   msgs=3    Charlie
+144         563.452  SEM_POST           tid=1   room=-  sem=50   msgs=3    Charlie
+145         589.417  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+146         589.422  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+147         589.424  ACQUIRED_LOCK      tid=6   room=C  sem=-1   msgs=0    Diana
+148         589.424  RELEASED_LOCK      tid=6   room=C  sem=-1   msgs=0    Diana
+149         589.424  MSG_BROADCAST      tid=6   room=C  sem=49   msgs=3    Diana
+150         589.424  SEM_POST           tid=6   room=-  sem=50   msgs=3    Diana
+151         611.710  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+152         611.713  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+153         611.715  PRIVATE_MSG        tid=1   room=-  sem=-1   msgs=0    T1->T5 Eve
+154         611.719  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=3    Eve
+155         611.719  SEM_POST           tid=7   room=-  sem=50   msgs=3    Eve
+156         631.799  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+157         631.803  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+158         631.805  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Frank
+159         631.806  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Frank
+160         631.806  MSG_BROADCAST      tid=2   room=B  sem=49   msgs=4    Frank
+161         631.806  SEM_POST           tid=2   room=-  sem=50   msgs=4    Frank
+162         653.425  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+163         653.426  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+164         653.429  ACQUIRED_LOCK      tid=3   room=C  sem=-1   msgs=0    Grace
+165         653.429  RELEASED_LOCK      tid=3   room=C  sem=-1   msgs=0    Grace
+166         653.429  MSG_BROADCAST      tid=3   room=C  sem=49   msgs=4    Grace
+167         653.430  SEM_POST           tid=3   room=-  sem=50   msgs=4    Grace
+168         674.441  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+169         674.446  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+170         674.448  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Hank
+171         674.449  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Hank
+172         674.449  MSG_BROADCAST      tid=4   room=A  sem=49   msgs=4    Hank
+173         674.449  SEM_POST           tid=4   room=-  sem=50   msgs=4    Hank
+174         696.421  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+175         696.426  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+176         696.428  ACQUIRED_LOCK      tid=5   room=B  sem=-1   msgs=0    Iris
+177         696.429  RELEASED_LOCK      tid=5   room=B  sem=-1   msgs=0    Iris
+178         696.429  MSG_BROADCAST      tid=5   room=B  sem=49   msgs=4    Iris
+179         696.429  SEM_POST           tid=5   room=-  sem=50   msgs=4    Iris
+180         725.914  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+181         725.922  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+182         725.924  ACQUIRED_LOCK      tid=0   room=C  sem=-1   msgs=0    Jack
+183         725.924  RELEASED_LOCK      tid=0   room=C  sem=-1   msgs=0    Jack
+184         725.925  MSG_BROADCAST      tid=0   room=C  sem=49   msgs=5    Jack
+185         725.925  SEM_POST           tid=0   room=-  sem=50   msgs=5    Jack
+186         737.810  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+187         737.813  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+188         737.814  ACQUIRED_LOCK      tid=1   room=A  sem=-1   msgs=0    Karen
+189         737.815  RELEASED_LOCK      tid=1   room=A  sem=-1   msgs=0    Karen
+190         737.815  MSG_BROADCAST      tid=1   room=A  sem=49   msgs=4    Karen
+191         737.815  SEM_POST           tid=1   room=-  sem=50   msgs=4    Karen
+192         758.106  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+193         758.110  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+194         758.112  ACQUIRED_LOCK      tid=6   room=B  sem=-1   msgs=0    Leo
+195         758.113  RELEASED_LOCK      tid=6   room=B  sem=-1   msgs=0    Leo
+196         758.113  MSG_BROADCAST      tid=6   room=B  sem=49   msgs=4    Leo
+197         758.113  SEM_POST           tid=6   room=-  sem=50   msgs=4    Leo
+198         792.496  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+199         792.499  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+200         792.501  PRIVATE_MSG        tid=6   room=-  sem=-1   msgs=0    T6->T7 Mia
+201         792.505  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=4    Mia
+202         792.505  SEM_POST           tid=7   room=-  sem=50   msgs=4    Mia
+203         820.471  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+204         820.476  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+205         820.477  ACQUIRED_LOCK      tid=2   room=A  sem=-1   msgs=0    Nick
+206         820.478  RELEASED_LOCK      tid=2   room=A  sem=-1   msgs=0    Nick
+207         820.478  MSG_BROADCAST      tid=2   room=A  sem=49   msgs=5    Nick
+208         820.478  SEM_POST           tid=2   room=-  sem=50   msgs=5    Nick
+209         842.321  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+210         842.323  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+211         842.325  ACQUIRED_LOCK      tid=3   room=B  sem=-1   msgs=0    Olivia
+212         842.325  RELEASED_LOCK      tid=3   room=B  sem=-1   msgs=0    Olivia
+213         842.326  MSG_BROADCAST      tid=3   room=B  sem=49   msgs=5    Olivia
+214         842.326  SEM_POST           tid=3   room=-  sem=50   msgs=5    Olivia
+215         873.928  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+216         873.932  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+217         873.933  ACQUIRED_LOCK      tid=4   room=C  sem=-1   msgs=0    Paul
+218         873.934  RELEASED_LOCK      tid=4   room=C  sem=-1   msgs=0    Paul
+219         873.934  MSG_BROADCAST      tid=4   room=C  sem=49   msgs=5    Paul
+220         873.934  SEM_POST           tid=4   room=-  sem=50   msgs=5    Paul
+221         894.906  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+222         894.909  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+223         894.911  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Quinn
+224         894.912  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Quinn
+225         894.912  MSG_BROADCAST      tid=5   room=A  sem=49   msgs=5    Quinn
+226         894.912  SEM_POST           tid=5   room=-  sem=50   msgs=5    Quinn
+227         914.040  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+228         914.041  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+229         914.042  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Rose
+230         914.042  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Rose
+231         914.043  MSG_BROADCAST      tid=0   room=B  sem=49   msgs=6    Rose
+232         914.043  SEM_POST           tid=0   room=-  sem=50   msgs=6    Rose
+233         936.484  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+234         936.487  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+235         936.488  ACQUIRED_LOCK      tid=1   room=C  sem=-1   msgs=0    Sam
+236         936.489  RELEASED_LOCK      tid=1   room=C  sem=-1   msgs=0    Sam
+237         936.489  MSG_BROADCAST      tid=1   room=C  sem=49   msgs=5    Sam
+238         936.490  SEM_POST           tid=1   room=-  sem=50   msgs=5    Sam
+239         970.590  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+240         970.594  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+241         970.596  ACQUIRED_LOCK      tid=6   room=A  sem=-1   msgs=0    Tina
+242         970.597  RELEASED_LOCK      tid=6   room=A  sem=-1   msgs=0    Tina
+243         970.597  MSG_BROADCAST      tid=6   room=A  sem=49   msgs=5    Tina
+244         970.597  SEM_POST           tid=6   room=-  sem=50   msgs=5    Tina
+245        1003.452  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+246        1003.456  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+247        1003.459  PRIVATE_MSG        tid=2   room=-  sem=-1   msgs=0    T2->T5 Alice
+248        1003.463  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=5    Alice
+249        1003.463  SEM_POST           tid=7   room=-  sem=50   msgs=5    Alice
+250        1038.931  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+251        1038.941  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+252        1038.942  ACQUIRED_LOCK      tid=2   room=C  sem=-1   msgs=0    Bob
+253        1038.943  RELEASED_LOCK      tid=2   room=C  sem=-1   msgs=0    Bob
+254        1038.943  MSG_BROADCAST      tid=2   room=C  sem=49   msgs=6    Bob
+255        1038.943  SEM_POST           tid=2   room=-  sem=50   msgs=6    Bob
+256        1048.564  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+257        1048.568  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+258        1048.569  ACQUIRED_LOCK      tid=3   room=A  sem=-1   msgs=0    Charlie
+259        1048.570  RELEASED_LOCK      tid=3   room=A  sem=-1   msgs=0    Charlie
+260        1048.570  MSG_BROADCAST      tid=3   room=A  sem=49   msgs=6    Charlie
+261        1048.571  SEM_POST           tid=3   room=-  sem=50   msgs=6    Charlie
+262        1070.575  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+263        1070.578  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+264        1070.579  ACQUIRED_LOCK      tid=4   room=B  sem=-1   msgs=0    Diana
+265        1070.580  RELEASED_LOCK      tid=4   room=B  sem=-1   msgs=0    Diana
+266        1070.580  MSG_BROADCAST      tid=4   room=B  sem=49   msgs=6    Diana
+267        1070.580  SEM_POST           tid=4   room=-  sem=50   msgs=6    Diana
+268        1090.688  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+269        1090.692  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+270        1090.693  ACQUIRED_LOCK      tid=5   room=C  sem=-1   msgs=0    Eve
+271        1090.693  RELEASED_LOCK      tid=5   room=C  sem=-1   msgs=0    Eve
+272        1090.694  MSG_BROADCAST      tid=5   room=C  sem=49   msgs=6    Eve
+273        1090.694  SEM_POST           tid=5   room=-  sem=50   msgs=6    Eve
+274        1112.539  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+275        1112.543  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+276        1112.544  ACQUIRED_LOCK      tid=0   room=A  sem=-1   msgs=0    Frank
+277        1112.544  RELEASED_LOCK      tid=0   room=A  sem=-1   msgs=0    Frank
+278        1112.545  MSG_BROADCAST      tid=0   room=A  sem=49   msgs=7    Frank
+279        1112.545  SEM_POST           tid=0   room=-  sem=50   msgs=7    Frank
+280        1140.707  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+281        1140.708  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+282        1140.710  ACQUIRED_LOCK      tid=1   room=B  sem=-1   msgs=0    Grace
+283        1140.711  RELEASED_LOCK      tid=1   room=B  sem=-1   msgs=0    Grace
+284        1140.711  MSG_BROADCAST      tid=1   room=B  sem=49   msgs=6    Grace
+285        1140.711  SEM_POST           tid=1   room=-  sem=50   msgs=6    Grace
+286        1164.393  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+287        1164.397  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+288        1164.400  ACQUIRED_LOCK      tid=6   room=C  sem=-1   msgs=0    Hank
+289        1164.401  RELEASED_LOCK      tid=6   room=C  sem=-1   msgs=0    Hank
+290        1164.401  MSG_BROADCAST      tid=6   room=C  sem=49   msgs=6    Hank
+291        1164.401  SEM_POST           tid=6   room=-  sem=50   msgs=6    Hank
+292        1188.486  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+293        1188.491  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+294        1188.494  PRIVATE_MSG        tid=6   room=-  sem=-1   msgs=0    T6->T3 Iris
+295        1188.498  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=6    Iris
+296        1188.499  SEM_POST           tid=7   room=-  sem=50   msgs=6    Iris
+297        1206.544  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+298        1206.548  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+299        1206.550  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Jack
+300        1206.551  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Jack
+301        1206.551  MSG_BROADCAST      tid=2   room=B  sem=49   msgs=7    Jack
+302        1206.552  SEM_POST           tid=2   room=-  sem=50   msgs=7    Jack
+303        1226.769  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+304        1226.774  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+305        1226.777  ACQUIRED_LOCK      tid=3   room=C  sem=-1   msgs=0    Karen
+306        1226.778  RELEASED_LOCK      tid=3   room=C  sem=-1   msgs=0    Karen
+307        1226.779  MSG_BROADCAST      tid=3   room=C  sem=49   msgs=7    Karen
+308        1226.779  SEM_POST           tid=3   room=-  sem=50   msgs=7    Karen
+309        1247.761  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+310        1247.764  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+311        1247.766  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Leo
+312        1247.767  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Leo
+313        1247.767  MSG_BROADCAST      tid=4   room=A  sem=49   msgs=7    Leo
+314        1247.767  SEM_POST           tid=4   room=-  sem=50   msgs=7    Leo
+315        1267.144  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+316        1267.145  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+317        1267.146  ACQUIRED_LOCK      tid=5   room=B  sem=-1   msgs=0    Mia
+318        1267.147  RELEASED_LOCK      tid=5   room=B  sem=-1   msgs=0    Mia
+319        1267.147  MSG_BROADCAST      tid=5   room=B  sem=49   msgs=7    Mia
+320        1267.147  SEM_POST           tid=5   room=-  sem=50   msgs=7    Mia
+321        1290.787  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+322        1290.789  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+323        1290.790  ACQUIRED_LOCK      tid=0   room=C  sem=-1   msgs=0    Nick
+324        1290.791  RELEASED_LOCK      tid=0   room=C  sem=-1   msgs=0    Nick
+325        1290.791  MSG_BROADCAST      tid=0   room=C  sem=49   msgs=8    Nick
+326        1290.791  SEM_POST           tid=0   room=-  sem=50   msgs=8    Nick
+327        1324.333  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+328        1324.334  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+329        1324.336  ACQUIRED_LOCK      tid=1   room=A  sem=-1   msgs=0    Olivia
+330        1324.337  RELEASED_LOCK      tid=1   room=A  sem=-1   msgs=0    Olivia
+331        1324.337  MSG_BROADCAST      tid=1   room=A  sem=49   msgs=7    Olivia
+332        1324.337  SEM_POST           tid=1   room=-  sem=50   msgs=7    Olivia
+333        1345.670  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+334        1345.675  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+335        1345.676  ACQUIRED_LOCK      tid=6   room=B  sem=-1   msgs=0    Paul
+336        1345.677  RELEASED_LOCK      tid=6   room=B  sem=-1   msgs=0    Paul
+337        1345.677  MSG_BROADCAST      tid=6   room=B  sem=49   msgs=7    Paul
+338        1345.677  SEM_POST           tid=6   room=-  sem=50   msgs=7    Paul
+339        1369.130  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+340        1369.133  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+341        1369.136  PRIVATE_MSG        tid=3   room=-  sem=-1   msgs=0    T3->T6 Quinn
+342        1369.139  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=7    Quinn
+343        1369.139  SEM_POST           tid=7   room=-  sem=50   msgs=7    Quinn
+344        1395.916  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+345        1395.920  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+346        1395.922  ACQUIRED_LOCK      tid=2   room=A  sem=-1   msgs=0    Rose
+347        1395.922  RELEASED_LOCK      tid=2   room=A  sem=-1   msgs=0    Rose
+348        1395.922  MSG_BROADCAST      tid=2   room=A  sem=49   msgs=8    Rose
+349        1395.922  SEM_POST           tid=2   room=-  sem=50   msgs=8    Rose
+350        1416.357  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+351        1416.359  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+352        1416.360  ACQUIRED_LOCK      tid=3   room=B  sem=-1   msgs=0    Sam
+353        1416.361  RELEASED_LOCK      tid=3   room=B  sem=-1   msgs=0    Sam
+354        1416.361  MSG_BROADCAST      tid=3   room=B  sem=49   msgs=8    Sam
+355        1416.362  SEM_POST           tid=3   room=-  sem=50   msgs=8    Sam
+356        1442.752  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+357        1442.756  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+358        1442.758  ACQUIRED_LOCK      tid=4   room=C  sem=-1   msgs=0    Tina
+359        1442.758  RELEASED_LOCK      tid=4   room=C  sem=-1   msgs=0    Tina
+360        1442.759  MSG_BROADCAST      tid=4   room=C  sem=49   msgs=8    Tina
+361        1442.759  SEM_POST           tid=4   room=-  sem=50   msgs=8    Tina
+362        1468.376  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+363        1468.377  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+364        1468.380  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Alice
+365        1468.381  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Alice
+366        1468.381  MSG_BROADCAST      tid=5   room=A  sem=49   msgs=8    Alice
+367        1468.381  SEM_POST           tid=5   room=-  sem=50   msgs=8    Alice
+368        1488.833  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+369        1488.834  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+370        1488.835  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Bob
+371        1488.835  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Bob
+372        1488.836  MSG_BROADCAST      tid=0   room=B  sem=49   msgs=9    Bob
+373        1488.836  SEM_POST           tid=0   room=-  sem=50   msgs=9    Bob
+374        1511.825  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+375        1511.828  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+376        1511.830  ACQUIRED_LOCK      tid=1   room=C  sem=-1   msgs=0    Charlie
+377        1511.830  RELEASED_LOCK      tid=1   room=C  sem=-1   msgs=0    Charlie
+378        1511.830  MSG_BROADCAST      tid=1   room=C  sem=49   msgs=8    Charlie
+379        1511.830  SEM_POST           tid=1   room=-  sem=50   msgs=8    Charlie
+380        1545.021  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+381        1545.027  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+382        1545.030  ACQUIRED_LOCK      tid=6   room=A  sem=-1   msgs=0    Diana
+383        1545.030  RELEASED_LOCK      tid=6   room=A  sem=-1   msgs=0    Diana
+384        1545.030  MSG_BROADCAST      tid=6   room=A  sem=49   msgs=8    Diana
+385        1545.031  SEM_POST           tid=6   room=-  sem=50   msgs=8    Diana
+386        1561.099  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+387        1561.100  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+388        1561.102  PRIVATE_MSG        tid=1   room=-  sem=-1   msgs=0    T1->T2 Eve
+389        1561.104  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=8    Eve
+390        1561.104  SEM_POST           tid=7   room=-  sem=50   msgs=8    Eve
+391        1584.888  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+392        1584.891  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+393        1584.893  ACQUIRED_LOCK      tid=2   room=C  sem=-1   msgs=0    Frank
+394        1584.894  RELEASED_LOCK      tid=2   room=C  sem=-1   msgs=0    Frank
+395        1584.894  MSG_BROADCAST      tid=2   room=C  sem=49   msgs=9    Frank
+396        1584.894  SEM_POST           tid=2   room=-  sem=50   msgs=9    Frank
+397        1608.165  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+398        1608.169  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+399        1608.170  ACQUIRED_LOCK      tid=3   room=A  sem=-1   msgs=0    Grace
+400        1608.171  RELEASED_LOCK      tid=3   room=A  sem=-1   msgs=0    Grace
+401        1608.171  MSG_BROADCAST      tid=3   room=A  sem=49   msgs=9    Grace
+402        1608.171  SEM_POST           tid=3   room=-  sem=50   msgs=9    Grace
+403        1625.652  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+404        1625.654  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+405        1625.656  ACQUIRED_LOCK      tid=4   room=B  sem=-1   msgs=0    Hank
+406        1625.657  RELEASED_LOCK      tid=4   room=B  sem=-1   msgs=0    Hank
+407        1625.657  MSG_BROADCAST      tid=4   room=B  sem=49   msgs=9    Hank
+408        1625.657  SEM_POST           tid=4   room=-  sem=50   msgs=9    Hank
+409        1656.666  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+410        1656.670  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+411        1656.671  ACQUIRED_LOCK      tid=5   room=C  sem=-1   msgs=0    Iris
+412        1656.672  RELEASED_LOCK      tid=5   room=C  sem=-1   msgs=0    Iris
+413        1656.672  MSG_BROADCAST      tid=5   room=C  sem=49   msgs=9    Iris
+414        1656.672  SEM_POST           tid=5   room=-  sem=50   msgs=9    Iris
+415        1674.547  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+416        1674.551  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+417        1674.553  ACQUIRED_LOCK      tid=0   room=A  sem=-1   msgs=0    Jack
+418        1674.553  RELEASED_LOCK      tid=0   room=A  sem=-1   msgs=0    Jack
+419        1674.553  MSG_BROADCAST      tid=0   room=A  sem=49   msgs=10   Jack
+420        1674.554  SEM_POST           tid=0   room=-  sem=50   msgs=10   Jack
+421        1698.532  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+422        1698.536  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+423        1698.538  ACQUIRED_LOCK      tid=1   room=B  sem=-1   msgs=0    Karen
+424        1698.539  RELEASED_LOCK      tid=1   room=B  sem=-1   msgs=0    Karen
+425        1698.539  MSG_BROADCAST      tid=1   room=B  sem=49   msgs=9    Karen
+426        1698.539  SEM_POST           tid=1   room=-  sem=50   msgs=9    Karen
+427        1719.019  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+428        1719.023  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+429        1719.024  ACQUIRED_LOCK      tid=6   room=C  sem=-1   msgs=0    Leo
+430        1719.025  RELEASED_LOCK      tid=6   room=C  sem=-1   msgs=0    Leo
+431        1719.025  MSG_BROADCAST      tid=6   room=C  sem=49   msgs=9    Leo
+432        1719.025  SEM_POST           tid=6   room=-  sem=50   msgs=9    Leo
+433        1741.465  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+434        1741.470  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+435        1741.473  PRIVATE_MSG        tid=0   room=-  sem=-1   msgs=0    T0->T5 Mia
+436        1741.477  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=9    Mia
+437        1741.477  SEM_POST           tid=7   room=-  sem=50   msgs=9    Mia
+438        1762.216  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+439        1762.219  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+440        1762.221  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Nick
+441        1762.222  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Nick
+442        1762.222  MSG_BROADCAST      tid=2   room=B  sem=49   msgs=10   Nick
+443        1762.222  SEM_POST           tid=2   room=-  sem=50   msgs=10   Nick
+444        1782.737  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+445        1782.742  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+446        1782.744  ACQUIRED_LOCK      tid=3   room=C  sem=-1   msgs=0    Olivia
+447        1782.745  RELEASED_LOCK      tid=3   room=C  sem=-1   msgs=0    Olivia
+448        1782.745  MSG_BROADCAST      tid=3   room=C  sem=49   msgs=10   Olivia
+449        1782.746  SEM_POST           tid=3   room=-  sem=50   msgs=10   Olivia
+450        1810.178  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+451        1810.179  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+452        1810.182  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Paul
+453        1810.182  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Paul
+454        1810.182  MSG_BROADCAST      tid=4   room=A  sem=49   msgs=10   Paul
+455        1810.182  SEM_POST           tid=4   room=-  sem=50   msgs=10   Paul
+456        1834.446  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+457        1834.450  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+458        1834.452  ACQUIRED_LOCK      tid=5   room=B  sem=-1   msgs=0    Quinn
+459        1834.453  RELEASED_LOCK      tid=5   room=B  sem=-1   msgs=0    Quinn
+460        1834.453  MSG_BROADCAST      tid=5   room=B  sem=49   msgs=10   Quinn
+461        1834.454  SEM_POST           tid=5   room=-  sem=50   msgs=10   Quinn
+462        1854.601  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+463        1854.604  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+464        1854.604  ACQUIRED_LOCK      tid=0   room=C  sem=-1   msgs=0    Rose
+465        1854.605  RELEASED_LOCK      tid=0   room=C  sem=-1   msgs=0    Rose
+466        1854.605  MSG_BROADCAST      tid=0   room=C  sem=49   msgs=11   Rose
+467        1854.605  SEM_POST           tid=0   room=-  sem=50   msgs=11   Rose
+468        1879.498  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+469        1879.502  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+470        1879.503  ACQUIRED_LOCK      tid=1   room=A  sem=-1   msgs=0    Sam
+471        1879.504  RELEASED_LOCK      tid=1   room=A  sem=-1   msgs=0    Sam
+472        1879.504  MSG_BROADCAST      tid=1   room=A  sem=49   msgs=10   Sam
+473        1879.504  SEM_POST           tid=1   room=-  sem=50   msgs=10   Sam
+474        1901.967  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+475        1901.969  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+476        1901.970  ACQUIRED_LOCK      tid=6   room=B  sem=-1   msgs=0    Tina
+477        1901.971  RELEASED_LOCK      tid=6   room=B  sem=-1   msgs=0    Tina
+478        1901.971  MSG_BROADCAST      tid=6   room=B  sem=49   msgs=10   Tina
+479        1901.971  SEM_POST           tid=6   room=-  sem=50   msgs=10   Tina
+480        1922.674  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+481        1922.676  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+482        1922.677  PRIVATE_MSG        tid=7   room=-  sem=-1   msgs=0    T7->T3 Alice
+483        1922.678  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=10   Alice
+484        1922.678  SEM_POST           tid=7   room=-  sem=50   msgs=10   Alice
+485        1943.512  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+486        1943.516  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+487        1943.519  ACQUIRED_LOCK      tid=2   room=A  sem=-1   msgs=0    Bob
+488        1943.519  RELEASED_LOCK      tid=2   room=A  sem=-1   msgs=0    Bob
+489        1943.519  MSG_BROADCAST      tid=2   room=A  sem=49   msgs=11   Bob
+490        1943.519  SEM_POST           tid=2   room=-  sem=50   msgs=11   Bob
+491        1965.877  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+492        1965.880  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+493        1965.882  ACQUIRED_LOCK      tid=3   room=B  sem=-1   msgs=0    Charlie
+494        1965.882  RELEASED_LOCK      tid=3   room=B  sem=-1   msgs=0    Charlie
+495        1965.882  MSG_BROADCAST      tid=3   room=B  sem=49   msgs=11   Charlie
+496        1965.882  SEM_POST           tid=3   room=-  sem=50   msgs=11   Charlie
+497        1986.535  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+498        1986.536  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+499        1986.537  ACQUIRED_LOCK      tid=4   room=C  sem=-1   msgs=0    Diana
+500        1986.538  RELEASED_LOCK      tid=4   room=C  sem=-1   msgs=0    Diana
+501        1986.538  MSG_BROADCAST      tid=4   room=C  sem=49   msgs=11   Diana
+502        1986.538  SEM_POST           tid=4   room=-  sem=50   msgs=11   Diana
+503        2007.520  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+504        2007.521  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+505        2007.523  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Eve
+506        2007.523  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Eve
+507        2007.523  MSG_BROADCAST      tid=5   room=A  sem=49   msgs=11   Eve
+508        2007.524  SEM_POST           tid=5   room=-  sem=50   msgs=11   Eve
+509        2029.563  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+510        2029.566  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+511        2029.567  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Frank
+512        2029.567  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Frank
+513        2029.568  MSG_BROADCAST      tid=0   room=B  sem=49   msgs=12   Frank
+514        2029.568  SEM_POST           tid=0   room=-  sem=50   msgs=12   Frank
+515        2052.342  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+516        2052.345  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+517        2052.347  ACQUIRED_LOCK      tid=1   room=C  sem=-1   msgs=0    Grace
+518        2052.347  RELEASED_LOCK      tid=1   room=C  sem=-1   msgs=0    Grace
+519        2052.348  MSG_BROADCAST      tid=1   room=C  sem=49   msgs=11   Grace
+520        2052.348  SEM_POST           tid=1   room=-  sem=50   msgs=11   Grace
+521        2070.774  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+522        2070.778  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+523        2070.780  ACQUIRED_LOCK      tid=6   room=A  sem=-1   msgs=0    Hank
+524        2070.781  RELEASED_LOCK      tid=6   room=A  sem=-1   msgs=0    Hank
+525        2070.781  MSG_BROADCAST      tid=6   room=A  sem=49   msgs=11   Hank
+526        2070.781  SEM_POST           tid=6   room=-  sem=50   msgs=11   Hank
+527        2094.238  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+528        2094.242  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+529        2094.244  PRIVATE_MSG        tid=1   room=-  sem=-1   msgs=0    T1->T2 Iris
+530        2094.247  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=11   Iris
+531        2094.247  SEM_POST           tid=7   room=-  sem=50   msgs=11   Iris
+532        2118.347  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+533        2118.349  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+534        2118.350  ACQUIRED_LOCK      tid=2   room=C  sem=-1   msgs=0    Jack
+535        2118.350  RELEASED_LOCK      tid=2   room=C  sem=-1   msgs=0    Jack
+536        2118.351  MSG_BROADCAST      tid=2   room=C  sem=49   msgs=12   Jack
+537        2118.351  SEM_POST           tid=2   room=-  sem=50   msgs=12   Jack
+538        2157.093  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+539        2157.094  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+540        2157.095  ACQUIRED_LOCK      tid=3   room=A  sem=-1   msgs=0    Karen
+541        2157.096  RELEASED_LOCK      tid=3   room=A  sem=-1   msgs=0    Karen
+542        2157.096  MSG_BROADCAST      tid=3   room=A  sem=49   msgs=12   Karen
+543        2157.096  SEM_POST           tid=3   room=-  sem=50   msgs=12   Karen
+544        2181.719  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+545        2181.723  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+546        2181.725  ACQUIRED_LOCK      tid=4   room=B  sem=-1   msgs=0    Leo
+547        2181.726  RELEASED_LOCK      tid=4   room=B  sem=-1   msgs=0    Leo
+548        2181.726  MSG_BROADCAST      tid=4   room=B  sem=49   msgs=12   Leo
+549        2181.726  SEM_POST           tid=4   room=-  sem=50   msgs=12   Leo
+550        2212.151  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+551        2212.156  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+552        2212.157  ACQUIRED_LOCK      tid=5   room=C  sem=-1   msgs=0    Mia
+553        2212.158  RELEASED_LOCK      tid=5   room=C  sem=-1   msgs=0    Mia
+554        2212.158  MSG_BROADCAST      tid=5   room=C  sem=49   msgs=12   Mia
+555        2212.159  SEM_POST           tid=5   room=-  sem=50   msgs=12   Mia
+556        2240.577  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+557        2240.582  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+558        2240.583  ACQUIRED_LOCK      tid=0   room=A  sem=-1   msgs=0    Nick
+559        2240.584  RELEASED_LOCK      tid=0   room=A  sem=-1   msgs=0    Nick
+560        2240.584  MSG_BROADCAST      tid=0   room=A  sem=49   msgs=13   Nick
+561        2240.584  SEM_POST           tid=0   room=-  sem=50   msgs=13   Nick
+562        2262.431  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+563        2262.436  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+564        2262.438  ACQUIRED_LOCK      tid=1   room=B  sem=-1   msgs=0    Olivia
+565        2262.438  RELEASED_LOCK      tid=1   room=B  sem=-1   msgs=0    Olivia
+566        2262.438  MSG_BROADCAST      tid=1   room=B  sem=49   msgs=12   Olivia
+567        2262.439  SEM_POST           tid=1   room=-  sem=50   msgs=12   Olivia
+568        2286.058  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+569        2286.063  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+570        2286.065  ACQUIRED_LOCK      tid=6   room=C  sem=-1   msgs=0    Paul
+571        2286.066  RELEASED_LOCK      tid=6   room=C  sem=-1   msgs=0    Paul
+572        2286.066  MSG_BROADCAST      tid=6   room=C  sem=49   msgs=12   Paul
+573        2286.066  SEM_POST           tid=6   room=-  sem=50   msgs=12   Paul
+574        2369.962  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+575        2369.969  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+576        2369.972  PRIVATE_MSG        tid=1   room=-  sem=-1   msgs=0    T1->T7 Quinn
+577        2369.978  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=12   Quinn
+578        2369.979  SEM_POST           tid=7   room=-  sem=50   msgs=12   Quinn
+579        2430.055  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+580        2430.059  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+581        2430.061  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Rose
+582        2430.062  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Rose
+583        2430.062  MSG_BROADCAST      tid=2   room=B  sem=49   msgs=13   Rose
+584        2430.062  SEM_POST           tid=2   room=-  sem=50   msgs=13   Rose
+585        2502.576  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+586        2502.578  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+587        2502.580  ACQUIRED_LOCK      tid=3   room=C  sem=-1   msgs=0    Sam
+588        2502.580  RELEASED_LOCK      tid=3   room=C  sem=-1   msgs=0    Sam
+589        2502.580  MSG_BROADCAST      tid=3   room=C  sem=49   msgs=13   Sam
+590        2502.581  SEM_POST           tid=3   room=-  sem=50   msgs=13   Sam
+591        2574.468  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+592        2574.477  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+593        2574.478  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Tina
+594        2574.479  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Tina
+595        2574.479  MSG_BROADCAST      tid=4   room=A  sem=49   msgs=13   Tina
+596        2574.479  SEM_POST           tid=4   room=-  sem=50   msgs=13   Tina
+597        2640.738  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+598        2640.742  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+599        2640.744  ACQUIRED_LOCK      tid=5   room=B  sem=-1   msgs=0    Alice
+600        2640.745  RELEASED_LOCK      tid=5   room=B  sem=-1   msgs=0    Alice
+601        2640.745  MSG_BROADCAST      tid=5   room=B  sem=49   msgs=13   Alice
+602        2640.745  SEM_POST           tid=5   room=-  sem=50   msgs=13   Alice
+603        2712.415  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+604        2712.419  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+605        2712.421  ACQUIRED_LOCK      tid=0   room=C  sem=-1   msgs=0    Bob
+606        2712.421  RELEASED_LOCK      tid=0   room=C  sem=-1   msgs=0    Bob
+607        2712.422  MSG_BROADCAST      tid=0   room=C  sem=49   msgs=14   Bob
+608        2712.422  SEM_POST           tid=0   room=-  sem=50   msgs=14   Bob
+609        2779.515  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+610        2779.517  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+611        2779.519  ACQUIRED_LOCK      tid=1   room=A  sem=-1   msgs=0    Charlie
+612        2779.520  RELEASED_LOCK      tid=1   room=A  sem=-1   msgs=0    Charlie
+613        2779.520  MSG_BROADCAST      tid=1   room=A  sem=49   msgs=13   Charlie
+614        2779.521  SEM_POST           tid=1   room=-  sem=50   msgs=13   Charlie
+615        2845.259  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+616        2845.260  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+617        2845.261  ACQUIRED_LOCK      tid=6   room=B  sem=-1   msgs=0    Diana
+618        2845.262  RELEASED_LOCK      tid=6   room=B  sem=-1   msgs=0    Diana
+619        2845.262  MSG_BROADCAST      tid=6   room=B  sem=49   msgs=13   Diana
+620        2845.263  SEM_POST           tid=6   room=-  sem=50   msgs=13   Diana
+621        2911.067  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+622        2911.070  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+623        2911.072  PRIVATE_MSG        tid=0   room=-  sem=-1   msgs=0    T0->T3 Eve
+624        2911.076  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=13   Eve
+625        2911.076  SEM_POST           tid=7   room=-  sem=50   msgs=13   Eve
+626        2978.515  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+627        2978.518  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+628        2978.519  ACQUIRED_LOCK      tid=2   room=A  sem=-1   msgs=0    Frank
+629        2978.519  RELEASED_LOCK      tid=2   room=A  sem=-1   msgs=0    Frank
+630        2978.519  MSG_BROADCAST      tid=2   room=A  sem=49   msgs=14   Frank
+631        2978.520  SEM_POST           tid=2   room=-  sem=50   msgs=14   Frank
+632        3039.666  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+633        3039.671  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+634        3039.673  ACQUIRED_LOCK      tid=3   room=B  sem=-1   msgs=0    Grace
+635        3039.674  RELEASED_LOCK      tid=3   room=B  sem=-1   msgs=0    Grace
+636        3039.674  MSG_BROADCAST      tid=3   room=B  sem=49   msgs=14   Grace
+637        3039.674  SEM_POST           tid=3   room=-  sem=50   msgs=14   Grace
+638        3103.410  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+639        3103.414  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+640        3103.416  ACQUIRED_LOCK      tid=4   room=C  sem=-1   msgs=0    Hank
+641        3103.417  RELEASED_LOCK      tid=4   room=C  sem=-1   msgs=0    Hank
+642        3103.417  MSG_BROADCAST      tid=4   room=C  sem=49   msgs=14   Hank
+643        3103.417  SEM_POST           tid=4   room=-  sem=50   msgs=14   Hank
+644        3173.772  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+645        3173.776  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+646        3173.778  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Iris
+647        3173.779  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Iris
+648        3173.779  MSG_BROADCAST      tid=5   room=A  sem=49   msgs=14   Iris
+649        3173.779  SEM_POST           tid=5   room=-  sem=50   msgs=14   Iris
+650        3242.721  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+651        3242.723  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+652        3242.725  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Jack
+653        3242.726  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Jack
+654        3242.726  MSG_BROADCAST      tid=0   room=B  sem=49   msgs=15   Jack
+655        3242.726  SEM_POST           tid=0   room=-  sem=50   msgs=15   Jack
+656        3319.519  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+657        3319.520  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+658        3319.522  ACQUIRED_LOCK      tid=1   room=C  sem=-1   msgs=0    Karen
+659        3319.523  RELEASED_LOCK      tid=1   room=C  sem=-1   msgs=0    Karen
+660        3319.523  MSG_BROADCAST      tid=1   room=C  sem=49   msgs=14   Karen
+661        3319.523  SEM_POST           tid=1   room=-  sem=50   msgs=14   Karen
+662        3386.242  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+663        3386.246  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+664        3386.247  ACQUIRED_LOCK      tid=6   room=A  sem=-1   msgs=0    Leo
+665        3386.248  RELEASED_LOCK      tid=6   room=A  sem=-1   msgs=0    Leo
+666        3386.248  MSG_BROADCAST      tid=6   room=A  sem=49   msgs=14   Leo
+667        3386.248  SEM_POST           tid=6   room=-  sem=50   msgs=14   Leo
+668        3446.471  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+669        3446.473  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+670        3446.474  PRIVATE_MSG        tid=1   room=-  sem=-1   msgs=0    T1->T4 Mia
+671        3446.476  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=14   Mia
+672        3446.476  SEM_POST           tid=7   room=-  sem=50   msgs=14   Mia
+673        3511.180  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+674        3511.184  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+675        3511.185  ACQUIRED_LOCK      tid=2   room=C  sem=-1   msgs=0    Nick
+676        3511.187  RELEASED_LOCK      tid=2   room=C  sem=-1   msgs=0    Nick
+677        3511.187  MSG_BROADCAST      tid=2   room=C  sem=49   msgs=15   Nick
+678        3511.187  SEM_POST           tid=2   room=-  sem=50   msgs=15   Nick
+679        3574.716  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+680        3574.719  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+681        3574.721  ACQUIRED_LOCK      tid=3   room=A  sem=-1   msgs=0    Olivia
+682        3574.722  RELEASED_LOCK      tid=3   room=A  sem=-1   msgs=0    Olivia
+683        3574.722  MSG_BROADCAST      tid=3   room=A  sem=49   msgs=15   Olivia
+684        3574.722  SEM_POST           tid=3   room=-  sem=50   msgs=15   Olivia
+685        3650.816  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+686        3650.820  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+687        3650.821  ACQUIRED_LOCK      tid=4   room=B  sem=-1   msgs=0    Paul
+688        3650.822  RELEASED_LOCK      tid=4   room=B  sem=-1   msgs=0    Paul
+689        3650.822  MSG_BROADCAST      tid=4   room=B  sem=49   msgs=15   Paul
+690        3650.822  SEM_POST           tid=4   room=-  sem=50   msgs=15   Paul
+691        3721.708  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+692        3721.710  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+693        3721.712  ACQUIRED_LOCK      tid=5   room=C  sem=-1   msgs=0    Quinn
+694        3721.712  RELEASED_LOCK      tid=5   room=C  sem=-1   msgs=0    Quinn
+695        3721.712  MSG_BROADCAST      tid=5   room=C  sem=49   msgs=15   Quinn
+696        3721.713  SEM_POST           tid=5   room=-  sem=50   msgs=15   Quinn
+697        3790.858  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+698        3790.862  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+699        3790.864  ACQUIRED_LOCK      tid=0   room=A  sem=-1   msgs=0    Rose
+700        3790.865  RELEASED_LOCK      tid=0   room=A  sem=-1   msgs=0    Rose
+701        3790.866  MSG_BROADCAST      tid=0   room=A  sem=49   msgs=16   Rose
+702        3790.866  SEM_POST           tid=0   room=-  sem=50   msgs=16   Rose
+703        3866.051  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+704        3866.058  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+705        3866.060  ACQUIRED_LOCK      tid=1   room=B  sem=-1   msgs=0    Sam
+706        3866.060  RELEASED_LOCK      tid=1   room=B  sem=-1   msgs=0    Sam
+707        3866.060  MSG_BROADCAST      tid=1   room=B  sem=49   msgs=15   Sam
+708        3866.060  SEM_POST           tid=1   room=-  sem=50   msgs=15   Sam
+709        3935.136  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+710        3935.140  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+711        3935.141  ACQUIRED_LOCK      tid=6   room=C  sem=-1   msgs=0    Tina
+712        3935.142  RELEASED_LOCK      tid=6   room=C  sem=-1   msgs=0    Tina
+713        3935.142  MSG_BROADCAST      tid=6   room=C  sem=49   msgs=15   Tina
+714        3935.142  SEM_POST           tid=6   room=-  sem=50   msgs=15   Tina
+715        3999.768  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+716        3999.773  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+717        3999.776  PRIVATE_MSG        tid=7   room=-  sem=-1   msgs=0    T7->T0 Alice
+718        3999.780  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=15   Alice
+719        3999.780  SEM_POST           tid=7   room=-  sem=50   msgs=15   Alice
+720        4072.881  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+721        4072.885  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+722        4072.887  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Bob
+723        4072.887  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Bob
+724        4072.888  MSG_BROADCAST      tid=2   room=B  sem=49   msgs=16   Bob
+725        4072.888  SEM_POST           tid=2   room=-  sem=50   msgs=16   Bob
+726        4132.407  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+727        4132.412  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+728        4132.414  ACQUIRED_LOCK      tid=3   room=C  sem=-1   msgs=0    Charlie
+729        4132.414  RELEASED_LOCK      tid=3   room=C  sem=-1   msgs=0    Charlie
+730        4132.414  MSG_BROADCAST      tid=3   room=C  sem=49   msgs=16   Charlie
+731        4132.415  SEM_POST           tid=3   room=-  sem=50   msgs=16   Charlie
+732        4196.599  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+733        4196.601  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+734        4196.602  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Diana
+735        4196.602  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Diana
+736        4196.602  MSG_BROADCAST      tid=4   room=A  sem=49   msgs=16   Diana
+737        4196.603  SEM_POST           tid=4   room=-  sem=50   msgs=16   Diana
+738        4259.878  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+739        4259.880  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+740        4259.881  ACQUIRED_LOCK      tid=5   room=B  sem=-1   msgs=0    Eve
+741        4259.882  RELEASED_LOCK      tid=5   room=B  sem=-1   msgs=0    Eve
+742        4259.882  MSG_BROADCAST      tid=5   room=B  sem=49   msgs=16   Eve
+743        4259.882  SEM_POST           tid=5   room=-  sem=50   msgs=16   Eve
+744        4323.500  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+745        4323.504  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+746        4323.505  ACQUIRED_LOCK      tid=0   room=C  sem=-1   msgs=0    Frank
+747        4323.506  RELEASED_LOCK      tid=0   room=C  sem=-1   msgs=0    Frank
+748        4323.506  MSG_BROADCAST      tid=0   room=C  sem=49   msgs=17   Frank
+749        4323.506  SEM_POST           tid=0   room=-  sem=50   msgs=17   Frank
+750        4389.952  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+751        4389.955  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+752        4389.958  ACQUIRED_LOCK      tid=1   room=A  sem=-1   msgs=0    Grace
+753        4389.958  RELEASED_LOCK      tid=1   room=A  sem=-1   msgs=0    Grace
+754        4389.958  MSG_BROADCAST      tid=1   room=A  sem=49   msgs=16   Grace
+755        4389.959  SEM_POST           tid=1   room=-  sem=50   msgs=16   Grace
+756        4456.761  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+757        4456.764  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+758        4456.765  ACQUIRED_LOCK      tid=6   room=B  sem=-1   msgs=0    Hank
+759        4456.766  RELEASED_LOCK      tid=6   room=B  sem=-1   msgs=0    Hank
+760        4456.766  MSG_BROADCAST      tid=6   room=B  sem=49   msgs=16   Hank
+761        4456.766  SEM_POST           tid=6   room=-  sem=50   msgs=16   Hank
+762        4518.585  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+763        4518.588  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+764        4518.590  PRIVATE_MSG        tid=7   room=-  sem=-1   msgs=0    T7->T6 Iris
+765        4518.593  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=16   Iris
+766        4518.594  SEM_POST           tid=7   room=-  sem=50   msgs=16   Iris
+767        4582.967  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+768        4582.968  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+769        4582.969  ACQUIRED_LOCK      tid=2   room=A  sem=-1   msgs=0    Jack
+770        4582.970  RELEASED_LOCK      tid=2   room=A  sem=-1   msgs=0    Jack
+771        4582.970  MSG_BROADCAST      tid=2   room=A  sem=49   msgs=17   Jack
+772        4582.970  SEM_POST           tid=2   room=-  sem=50   msgs=17   Jack
+773        4648.559  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+774        4648.563  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+775        4648.565  ACQUIRED_LOCK      tid=3   room=B  sem=-1   msgs=0    Karen
+776        4648.565  RELEASED_LOCK      tid=3   room=B  sem=-1   msgs=0    Karen
+777        4648.566  MSG_BROADCAST      tid=3   room=B  sem=49   msgs=17   Karen
+778        4648.566  SEM_POST           tid=3   room=-  sem=50   msgs=17   Karen
+779        4714.853  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+780        4714.855  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+781        4714.857  ACQUIRED_LOCK      tid=4   room=C  sem=-1   msgs=0    Leo
+782        4714.858  RELEASED_LOCK      tid=4   room=C  sem=-1   msgs=0    Leo
+783        4714.858  MSG_BROADCAST      tid=4   room=C  sem=49   msgs=17   Leo
+784        4714.858  SEM_POST           tid=4   room=-  sem=50   msgs=17   Leo
+785        4781.045  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+786        4781.046  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+787        4781.048  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Mia
+788        4781.049  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Mia
+789        4781.049  MSG_BROADCAST      tid=5   room=A  sem=49   msgs=17   Mia
+790        4781.050  SEM_POST           tid=5   room=-  sem=50   msgs=17   Mia
+791        4849.388  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+792        4849.390  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+793        4849.392  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Nick
+794        4849.393  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Nick
+795        4849.393  MSG_BROADCAST      tid=0   room=B  sem=49   msgs=18   Nick
+796        4849.393  SEM_POST           tid=0   room=-  sem=50   msgs=18   Nick
+797        4924.086  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+798        4924.089  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+799        4924.091  ACQUIRED_LOCK      tid=1   room=C  sem=-1   msgs=0    Olivia
+800        4924.091  RELEASED_LOCK      tid=1   room=C  sem=-1   msgs=0    Olivia
+801        4924.092  MSG_BROADCAST      tid=1   room=C  sem=49   msgs=17   Olivia
+802        4924.092  SEM_POST           tid=1   room=-  sem=50   msgs=17   Olivia
+803        4993.371  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+804        4993.373  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+805        4993.375  ACQUIRED_LOCK      tid=6   room=A  sem=-1   msgs=0    Paul
+806        4993.376  RELEASED_LOCK      tid=6   room=A  sem=-1   msgs=0    Paul
+807        4993.376  MSG_BROADCAST      tid=6   room=A  sem=49   msgs=17   Paul
+808        4993.376  SEM_POST           tid=6   room=-  sem=50   msgs=17   Paul
+809        5063.224  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+810        5063.226  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+811        5063.228  PRIVATE_MSG        tid=6   room=-  sem=-1   msgs=0    T6->T0 Quinn
+812        5063.230  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=17   Quinn
+813        5063.230  SEM_POST           tid=7   room=-  sem=50   msgs=17   Quinn
+814        5127.271  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+815        5127.274  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+816        5127.276  ACQUIRED_LOCK      tid=2   room=C  sem=-1   msgs=0    Rose
+817        5127.277  RELEASED_LOCK      tid=2   room=C  sem=-1   msgs=0    Rose
+818        5127.277  MSG_BROADCAST      tid=2   room=C  sem=49   msgs=18   Rose
+819        5127.277  SEM_POST           tid=2   room=-  sem=50   msgs=18   Rose
+820        5195.623  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+821        5195.629  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+822        5195.632  ACQUIRED_LOCK      tid=3   room=A  sem=-1   msgs=0    Sam
+823        5195.633  RELEASED_LOCK      tid=3   room=A  sem=-1   msgs=0    Sam
+824        5195.633  MSG_BROADCAST      tid=3   room=A  sem=49   msgs=18   Sam
+825        5195.633  SEM_POST           tid=3   room=-  sem=50   msgs=18   Sam
+826        5259.835  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+827        5259.840  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+828        5259.842  ACQUIRED_LOCK      tid=4   room=B  sem=-1   msgs=0    Tina
+829        5259.843  RELEASED_LOCK      tid=4   room=B  sem=-1   msgs=0    Tina
+830        5259.843  MSG_BROADCAST      tid=4   room=B  sem=49   msgs=18   Tina
+831        5259.844  SEM_POST           tid=4   room=-  sem=50   msgs=18   Tina
+832        5342.892  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+833        5342.902  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+834        5342.904  ACQUIRED_LOCK      tid=5   room=C  sem=-1   msgs=0    Alice
+835        5342.905  RELEASED_LOCK      tid=5   room=C  sem=-1   msgs=0    Alice
+836        5342.905  MSG_BROADCAST      tid=5   room=C  sem=49   msgs=18   Alice
+837        5342.905  SEM_POST           tid=5   room=-  sem=50   msgs=18   Alice
+838        5391.814  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+839        5391.817  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+840        5391.819  ACQUIRED_LOCK      tid=0   room=A  sem=-1   msgs=0    Bob
+841        5391.819  RELEASED_LOCK      tid=0   room=A  sem=-1   msgs=0    Bob
+842        5391.820  MSG_BROADCAST      tid=0   room=A  sem=49   msgs=19   Bob
+843        5391.820  SEM_POST           tid=0   room=-  sem=50   msgs=19   Bob
+844        5459.579  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+845        5459.582  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+846        5459.584  ACQUIRED_LOCK      tid=1   room=B  sem=-1   msgs=0    Charlie
+847        5459.585  RELEASED_LOCK      tid=1   room=B  sem=-1   msgs=0    Charlie
+848        5459.585  MSG_BROADCAST      tid=1   room=B  sem=49   msgs=18   Charlie
+849        5459.585  SEM_POST           tid=1   room=-  sem=50   msgs=18   Charlie
+850        5526.116  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+851        5526.118  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+852        5526.120  ACQUIRED_LOCK      tid=6   room=C  sem=-1   msgs=0    Diana
+853        5526.121  RELEASED_LOCK      tid=6   room=C  sem=-1   msgs=0    Diana
+854        5526.121  MSG_BROADCAST      tid=6   room=C  sem=49   msgs=18   Diana
+855        5526.121  SEM_POST           tid=6   room=-  sem=50   msgs=18   Diana
+856        5594.481  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+857        5594.485  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+858        5594.487  PRIVATE_MSG        tid=1   room=-  sem=-1   msgs=0    T1->T7 Eve
+859        5594.490  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=18   Eve
+860        5594.490  SEM_POST           tid=7   room=-  sem=50   msgs=18   Eve
+861        5671.965  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+862        5671.970  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+863        5671.972  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Frank
+864        5671.973  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Frank
+865        5671.973  MSG_BROADCAST      tid=2   room=B  sem=49   msgs=19   Frank
+866        5671.974  SEM_POST           tid=2   room=-  sem=50   msgs=19   Frank
+867        5731.898  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+868        5731.899  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+869        5731.901  ACQUIRED_LOCK      tid=3   room=C  sem=-1   msgs=0    Grace
+870        5731.902  RELEASED_LOCK      tid=3   room=C  sem=-1   msgs=0    Grace
+871        5731.902  MSG_BROADCAST      tid=3   room=C  sem=49   msgs=19   Grace
+872        5731.902  SEM_POST           tid=3   room=-  sem=50   msgs=19   Grace
+873        5804.680  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+874        5804.685  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+875        5804.687  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Hank
+876        5804.687  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Hank
+877        5804.688  MSG_BROADCAST      tid=4   room=A  sem=49   msgs=19   Hank
+878        5804.688  SEM_POST           tid=4   room=-  sem=50   msgs=19   Hank
+879        5868.787  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+880        5868.790  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+881        5868.791  ACQUIRED_LOCK      tid=5   room=B  sem=-1   msgs=0    Iris
+882        5868.792  RELEASED_LOCK      tid=5   room=B  sem=-1   msgs=0    Iris
+883        5868.792  MSG_BROADCAST      tid=5   room=B  sem=49   msgs=19   Iris
+884        5868.792  SEM_POST           tid=5   room=-  sem=50   msgs=19   Iris
+885        5933.754  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+886        5933.759  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+887        5933.761  ACQUIRED_LOCK      tid=0   room=C  sem=-1   msgs=0    Jack
+888        5933.761  RELEASED_LOCK      tid=0   room=C  sem=-1   msgs=0    Jack
+889        5933.762  MSG_BROADCAST      tid=0   room=C  sem=49   msgs=20   Jack
+890        5933.762  SEM_POST           tid=0   room=-  sem=50   msgs=20   Jack
+891        5999.374  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+892        5999.377  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+893        5999.378  ACQUIRED_LOCK      tid=1   room=A  sem=-1   msgs=0    Karen
+894        5999.379  RELEASED_LOCK      tid=1   room=A  sem=-1   msgs=0    Karen
+895        5999.379  MSG_BROADCAST      tid=1   room=A  sem=49   msgs=19   Karen
+896        5999.379  SEM_POST           tid=1   room=-  sem=50   msgs=19   Karen
+897        6068.951  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+898        6068.954  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+899        6068.956  ACQUIRED_LOCK      tid=6   room=B  sem=-1   msgs=0    Leo
+900        6068.957  RELEASED_LOCK      tid=6   room=B  sem=-1   msgs=0    Leo
+901        6068.957  MSG_BROADCAST      tid=6   room=B  sem=49   msgs=19   Leo
+902        6068.957  SEM_POST           tid=6   room=-  sem=50   msgs=19   Leo
+903        6140.591  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+904        6140.594  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+905        6140.597  PRIVATE_MSG        tid=5   room=-  sem=-1   msgs=0    T5->T0 Mia
+906        6140.600  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=19   Mia
+907        6140.600  SEM_POST           tid=7   room=-  sem=50   msgs=19   Mia
+908        6213.037  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+909        6213.039  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+910        6213.041  ACQUIRED_LOCK      tid=2   room=A  sem=-1   msgs=0    Nick
+911        6213.041  RELEASED_LOCK      tid=2   room=A  sem=-1   msgs=0    Nick
+912        6213.042  MSG_BROADCAST      tid=2   room=A  sem=49   msgs=20   Nick
+913        6213.042  SEM_POST           tid=2   room=-  sem=50   msgs=20   Nick
+914        6280.790  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+915        6280.791  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+916        6280.793  ACQUIRED_LOCK      tid=3   room=B  sem=-1   msgs=0    Olivia
+917        6280.794  RELEASED_LOCK      tid=3   room=B  sem=-1   msgs=0    Olivia
+918        6280.794  MSG_BROADCAST      tid=3   room=B  sem=49   msgs=20   Olivia
+919        6280.794  SEM_POST           tid=3   room=-  sem=50   msgs=20   Olivia
+920        6354.397  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+921        6354.401  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+922        6354.403  ACQUIRED_LOCK      tid=4   room=C  sem=-1   msgs=0    Paul
+923        6354.404  RELEASED_LOCK      tid=4   room=C  sem=-1   msgs=0    Paul
+924        6354.404  MSG_BROADCAST      tid=4   room=C  sem=49   msgs=20   Paul
+925        6354.404  SEM_POST           tid=4   room=-  sem=50   msgs=20   Paul
+926        6419.787  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+927        6419.791  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+928        6419.793  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Quinn
+929        6419.793  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Quinn
+930        6419.793  MSG_BROADCAST      tid=5   room=A  sem=49   msgs=20   Quinn
+931        6419.793  SEM_POST           tid=5   room=-  sem=50   msgs=20   Quinn
+932        6503.415  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+933        6503.418  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+934        6503.420  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Rose
+935        6503.421  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Rose
+936        6503.421  MSG_BROADCAST      tid=0   room=B  sem=49   msgs=21   Rose
+937        6503.422  SEM_POST           tid=0   room=-  sem=50   msgs=21   Rose
+938        6570.113  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+939        6570.117  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+940        6570.119  ACQUIRED_LOCK      tid=1   room=C  sem=-1   msgs=0    Sam
+941        6570.120  RELEASED_LOCK      tid=1   room=C  sem=-1   msgs=0    Sam
+942        6570.120  MSG_BROADCAST      tid=1   room=C  sem=49   msgs=20   Sam
+943        6570.120  SEM_POST           tid=1   room=-  sem=50   msgs=20   Sam
+944        6633.011  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+945        6633.012  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+946        6633.013  ACQUIRED_LOCK      tid=6   room=A  sem=-1   msgs=0    Tina
+947        6633.014  RELEASED_LOCK      tid=6   room=A  sem=-1   msgs=0    Tina
+948        6633.014  MSG_BROADCAST      tid=6   room=A  sem=49   msgs=20   Tina
+949        6633.014  SEM_POST           tid=6   room=-  sem=50   msgs=20   Tina
+950        6697.678  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+951        6697.682  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+952        6697.685  PRIVATE_MSG        tid=6   room=-  sem=-1   msgs=0    T6->T0 Alice
+953        6697.690  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=20   Alice
+954        6697.690  SEM_POST           tid=7   room=-  sem=50   msgs=20   Alice
+955        6762.322  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+956        6762.324  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+957        6762.326  ACQUIRED_LOCK      tid=2   room=C  sem=-1   msgs=0    Bob
+958        6762.326  RELEASED_LOCK      tid=2   room=C  sem=-1   msgs=0    Bob
+959        6762.326  MSG_BROADCAST      tid=2   room=C  sem=49   msgs=21   Bob
+960        6762.327  SEM_POST           tid=2   room=-  sem=50   msgs=21   Bob
+961        6829.222  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+962        6829.227  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+963        6829.229  ACQUIRED_LOCK      tid=3   room=A  sem=-1   msgs=0    Charlie
+964        6829.230  RELEASED_LOCK      tid=3   room=A  sem=-1   msgs=0    Charlie
+965        6829.230  MSG_BROADCAST      tid=3   room=A  sem=49   msgs=21   Charlie
+966        6829.230  SEM_POST           tid=3   room=-  sem=50   msgs=21   Charlie
+967        6892.445  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+968        6892.447  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+969        6892.448  ACQUIRED_LOCK      tid=4   room=B  sem=-1   msgs=0    Diana
+970        6892.449  RELEASED_LOCK      tid=4   room=B  sem=-1   msgs=0    Diana
+971        6892.449  MSG_BROADCAST      tid=4   room=B  sem=49   msgs=21   Diana
+972        6892.449  SEM_POST           tid=4   room=-  sem=50   msgs=21   Diana
+973        6955.695  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+974        6955.696  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+975        6955.697  ACQUIRED_LOCK      tid=5   room=C  sem=-1   msgs=0    Eve
+976        6955.698  RELEASED_LOCK      tid=5   room=C  sem=-1   msgs=0    Eve
+977        6955.698  MSG_BROADCAST      tid=5   room=C  sem=49   msgs=21   Eve
+978        6955.698  SEM_POST           tid=5   room=-  sem=50   msgs=21   Eve
+979        7028.741  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+980        7028.745  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+981        7028.747  ACQUIRED_LOCK      tid=0   room=A  sem=-1   msgs=0    Frank
+982        7028.748  BUFFER_WRAP        tid=0   room=A  sem=-1   msgs=0    Frank
+983        7028.748  RELEASED_LOCK      tid=0   room=A  sem=-1   msgs=0    Frank
+984        7028.748  MSG_BROADCAST      tid=0   room=A  sem=49   msgs=22   Frank
+985        7028.748  SEM_POST           tid=0   room=-  sem=50   msgs=22   Frank
+986        7098.891  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+987        7098.898  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+988        7098.899  ACQUIRED_LOCK      tid=1   room=B  sem=-1   msgs=0    Grace
+989        7098.900  RELEASED_LOCK      tid=1   room=B  sem=-1   msgs=0    Grace
+990        7098.900  MSG_BROADCAST      tid=1   room=B  sem=49   msgs=21   Grace
+991        7098.900  SEM_POST           tid=1   room=-  sem=50   msgs=21   Grace
+992        7155.772  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+993        7155.774  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+994        7155.775  ACQUIRED_LOCK      tid=6   room=C  sem=-1   msgs=0    Hank
+995        7155.775  RELEASED_LOCK      tid=6   room=C  sem=-1   msgs=0    Hank
+996        7155.775  MSG_BROADCAST      tid=6   room=C  sem=49   msgs=21   Hank
+997        7155.775  SEM_POST           tid=6   room=-  sem=50   msgs=21   Hank
+998        7223.707  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+999        7223.710  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+1000       7223.713  PRIVATE_MSG        tid=5   room=-  sem=-1   msgs=0    T5->T3 Iris
+1001       7223.715  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=21   Iris
+1002       7223.715  SEM_POST           tid=7   room=-  sem=50   msgs=21   Iris
+1003       7291.777  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+1004       7291.781  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+1005       7291.783  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Jack
+1006       7291.783  BUFFER_WRAP        tid=2   room=B  sem=-1   msgs=0    Jack
+1007       7291.783  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Jack
+1008       7291.784  MSG_BROADCAST      tid=2   room=B  sem=49   msgs=22   Jack
+1009       7291.784  SEM_POST           tid=2   room=-  sem=50   msgs=22   Jack
+1010       7365.170  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+1011       7365.175  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+1012       7365.177  ACQUIRED_LOCK      tid=3   room=C  sem=-1   msgs=0    Karen
+1013       7365.177  BUFFER_WRAP        tid=3   room=C  sem=-1   msgs=0    Karen
+1014       7365.177  RELEASED_LOCK      tid=3   room=C  sem=-1   msgs=0    Karen
+1015       7365.177  MSG_BROADCAST      tid=3   room=C  sem=49   msgs=22   Karen
+1016       7365.178  SEM_POST           tid=3   room=-  sem=50   msgs=22   Karen
+1017       7429.804  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+1018       7429.806  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+1019       7429.809  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Leo
+1020       7429.809  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Leo
+1021       7429.809  MSG_BROADCAST      tid=4   room=A  sem=49   msgs=22   Leo
+1022       7429.810  SEM_POST           tid=4   room=-  sem=50   msgs=22   Leo
+1023       7497.089  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+1024       7497.091  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+1025       7497.093  ACQUIRED_LOCK      tid=5   room=B  sem=-1   msgs=0    Mia
+1026       7497.093  RELEASED_LOCK      tid=5   room=B  sem=-1   msgs=0    Mia
+1027       7497.094  MSG_BROADCAST      tid=5   room=B  sem=49   msgs=22   Mia
+1028       7497.094  SEM_POST           tid=5   room=-  sem=50   msgs=22   Mia
+1029       7568.556  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+1030       7568.559  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+1031       7568.561  ACQUIRED_LOCK      tid=0   room=C  sem=-1   msgs=0    Nick
+1032       7568.561  RELEASED_LOCK      tid=0   room=C  sem=-1   msgs=0    Nick
+1033       7568.561  MSG_BROADCAST      tid=0   room=C  sem=49   msgs=23   Nick
+1034       7568.561  SEM_POST           tid=0   room=-  sem=50   msgs=23   Nick
+1035       7638.322  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+1036       7638.325  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+1037       7638.327  ACQUIRED_LOCK      tid=1   room=A  sem=-1   msgs=0    Olivia
+1038       7638.328  RELEASED_LOCK      tid=1   room=A  sem=-1   msgs=0    Olivia
+1039       7638.328  MSG_BROADCAST      tid=1   room=A  sem=49   msgs=22   Olivia
+1040       7638.328  SEM_POST           tid=1   room=-  sem=50   msgs=22   Olivia
+1041       7706.963  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+1042       7706.967  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+1043       7706.969  ACQUIRED_LOCK      tid=6   room=B  sem=-1   msgs=0    Paul
+1044       7706.969  RELEASED_LOCK      tid=6   room=B  sem=-1   msgs=0    Paul
+1045       7706.969  MSG_BROADCAST      tid=6   room=B  sem=49   msgs=22   Paul
+1046       7706.969  SEM_POST           tid=6   room=-  sem=50   msgs=22   Paul
+1047       7782.798  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+1048       7782.805  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+1049       7782.810  PRIVATE_MSG        tid=0   room=-  sem=-1   msgs=0    T0->T3 Quinn
+1050       7782.818  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=22   Quinn
+1051       7782.818  SEM_POST           tid=7   room=-  sem=50   msgs=22   Quinn
+1052       7842.774  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+1053       7842.778  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+1054       7842.779  ACQUIRED_LOCK      tid=2   room=A  sem=-1   msgs=0    Rose
+1055       7842.780  RELEASED_LOCK      tid=2   room=A  sem=-1   msgs=0    Rose
+1056       7842.780  MSG_BROADCAST      tid=2   room=A  sem=49   msgs=23   Rose
+1057       7842.780  SEM_POST           tid=2   room=-  sem=50   msgs=23   Rose
+1058       7916.386  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+1059       7916.389  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+1060       7916.390  ACQUIRED_LOCK      tid=3   room=B  sem=-1   msgs=0    Sam
+1061       7916.391  RELEASED_LOCK      tid=3   room=B  sem=-1   msgs=0    Sam
+1062       7916.391  MSG_BROADCAST      tid=3   room=B  sem=49   msgs=23   Sam
+1063       7916.391  SEM_POST           tid=3   room=-  sem=50   msgs=23   Sam
+1064       7980.121  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+1065       7980.124  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+1066       7980.125  ACQUIRED_LOCK      tid=4   room=C  sem=-1   msgs=0    Tina
+1067       7980.126  RELEASED_LOCK      tid=4   room=C  sem=-1   msgs=0    Tina
+1068       7980.126  MSG_BROADCAST      tid=4   room=C  sem=49   msgs=23   Tina
+1069       7980.126  SEM_POST           tid=4   room=-  sem=50   msgs=23   Tina
+1070       8045.899  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+1071       8045.903  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+1072       8045.904  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Alice
+1073       8045.904  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Alice
+1074       8045.905  MSG_BROADCAST      tid=5   room=A  sem=49   msgs=23   Alice
+1075       8045.905  SEM_POST           tid=5   room=-  sem=50   msgs=23   Alice
+1076       8108.407  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+1077       8108.410  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+1078       8108.410  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Bob
+1079       8108.411  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Bob
+1080       8108.411  MSG_BROADCAST      tid=0   room=B  sem=49   msgs=24   Bob
+1081       8108.411  SEM_POST           tid=0   room=-  sem=50   msgs=24   Bob
+1082       8172.467  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+1083       8172.470  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+1084       8172.472  ACQUIRED_LOCK      tid=1   room=C  sem=-1   msgs=0    Charlie
+1085       8172.472  RELEASED_LOCK      tid=1   room=C  sem=-1   msgs=0    Charlie
+1086       8172.473  MSG_BROADCAST      tid=1   room=C  sem=49   msgs=23   Charlie
+1087       8172.473  SEM_POST           tid=1   room=-  sem=50   msgs=23   Charlie
+1088       8238.255  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+1089       8238.259  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+1090       8238.261  ACQUIRED_LOCK      tid=6   room=A  sem=-1   msgs=0    Diana
+1091       8238.262  RELEASED_LOCK      tid=6   room=A  sem=-1   msgs=0    Diana
+1092       8238.262  MSG_BROADCAST      tid=6   room=A  sem=49   msgs=23   Diana
+1093       8238.262  SEM_POST           tid=6   room=-  sem=50   msgs=23   Diana
+1094       8306.023  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+1095       8306.029  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+1096       8306.033  PRIVATE_MSG        tid=4   room=-  sem=-1   msgs=0    T4->T3 Eve
+1097       8306.039  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=23   Eve
+1098       8306.039  SEM_POST           tid=7   room=-  sem=50   msgs=23   Eve
+1099       8371.982  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+1100       8371.985  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+1101       8371.987  ACQUIRED_LOCK      tid=2   room=C  sem=-1   msgs=0    Frank
+1102       8371.987  RELEASED_LOCK      tid=2   room=C  sem=-1   msgs=0    Frank
+1103       8371.988  MSG_BROADCAST      tid=2   room=C  sem=49   msgs=24   Frank
+1104       8371.988  SEM_POST           tid=2   room=-  sem=50   msgs=24   Frank
+1105       8435.114  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+1106       8435.118  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+1107       8435.120  ACQUIRED_LOCK      tid=3   room=A  sem=-1   msgs=0    Grace
+1108       8435.121  RELEASED_LOCK      tid=3   room=A  sem=-1   msgs=0    Grace
+1109       8435.121  MSG_BROADCAST      tid=3   room=A  sem=49   msgs=24   Grace
+1110       8435.122  SEM_POST           tid=3   room=-  sem=50   msgs=24   Grace
+1111       8506.777  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+1112       8506.780  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+1113       8506.781  ACQUIRED_LOCK      tid=4   room=B  sem=-1   msgs=0    Hank
+1114       8506.782  RELEASED_LOCK      tid=4   room=B  sem=-1   msgs=0    Hank
+1115       8506.782  MSG_BROADCAST      tid=4   room=B  sem=49   msgs=24   Hank
+1116       8506.782  SEM_POST           tid=4   room=-  sem=50   msgs=24   Hank
+1117       8569.944  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+1118       8569.945  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+1119       8569.946  ACQUIRED_LOCK      tid=5   room=C  sem=-1   msgs=0    Iris
+1120       8569.947  RELEASED_LOCK      tid=5   room=C  sem=-1   msgs=0    Iris
+1121       8569.947  MSG_BROADCAST      tid=5   room=C  sem=49   msgs=24   Iris
+1122       8569.947  SEM_POST           tid=5   room=-  sem=50   msgs=24   Iris
+1123       8641.677  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+1124       8641.679  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+1125       8641.681  ACQUIRED_LOCK      tid=0   room=A  sem=-1   msgs=0    Jack
+1126       8641.681  RELEASED_LOCK      tid=0   room=A  sem=-1   msgs=0    Jack
+1127       8641.681  MSG_BROADCAST      tid=0   room=A  sem=49   msgs=25   Jack
+1128       8641.681  SEM_POST           tid=0   room=-  sem=50   msgs=25   Jack
+1129       8705.034  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+1130       8705.039  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+1131       8705.041  ACQUIRED_LOCK      tid=1   room=B  sem=-1   msgs=0    Karen
+1132       8705.041  RELEASED_LOCK      tid=1   room=B  sem=-1   msgs=0    Karen
+1133       8705.042  MSG_BROADCAST      tid=1   room=B  sem=49   msgs=24   Karen
+1134       8705.042  SEM_POST           tid=1   room=-  sem=50   msgs=24   Karen
+1135       8772.168  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+1136       8772.171  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+1137       8772.173  ACQUIRED_LOCK      tid=6   room=C  sem=-1   msgs=0    Leo
+1138       8772.174  RELEASED_LOCK      tid=6   room=C  sem=-1   msgs=0    Leo
+1139       8772.174  MSG_BROADCAST      tid=6   room=C  sem=49   msgs=24   Leo
+1140       8772.175  SEM_POST           tid=6   room=-  sem=50   msgs=24   Leo
+1141       8847.737  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+1142       8847.738  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+1143       8847.740  PRIVATE_MSG        tid=3   room=-  sem=-1   msgs=0    T3->T1 Mia
+1144       8847.742  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=24   Mia
+1145       8847.742  SEM_POST           tid=7   room=-  sem=50   msgs=24   Mia
+1146       8919.857  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+1147       8919.862  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+1148       8919.864  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Nick
+1149       8919.864  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Nick
+1150       8919.865  MSG_BROADCAST      tid=2   room=B  sem=49   msgs=25   Nick
+1151       8919.865  SEM_POST           tid=2   room=-  sem=50   msgs=25   Nick
+1152       8984.880  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+1153       8984.881  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+1154       8984.884  ACQUIRED_LOCK      tid=3   room=C  sem=-1   msgs=0    Olivia
+1155       8984.884  RELEASED_LOCK      tid=3   room=C  sem=-1   msgs=0    Olivia
+1156       8984.884  MSG_BROADCAST      tid=3   room=C  sem=49   msgs=25   Olivia
+1157       8984.885  SEM_POST           tid=3   room=-  sem=50   msgs=25   Olivia
+1158       9052.963  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+1159       9052.965  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+1160       9052.966  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Paul
+1161       9052.967  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Paul
+1162       9052.967  MSG_BROADCAST      tid=4   room=A  sem=49   msgs=25   Paul
+1163       9052.967  SEM_POST           tid=4   room=-  sem=50   msgs=25   Paul
+1164       9126.243  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+1165       9126.248  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+1166       9126.250  ACQUIRED_LOCK      tid=5   room=B  sem=-1   msgs=0    Quinn
+1167       9126.251  RELEASED_LOCK      tid=5   room=B  sem=-1   msgs=0    Quinn
+1168       9126.251  MSG_BROADCAST      tid=5   room=B  sem=49   msgs=25   Quinn
+1169       9126.251  SEM_POST           tid=5   room=-  sem=50   msgs=25   Quinn
+1170       9200.171  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+1171       9200.182  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+1172       9200.183  ACQUIRED_LOCK      tid=0   room=C  sem=-1   msgs=0    Rose
+1173       9200.184  RELEASED_LOCK      tid=0   room=C  sem=-1   msgs=0    Rose
+1174       9200.184  MSG_BROADCAST      tid=0   room=C  sem=49   msgs=26   Rose
+1175       9200.185  SEM_POST           tid=0   room=-  sem=50   msgs=26   Rose
+1176       9253.562  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+1177       9253.564  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+1178       9253.566  ACQUIRED_LOCK      tid=1   room=A  sem=-1   msgs=0    Sam
+1179       9253.566  RELEASED_LOCK      tid=1   room=A  sem=-1   msgs=0    Sam
+1180       9253.566  MSG_BROADCAST      tid=1   room=A  sem=49   msgs=25   Sam
+1181       9253.566  SEM_POST           tid=1   room=-  sem=50   msgs=25   Sam
+1182       9317.047  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+1183       9317.048  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+1184       9317.049  ACQUIRED_LOCK      tid=6   room=B  sem=-1   msgs=0    Tina
+1185       9317.050  RELEASED_LOCK      tid=6   room=B  sem=-1   msgs=0    Tina
+1186       9317.050  MSG_BROADCAST      tid=6   room=B  sem=49   msgs=25   Tina
+1187       9317.050  SEM_POST           tid=6   room=-  sem=50   msgs=25   Tina
+1188       9382.243  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+1189       9382.246  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+1190       9382.248  PRIVATE_MSG        tid=2   room=-  sem=-1   msgs=0    T2->T7 Alice
+1191       9382.251  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=25   Alice
+1192       9382.252  SEM_POST           tid=7   room=-  sem=50   msgs=25   Alice
+1193       9445.582  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+1194       9445.586  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+1195       9445.587  ACQUIRED_LOCK      tid=2   room=A  sem=-1   msgs=0    Bob
+1196       9445.587  RELEASED_LOCK      tid=2   room=A  sem=-1   msgs=0    Bob
+1197       9445.588  MSG_BROADCAST      tid=2   room=A  sem=49   msgs=26   Bob
+1198       9445.588  SEM_POST           tid=2   room=-  sem=50   msgs=26   Bob
+1199       9511.497  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+1200       9511.498  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+1201       9511.499  ACQUIRED_LOCK      tid=3   room=B  sem=-1   msgs=0    Charlie
+1202       9511.500  RELEASED_LOCK      tid=3   room=B  sem=-1   msgs=0    Charlie
+1203       9511.500  MSG_BROADCAST      tid=3   room=B  sem=49   msgs=26   Charlie
+1204       9511.500  SEM_POST           tid=3   room=-  sem=50   msgs=26   Charlie
+1205       9579.275  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+1206       9579.281  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+1207       9579.282  ACQUIRED_LOCK      tid=4   room=C  sem=-1   msgs=0    Diana
+1208       9579.283  RELEASED_LOCK      tid=4   room=C  sem=-1   msgs=0    Diana
+1209       9579.283  MSG_BROADCAST      tid=4   room=C  sem=49   msgs=26   Diana
+1210       9579.283  SEM_POST           tid=4   room=-  sem=50   msgs=26   Diana
+1211       9640.891  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+1212       9640.895  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+1213       9640.897  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Eve
+1214       9640.897  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Eve
+1215       9640.898  MSG_BROADCAST      tid=5   room=A  sem=49   msgs=26   Eve
+1216       9640.898  SEM_POST           tid=5   room=-  sem=50   msgs=26   Eve
+1217       9708.467  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+1218       9708.471  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+1219       9708.472  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Frank
+1220       9708.473  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Frank
+1221       9708.473  MSG_BROADCAST      tid=0   room=B  sem=49   msgs=27   Frank
+1222       9708.473  SEM_POST           tid=0   room=-  sem=50   msgs=27   Frank
+1223       9778.395  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+1224       9778.398  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+1225       9778.400  ACQUIRED_LOCK      tid=1   room=C  sem=-1   msgs=0    Grace
+1226       9778.400  RELEASED_LOCK      tid=1   room=C  sem=-1   msgs=0    Grace
+1227       9778.400  MSG_BROADCAST      tid=1   room=C  sem=49   msgs=26   Grace
+1228       9778.401  SEM_POST           tid=1   room=-  sem=50   msgs=26   Grace
+1229       9846.497  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+1230       9846.499  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+1231       9846.501  ACQUIRED_LOCK      tid=6   room=A  sem=-1   msgs=0    Hank
+1232       9846.502  RELEASED_LOCK      tid=6   room=A  sem=-1   msgs=0    Hank
+1233       9846.502  MSG_BROADCAST      tid=6   room=A  sem=49   msgs=26   Hank
+1234       9846.502  SEM_POST           tid=6   room=-  sem=50   msgs=26   Hank
+1235       9917.597  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+1236       9917.601  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+1237       9917.604  PRIVATE_MSG        tid=3   room=-  sem=-1   msgs=0    T3->T4 Iris
+1238       9917.608  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=26   Iris
+1239       9917.609  SEM_POST           tid=7   room=-  sem=50   msgs=26   Iris
+1240       9983.604  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+1241       9983.607  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+1242       9983.610  ACQUIRED_LOCK      tid=2   room=C  sem=-1   msgs=0    Jack
+1243       9983.610  RELEASED_LOCK      tid=2   room=C  sem=-1   msgs=0    Jack
+1244       9983.610  MSG_BROADCAST      tid=2   room=C  sem=49   msgs=27   Jack
+1245       9983.611  SEM_POST           tid=2   room=-  sem=50   msgs=27   Jack
+1246      10058.573  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+1247      10058.575  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+1248      10058.577  ACQUIRED_LOCK      tid=3   room=A  sem=-1   msgs=0    Karen
+1249      10058.578  RELEASED_LOCK      tid=3   room=A  sem=-1   msgs=0    Karen
+1250      10058.578  MSG_BROADCAST      tid=3   room=A  sem=49   msgs=27   Karen
+1251      10058.578  SEM_POST           tid=3   room=-  sem=50   msgs=27   Karen
+1252      10133.578  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+1253      10133.586  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+1254      10133.588  ACQUIRED_LOCK      tid=4   room=B  sem=-1   msgs=0    Leo
+1255      10133.588  RELEASED_LOCK      tid=4   room=B  sem=-1   msgs=0    Leo
+1256      10133.588  MSG_BROADCAST      tid=4   room=B  sem=49   msgs=27   Leo
+1257      10133.589  SEM_POST           tid=4   room=-  sem=50   msgs=27   Leo
+1258      10191.606  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+1259      10191.609  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+1260      10191.610  ACQUIRED_LOCK      tid=5   room=C  sem=-1   msgs=0    Mia
+1261      10191.610  RELEASED_LOCK      tid=5   room=C  sem=-1   msgs=0    Mia
+1262      10191.611  MSG_BROADCAST      tid=5   room=C  sem=49   msgs=27   Mia
+1263      10191.611  SEM_POST           tid=5   room=-  sem=50   msgs=27   Mia
+1264      10255.504  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+1265      10255.507  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+1266      10255.510  ACQUIRED_LOCK      tid=0   room=A  sem=-1   msgs=0    Nick
+1267      10255.510  RELEASED_LOCK      tid=0   room=A  sem=-1   msgs=0    Nick
+1268      10255.511  MSG_BROADCAST      tid=0   room=A  sem=49   msgs=28   Nick
+1269      10255.511  SEM_POST           tid=0   room=-  sem=50   msgs=28   Nick
+1270      10327.563  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+1271      10327.564  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+1272      10327.566  ACQUIRED_LOCK      tid=1   room=B  sem=-1   msgs=0    Olivia
+1273      10327.567  RELEASED_LOCK      tid=1   room=B  sem=-1   msgs=0    Olivia
+1274      10327.567  MSG_BROADCAST      tid=1   room=B  sem=49   msgs=27   Olivia
+1275      10327.567  SEM_POST           tid=1   room=-  sem=50   msgs=27   Olivia
+1276      10397.673  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+1277      10397.680  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+1278      10397.681  ACQUIRED_LOCK      tid=6   room=C  sem=-1   msgs=0    Paul
+1279      10397.682  RELEASED_LOCK      tid=6   room=C  sem=-1   msgs=0    Paul
+1280      10397.682  MSG_BROADCAST      tid=6   room=C  sem=49   msgs=27   Paul
+1281      10397.682  SEM_POST           tid=6   room=-  sem=50   msgs=27   Paul
+1282      10470.132  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+1283      10470.140  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+1284      10470.143  PRIVATE_MSG        tid=0   room=-  sem=-1   msgs=0    T0->T2 Quinn
+1285      10470.151  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=27   Quinn
+1286      10470.151  SEM_POST           tid=7   room=-  sem=50   msgs=27   Quinn
+1287      10529.655  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+1288      10529.658  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+1289      10529.659  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Rose
+1290      10529.660  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Rose
+1291      10529.660  MSG_BROADCAST      tid=2   room=B  sem=49   msgs=28   Rose
+1292      10529.660  SEM_POST           tid=2   room=-  sem=50   msgs=28   Rose
+1293      10603.173  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+1294      10603.182  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+1295      10603.184  ACQUIRED_LOCK      tid=3   room=C  sem=-1   msgs=0    Sam
+1296      10603.185  RELEASED_LOCK      tid=3   room=C  sem=-1   msgs=0    Sam
+1297      10603.185  MSG_BROADCAST      tid=3   room=C  sem=49   msgs=28   Sam
+1298      10603.186  SEM_POST           tid=3   room=-  sem=50   msgs=28   Sam
+1299      10672.574  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+1300      10672.577  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+1301      10672.579  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Tina
+1302      10672.580  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Tina
+1303      10672.580  MSG_BROADCAST      tid=4   room=A  sem=49   msgs=28   Tina
+1304      10672.580  SEM_POST           tid=4   room=-  sem=50   msgs=28   Tina
+1305      10749.921  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+1306      10749.925  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+1307      10749.926  ACQUIRED_LOCK      tid=5   room=B  sem=-1   msgs=0    Alice
+1308      10749.927  RELEASED_LOCK      tid=5   room=B  sem=-1   msgs=0    Alice
+1309      10749.927  MSG_BROADCAST      tid=5   room=B  sem=49   msgs=28   Alice
+1310      10749.927  SEM_POST           tid=5   room=-  sem=50   msgs=28   Alice
+1311      10815.988  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+1312      10815.991  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+1313      10815.993  ACQUIRED_LOCK      tid=0   room=C  sem=-1   msgs=0    Bob
+1314      10815.993  RELEASED_LOCK      tid=0   room=C  sem=-1   msgs=0    Bob
+1315      10815.993  MSG_BROADCAST      tid=0   room=C  sem=49   msgs=29   Bob
+1316      10815.994  SEM_POST           tid=0   room=-  sem=50   msgs=29   Bob
+1317      10887.383  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+1318      10887.388  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+1319      10887.390  ACQUIRED_LOCK      tid=1   room=A  sem=-1   msgs=0    Charlie
+1320      10887.390  RELEASED_LOCK      tid=1   room=A  sem=-1   msgs=0    Charlie
+1321      10887.390  MSG_BROADCAST      tid=1   room=A  sem=49   msgs=28   Charlie
+1322      10887.390  SEM_POST           tid=1   room=-  sem=50   msgs=28   Charlie
+1323      10921.140  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+1324      10921.143  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+1325      10921.145  ACQUIRED_LOCK      tid=6   room=B  sem=-1   msgs=0    Diana
+1326      10921.145  RELEASED_LOCK      tid=6   room=B  sem=-1   msgs=0    Diana
+1327      10921.146  MSG_BROADCAST      tid=6   room=B  sem=49   msgs=28   Diana
+1328      10921.146  SEM_POST           tid=6   room=-  sem=50   msgs=28   Diana
+1329      10959.019  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+1330      10959.023  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+1331      10959.025  PRIVATE_MSG        tid=5   room=-  sem=-1   msgs=0    T5->T4 Eve
+1332      10959.031  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=28   Eve
+1333      10959.031  SEM_POST           tid=7   room=-  sem=50   msgs=28   Eve
+1334      10993.635  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+1335      10993.639  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+1336      10993.640  ACQUIRED_LOCK      tid=2   room=A  sem=-1   msgs=0    Frank
+1337      10993.641  RELEASED_LOCK      tid=2   room=A  sem=-1   msgs=0    Frank
+1338      10993.641  MSG_BROADCAST      tid=2   room=A  sem=49   msgs=29   Frank
+1339      10993.641  SEM_POST           tid=2   room=-  sem=50   msgs=29   Frank
+1340      11028.828  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+1341      11028.831  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+1342      11028.832  ACQUIRED_LOCK      tid=3   room=B  sem=-1   msgs=0    Grace
+1343      11028.832  RELEASED_LOCK      tid=3   room=B  sem=-1   msgs=0    Grace
+1344      11028.832  MSG_BROADCAST      tid=3   room=B  sem=49   msgs=29   Grace
+1345      11028.833  SEM_POST           tid=3   room=-  sem=50   msgs=29   Grace
+1346      11063.869  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+1347      11063.873  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+1348      11063.874  ACQUIRED_LOCK      tid=4   room=C  sem=-1   msgs=0    Hank
+1349      11063.874  RELEASED_LOCK      tid=4   room=C  sem=-1   msgs=0    Hank
+1350      11063.874  MSG_BROADCAST      tid=4   room=C  sem=49   msgs=29   Hank
+1351      11063.875  SEM_POST           tid=4   room=-  sem=50   msgs=29   Hank
+1352      11101.586  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+1353      11101.588  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+1354      11101.589  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Iris
+1355      11101.590  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Iris
+1356      11101.590  MSG_BROADCAST      tid=5   room=A  sem=49   msgs=29   Iris
+1357      11101.590  SEM_POST           tid=5   room=-  sem=50   msgs=29   Iris
+1358      11138.391  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+1359      11138.395  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+1360      11138.396  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Jack
+1361      11138.397  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Jack
+1362      11138.397  MSG_BROADCAST      tid=0   room=B  sem=49   msgs=30   Jack
+1363      11138.397  SEM_POST           tid=0   room=-  sem=50   msgs=30   Jack
+1364      11173.639  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+1365      11173.641  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+1366      11173.642  ACQUIRED_LOCK      tid=1   room=C  sem=-1   msgs=0    Karen
+1367      11173.642  RELEASED_LOCK      tid=1   room=C  sem=-1   msgs=0    Karen
+1368      11173.642  MSG_BROADCAST      tid=1   room=C  sem=49   msgs=29   Karen
+1369      11173.642  SEM_POST           tid=1   room=-  sem=50   msgs=29   Karen
+1370      11208.462  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+1371      11208.464  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+1372      11208.465  ACQUIRED_LOCK      tid=6   room=A  sem=-1   msgs=0    Leo
+1373      11208.466  RELEASED_LOCK      tid=6   room=A  sem=-1   msgs=0    Leo
+1374      11208.466  MSG_BROADCAST      tid=6   room=A  sem=49   msgs=29   Leo
+1375      11208.466  SEM_POST           tid=6   room=-  sem=50   msgs=29   Leo
+1376      11245.462  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+1377      11245.463  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+1378      11245.465  PRIVATE_MSG        tid=3   room=-  sem=-1   msgs=0    T3->T1 Mia
+1379      11245.467  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=29   Mia
+1380      11245.467  SEM_POST           tid=7   room=-  sem=50   msgs=29   Mia
+1381      11281.385  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+1382      11281.386  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+1383      11281.388  ACQUIRED_LOCK      tid=2   room=C  sem=-1   msgs=0    Nick
+1384      11281.389  RELEASED_LOCK      tid=2   room=C  sem=-1   msgs=0    Nick
+1385      11281.389  MSG_BROADCAST      tid=2   room=C  sem=49   msgs=30   Nick
+1386      11281.389  SEM_POST           tid=2   room=-  sem=50   msgs=30   Nick
+1387      11316.708  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+1388      11316.711  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+1389      11316.712  ACQUIRED_LOCK      tid=3   room=A  sem=-1   msgs=0    Olivia
+1390      11316.713  RELEASED_LOCK      tid=3   room=A  sem=-1   msgs=0    Olivia
+1391      11316.713  MSG_BROADCAST      tid=3   room=A  sem=49   msgs=30   Olivia
+1392      11316.713  SEM_POST           tid=3   room=-  sem=50   msgs=30   Olivia
+1393      11356.786  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+1394      11356.787  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+1395      11356.789  ACQUIRED_LOCK      tid=4   room=B  sem=-1   msgs=0    Paul
+1396      11356.790  RELEASED_LOCK      tid=4   room=B  sem=-1   msgs=0    Paul
+1397      11356.790  MSG_BROADCAST      tid=4   room=B  sem=49   msgs=30   Paul
+1398      11356.790  SEM_POST           tid=4   room=-  sem=50   msgs=30   Paul
+1399      11392.731  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+1400      11392.734  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+1401      11392.736  ACQUIRED_LOCK      tid=5   room=C  sem=-1   msgs=0    Quinn
+1402      11392.737  RELEASED_LOCK      tid=5   room=C  sem=-1   msgs=0    Quinn
+1403      11392.737  MSG_BROADCAST      tid=5   room=C  sem=49   msgs=30   Quinn
+1404      11392.737  SEM_POST           tid=5   room=-  sem=50   msgs=30   Quinn
+1405      11427.466  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+1406      11427.468  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+1407      11427.470  ACQUIRED_LOCK      tid=0   room=A  sem=-1   msgs=0    Rose
+1408      11427.471  RELEASED_LOCK      tid=0   room=A  sem=-1   msgs=0    Rose
+1409      11427.471  MSG_BROADCAST      tid=0   room=A  sem=49   msgs=31   Rose
+1410      11427.471  SEM_POST           tid=0   room=-  sem=50   msgs=31   Rose
+1411      11463.749  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+1412      11463.753  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+1413      11463.754  ACQUIRED_LOCK      tid=1   room=B  sem=-1   msgs=0    Sam
+1414      11463.755  RELEASED_LOCK      tid=1   room=B  sem=-1   msgs=0    Sam
+1415      11463.755  MSG_BROADCAST      tid=1   room=B  sem=49   msgs=30   Sam
+1416      11463.755  SEM_POST           tid=1   room=-  sem=50   msgs=30   Sam
+1417      11500.133  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+1418      11500.134  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+1419      11500.135  ACQUIRED_LOCK      tid=6   room=C  sem=-1   msgs=0    Tina
+1420      11500.136  RELEASED_LOCK      tid=6   room=C  sem=-1   msgs=0    Tina
+1421      11500.137  MSG_BROADCAST      tid=6   room=C  sem=49   msgs=30   Tina
+1422      11500.137  SEM_POST           tid=6   room=-  sem=50   msgs=30   Tina
+1423      11535.112  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+1424      11535.115  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+1425      11535.117  PRIVATE_MSG        tid=3   room=-  sem=-1   msgs=0    T3->T0 Alice
+1426      11535.121  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=30   Alice
+1427      11535.121  SEM_POST           tid=7   room=-  sem=50   msgs=30   Alice
+1428      11571.527  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+1429      11571.531  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+1430      11571.532  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Bob
+1431      11571.533  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Bob
+1432      11571.534  MSG_BROADCAST      tid=2   room=B  sem=49   msgs=31   Bob
+1433      11571.534  SEM_POST           tid=2   room=-  sem=50   msgs=31   Bob
+1434      11606.266  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+1435      11606.268  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+1436      11606.270  ACQUIRED_LOCK      tid=3   room=C  sem=-1   msgs=0    Charlie
+1437      11606.271  RELEASED_LOCK      tid=3   room=C  sem=-1   msgs=0    Charlie
+1438      11606.271  MSG_BROADCAST      tid=3   room=C  sem=49   msgs=31   Charlie
+1439      11606.271  SEM_POST           tid=3   room=-  sem=50   msgs=31   Charlie
+1440      11640.698  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+1441      11640.702  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+1442      11640.704  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Diana
+1443      11640.705  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Diana
+1444      11640.705  MSG_BROADCAST      tid=4   room=A  sem=49   msgs=31   Diana
+1445      11640.705  SEM_POST           tid=4   room=-  sem=50   msgs=31   Diana
+1446      11675.582  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+1447      11675.583  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+1448      11675.585  ACQUIRED_LOCK      tid=5   room=B  sem=-1   msgs=0    Eve
+1449      11675.586  RELEASED_LOCK      tid=5   room=B  sem=-1   msgs=0    Eve
+1450      11675.586  MSG_BROADCAST      tid=5   room=B  sem=49   msgs=31   Eve
+1451      11675.586  SEM_POST           tid=5   room=-  sem=50   msgs=31   Eve
+1452      11717.437  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+1453      11717.443  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+1454      11717.444  ACQUIRED_LOCK      tid=0   room=C  sem=-1   msgs=0    Frank
+1455      11717.445  RELEASED_LOCK      tid=0   room=C  sem=-1   msgs=0    Frank
+1456      11717.446  MSG_BROADCAST      tid=0   room=C  sem=49   msgs=32   Frank
+1457      11717.446  SEM_POST           tid=0   room=-  sem=50   msgs=32   Frank
+1458      11754.921  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+1459      11754.923  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+1460      11754.925  ACQUIRED_LOCK      tid=1   room=A  sem=-1   msgs=0    Grace
+1461      11754.925  RELEASED_LOCK      tid=1   room=A  sem=-1   msgs=0    Grace
+1462      11754.926  MSG_BROADCAST      tid=1   room=A  sem=49   msgs=31   Grace
+1463      11754.926  SEM_POST           tid=1   room=-  sem=50   msgs=31   Grace
+1464      11795.000  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+1465      11795.008  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+1466      11795.010  ACQUIRED_LOCK      tid=6   room=B  sem=-1   msgs=0    Hank
+1467      11795.011  RELEASED_LOCK      tid=6   room=B  sem=-1   msgs=0    Hank
+1468      11795.011  MSG_BROADCAST      tid=6   room=B  sem=49   msgs=31   Hank
+1469      11795.011  SEM_POST           tid=6   room=-  sem=50   msgs=31   Hank
+1470      11826.012  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+1471      11826.014  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+1472      11826.016  PRIVATE_MSG        tid=1   room=-  sem=-1   msgs=0    T1->T2 Iris
+1473      11826.017  PRIVATE_MSG        tid=7   room=P  sem=49   msgs=31   Iris
+1474      11826.017  SEM_POST           tid=7   room=-  sem=50   msgs=31   Iris
+1475      11860.880  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+1476      11860.882  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+1477      11860.884  ACQUIRED_LOCK      tid=2   room=A  sem=-1   msgs=0    Jack
+1478      11860.885  RELEASED_LOCK      tid=2   room=A  sem=-1   msgs=0    Jack
+1479      11860.885  MSG_BROADCAST      tid=2   room=A  sem=49   msgs=32   Jack
+1480      11860.885  SEM_POST           tid=2   room=-  sem=50   msgs=32   Jack
+1481      11895.557  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+1482      11895.562  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+1483      11895.564  ACQUIRED_LOCK      tid=3   room=B  sem=-1   msgs=0    Karen
+1484      11895.565  RELEASED_LOCK      tid=3   room=B  sem=-1   msgs=0    Karen
+1485      11895.565  MSG_BROADCAST      tid=3   room=B  sem=49   msgs=32   Karen
+1486      11895.565  SEM_POST           tid=3   room=-  sem=50   msgs=32   Karen
+1487      11931.669  SEM_BLOCK          tid=4   room=-  sem=50   msgs=0    about to wait
+1488      11931.672  SEM_WAIT           tid=4   room=-  sem=49   msgs=0    ADMITTED
+1489      11931.674  ACQUIRED_LOCK      tid=4   room=C  sem=-1   msgs=0    Leo
+1490      11931.675  RELEASED_LOCK      tid=4   room=C  sem=-1   msgs=0    Leo
+1491      11931.675  MSG_BROADCAST      tid=4   room=C  sem=49   msgs=32   Leo
+1492      11931.675  SEM_POST           tid=4   room=-  sem=50   msgs=32   Leo
+1493      11962.769  SEM_BLOCK          tid=5   room=-  sem=50   msgs=0    about to wait
+1494      11962.773  SEM_WAIT           tid=5   room=-  sem=49   msgs=0    ADMITTED
+1495      11962.775  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Mia
+1496      11962.775  BUFFER_FULL        tid=5   room=A  sem=-1   msgs=0    Mia
+1497      11962.775  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Mia
+1498      11993.561  SEM_BLOCK          tid=0   room=-  sem=49   msgs=0    about to wait
+1499      11993.565  SEM_WAIT           tid=0   room=-  sem=48   msgs=0    ADMITTED
+1500      11993.567  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Nick
+1501      11993.567  BUFFER_FULL        tid=0   room=B  sem=-1   msgs=0    Nick
+1502      11993.567  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Nick
+1503      12022.530  SEM_BLOCK          tid=1   room=-  sem=48   msgs=0    about to wait
+1504      12022.533  SEM_WAIT           tid=1   room=-  sem=47   msgs=0    ADMITTED
+1505      12022.535  ACQUIRED_LOCK      tid=1   room=C  sem=-1   msgs=0    Olivia
+1506      12022.536  RELEASED_LOCK      tid=1   room=C  sem=-1   msgs=0    Olivia
+1507      12022.536  MSG_BROADCAST      tid=1   room=C  sem=47   msgs=32   Olivia
+1508      12022.536  SEM_POST           tid=1   room=-  sem=48   msgs=32   Olivia
+1509      12051.880  SEM_BLOCK          tid=6   room=-  sem=48   msgs=0    about to wait
+1510      12051.882  SEM_WAIT           tid=6   room=-  sem=47   msgs=0    ADMITTED
+1511      12051.882  ACQUIRED_LOCK      tid=6   room=A  sem=-1   msgs=0    Paul
+1512      12051.883  BUFFER_FULL        tid=6   room=A  sem=-1   msgs=0    Paul
+1513      12051.883  RELEASED_LOCK      tid=6   room=A  sem=-1   msgs=0    Paul
+1514      12063.763  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Mia
+1515      12063.765  BUFFER_RESUME      tid=5   room=A  sem=-1   msgs=0    Mia
+1516      12063.768  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Mia
+1517      12063.769  MSG_BROADCAST      tid=5   room=A  sem=49   msgs=32   Mia
+1518      12063.770  SEM_POST           tid=5   room=-  sem=48   msgs=32   Mia
+1519      12081.792  SEM_BLOCK          tid=7   room=-  sem=48   msgs=0    about to wait
+1520      12081.794  SEM_WAIT           tid=7   room=-  sem=47   msgs=0    ADMITTED
+1521      12081.796  PRIVATE_MSG        tid=1   room=-  sem=-1   msgs=0    T1->T6 Quinn
+1522      12081.799  PRIVATE_MSG        tid=7   room=P  sem=47   msgs=32   Quinn
+1523      12081.800  SEM_POST           tid=7   room=-  sem=48   msgs=32   Quinn
+1524      12112.513  SEM_BLOCK          tid=2   room=-  sem=48   msgs=0    about to wait
+1525      12112.514  SEM_WAIT           tid=2   room=-  sem=47   msgs=0    ADMITTED
+1526      12112.516  ACQUIRED_LOCK      tid=2   room=C  sem=-1   msgs=0    Rose
+1527      12112.516  BUFFER_FULL        tid=2   room=C  sem=-1   msgs=0    Rose
+1528      12112.516  RELEASED_LOCK      tid=2   room=C  sem=-1   msgs=0    Rose
+1529      12116.014  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Nick
+1530      12116.016  BUFFER_RESUME      tid=0   room=B  sem=-1   msgs=0    Nick
+1531      12116.018  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Nick
+1532      12116.019  MSG_BROADCAST      tid=0   room=B  sem=48   msgs=33   Nick
+1533      12116.019  SEM_POST           tid=0   room=-  sem=48   msgs=33   Nick
+1534      12146.376  SEM_BLOCK          tid=3   room=-  sem=48   msgs=0    about to wait
+1535      12146.385  SEM_WAIT           tid=3   room=-  sem=47   msgs=0    ADMITTED
+1536      12146.387  ACQUIRED_LOCK      tid=3   room=A  sem=-1   msgs=0    Sam
+1537      12146.387  BUFFER_FULL        tid=3   room=A  sem=-1   msgs=0    Sam
+1538      12146.388  RELEASED_LOCK      tid=3   room=A  sem=-1   msgs=0    Sam
+1539      12146.559  ACQUIRED_LOCK      tid=2   room=C  sem=-1   msgs=0    Rose
+1540      12146.560  BUFFER_RESUME      tid=2   room=C  sem=-1   msgs=0    Rose
+1541      12146.562  RELEASED_LOCK      tid=2   room=C  sem=-1   msgs=0    Rose
+1542      12146.562  MSG_BROADCAST      tid=2   room=C  sem=47   msgs=33   Rose
+1543      12146.563  SEM_POST           tid=2   room=-  sem=48   msgs=33   Rose
+1544      12179.424  SEM_BLOCK          tid=4   room=-  sem=48   msgs=0    about to wait
+1545      12179.425  SEM_WAIT           tid=4   room=-  sem=47   msgs=0    ADMITTED
+1546      12179.426  ACQUIRED_LOCK      tid=4   room=B  sem=-1   msgs=0    Tina
+1547      12179.427  BUFFER_FULL        tid=4   room=B  sem=-1   msgs=0    Tina
+1548      12179.427  RELEASED_LOCK      tid=4   room=B  sem=-1   msgs=0    Tina
+1549      12209.848  SEM_BLOCK          tid=1   room=-  sem=47   msgs=0    about to wait
+1550      12209.850  SEM_WAIT           tid=1   room=-  sem=46   msgs=0    ADMITTED
+1551      12209.852  ACQUIRED_LOCK      tid=1   room=C  sem=-1   msgs=0    Alice
+1552      12209.852  BUFFER_FULL        tid=1   room=C  sem=-1   msgs=0    Alice
+1553      12209.853  RELEASED_LOCK      tid=1   room=C  sem=-1   msgs=0    Alice
+1554      12239.843  SEM_BLOCK          tid=5   room=-  sem=46   msgs=0    about to wait
+1555      12239.846  SEM_WAIT           tid=5   room=-  sem=45   msgs=0    ADMITTED
+1556      12239.847  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Bob
+1557      12239.847  BUFFER_FULL        tid=5   room=A  sem=-1   msgs=0    Bob
+1558      12239.847  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Bob
+1559      12272.139  SEM_BLOCK          tid=7   room=-  sem=45   msgs=0    about to wait
+1560      12272.141  SEM_WAIT           tid=7   room=-  sem=44   msgs=0    ADMITTED
+1561      12272.142  ACQUIRED_LOCK      tid=7   room=B  sem=-1   msgs=0    Charlie
+1562      12272.142  BUFFER_FULL        tid=7   room=B  sem=-1   msgs=0    Charlie
+1563      12272.142  RELEASED_LOCK      tid=7   room=B  sem=-1   msgs=0    Charlie
+1564      12303.445  SEM_BLOCK          tid=0   room=-  sem=44   msgs=0    about to wait
+1565      12303.448  SEM_WAIT           tid=0   room=-  sem=43   msgs=0    ADMITTED
+1566      12303.449  ACQUIRED_LOCK      tid=0   room=C  sem=-1   msgs=0    Diana
+1567      12303.449  BUFFER_FULL        tid=0   room=C  sem=-1   msgs=0    Diana
+1568      12303.449  RELEASED_LOCK      tid=0   room=C  sem=-1   msgs=0    Diana
+1569      12339.149  SEM_BLOCK          tid=2   room=-  sem=43   msgs=0    about to wait
+1570      12339.153  SEM_WAIT           tid=2   room=-  sem=42   msgs=0    ADMITTED
+1571      12339.155  PRIVATE_MSG        tid=2   room=-  sem=-1   msgs=0    T2->T7 Eve
+1572      12339.159  PRIVATE_MSG        tid=2   room=P  sem=42   msgs=34   Eve
+1573      12339.159  SEM_POST           tid=2   room=-  sem=43   msgs=34   Eve
+1574      12369.688  SEM_BLOCK          tid=2   room=-  sem=43   msgs=0    about to wait
+1575      12369.692  SEM_WAIT           tid=2   room=-  sem=42   msgs=0    ADMITTED
+1576      12369.693  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Frank
+1577      12369.694  BUFFER_FULL        tid=2   room=B  sem=-1   msgs=0    Frank
+1578      12369.694  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Frank
+1579      12563.359  ACQUIRED_LOCK      tid=6   room=A  sem=-1   msgs=0    Paul
+1580      12563.362  BUFFER_RESUME      tid=6   room=A  sem=-1   msgs=0    Paul
+1581      12563.364  RELEASED_LOCK      tid=6   room=A  sem=-1   msgs=0    Paul
+1582      12563.364  MSG_BROADCAST      tid=6   room=A  sem=47   msgs=32   Paul
+1583      12563.365  SEM_POST           tid=6   room=-  sem=43   msgs=32   Paul
+1584      12563.546  SEM_BLOCK          tid=6   room=-  sem=43   msgs=0    about to wait
+1585      12563.551  SEM_WAIT           tid=6   room=-  sem=42   msgs=0    ADMITTED
+1586      12563.553  ACQUIRED_LOCK      tid=6   room=C  sem=-1   msgs=0    Grace
+1587      12563.553  BUFFER_FULL        tid=6   room=C  sem=-1   msgs=0    Grace
+1588      12563.554  RELEASED_LOCK      tid=6   room=C  sem=-1   msgs=0    Grace
+1589      12616.666  ACQUIRED_LOCK      tid=4   room=B  sem=-1   msgs=0    Tina
+1590      12616.668  BUFFER_RESUME      tid=4   room=B  sem=-1   msgs=0    Tina
+1591      12616.671  RELEASED_LOCK      tid=4   room=B  sem=-1   msgs=0    Tina
+1592      12616.672  MSG_BROADCAST      tid=4   room=B  sem=47   msgs=33   Tina
+1593      12616.673  SEM_POST           tid=4   room=-  sem=43   msgs=33   Tina
+1594      12616.680  SEM_BLOCK          tid=4   room=-  sem=43   msgs=0    about to wait
+1595      12616.683  SEM_WAIT           tid=4   room=-  sem=42   msgs=0    ADMITTED
+1596      12616.684  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Hank
+1597      12616.685  BUFFER_FULL        tid=4   room=A  sem=-1   msgs=0    Hank
+1598      12616.685  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Hank
+1599      12647.996  ACQUIRED_LOCK      tid=1   room=C  sem=-1   msgs=0    Alice
+1600      12647.998  BUFFER_RESUME      tid=1   room=C  sem=-1   msgs=0    Alice
+1601      12647.999  RELEASED_LOCK      tid=1   room=C  sem=-1   msgs=0    Alice
+1602      12648.000  MSG_BROADCAST      tid=1   room=C  sem=46   msgs=33   Alice
+1603      12648.001  SEM_POST           tid=1   room=-  sem=43   msgs=33   Alice
+1604      12648.006  SEM_BLOCK          tid=1   room=-  sem=43   msgs=0    about to wait
+1605      12648.009  SEM_WAIT           tid=1   room=-  sem=42   msgs=0    ADMITTED
+1606      12648.011  ACQUIRED_LOCK      tid=1   room=B  sem=-1   msgs=0    Iris
+1607      12648.011  BUFFER_FULL        tid=1   room=B  sem=-1   msgs=0    Iris
+1608      12648.011  RELEASED_LOCK      tid=1   room=B  sem=-1   msgs=0    Iris
+1609      13069.801  ACQUIRED_LOCK      tid=3   room=A  sem=-1   msgs=0    Sam
+1610      13069.804  BUFFER_RESUME      tid=3   room=A  sem=-1   msgs=0    Sam
+1611      13069.807  RELEASED_LOCK      tid=3   room=A  sem=-1   msgs=0    Sam
+1612      13069.808  MSG_BROADCAST      tid=3   room=A  sem=47   msgs=33   Sam
+1613      13069.809  SEM_POST           tid=3   room=-  sem=43   msgs=33   Sam
+1614      13069.814  SEM_BLOCK          tid=3   room=-  sem=43   msgs=0    about to wait
+1615      13069.820  SEM_WAIT           tid=3   room=-  sem=42   msgs=0    ADMITTED
+1616      13069.822  ACQUIRED_LOCK      tid=3   room=C  sem=-1   msgs=0    Jack
+1617      13069.822  BUFFER_FULL        tid=3   room=C  sem=-1   msgs=0    Jack
+1618      13069.822  RELEASED_LOCK      tid=3   room=C  sem=-1   msgs=0    Jack
+1619      13118.185  ACQUIRED_LOCK      tid=7   room=B  sem=-1   msgs=0    Charlie
+1620      13118.188  BUFFER_RESUME      tid=7   room=B  sem=-1   msgs=0    Charlie
+1621      13118.190  RELEASED_LOCK      tid=7   room=B  sem=-1   msgs=0    Charlie
+1622      13118.191  MSG_BROADCAST      tid=7   room=B  sem=44   msgs=33   Charlie
+1623      13118.192  SEM_POST           tid=7   room=-  sem=43   msgs=33   Charlie
+1624      13118.198  SEM_BLOCK          tid=7   room=-  sem=43   msgs=0    about to wait
+1625      13118.202  SEM_WAIT           tid=7   room=-  sem=42   msgs=0    ADMITTED
+1626      13118.204  ACQUIRED_LOCK      tid=7   room=A  sem=-1   msgs=0    Karen
+1627      13118.204  BUFFER_FULL        tid=7   room=A  sem=-1   msgs=0    Karen
+1628      13118.204  RELEASED_LOCK      tid=7   room=A  sem=-1   msgs=0    Karen
+1629      13165.453  ACQUIRED_LOCK      tid=0   room=C  sem=-1   msgs=0    Diana
+1630      13165.456  BUFFER_RESUME      tid=0   room=C  sem=-1   msgs=0    Diana
+1631      13165.458  RELEASED_LOCK      tid=0   room=C  sem=-1   msgs=0    Diana
+1632      13165.459  MSG_BROADCAST      tid=0   room=C  sem=43   msgs=34   Diana
+1633      13165.461  SEM_POST           tid=0   room=-  sem=43   msgs=34   Diana
+1634      13165.468  SEM_BLOCK          tid=0   room=-  sem=43   msgs=0    about to wait
+1635      13166.030  SEM_WAIT           tid=0   room=-  sem=42   msgs=0    ADMITTED
+1636      13166.032  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Leo
+1637      13166.032  BUFFER_FULL        tid=0   room=B  sem=-1   msgs=0    Leo
+1638      13166.033  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Leo
+1639      13578.720  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Bob
+1640      13578.723  BUFFER_RESUME      tid=5   room=A  sem=-1   msgs=0    Bob
+1641      13578.726  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Bob
+1642      13578.726  MSG_BROADCAST      tid=5   room=A  sem=45   msgs=33   Bob
+1643      13578.728  SEM_POST           tid=5   room=-  sem=43   msgs=33   Bob
+1644      13578.733  SEM_BLOCK          tid=5   room=-  sem=43   msgs=0    about to wait
+1645      13578.739  SEM_WAIT           tid=5   room=-  sem=42   msgs=0    ADMITTED
+1646      13578.743  PRIVATE_MSG        tid=6   room=-  sem=-1   msgs=0    T6->T0 Mia
+1647      13578.751  PRIVATE_MSG        tid=5   room=P  sem=42   msgs=34   Mia
+1648      13578.751  SEM_POST           tid=5   room=-  sem=43   msgs=34   Mia
+1649      13578.753  SEM_BLOCK          tid=5   room=-  sem=43   msgs=0    about to wait
+1650      13578.753  SEM_WAIT           tid=5   room=-  sem=42   msgs=0    ADMITTED
+1651      13578.754  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Nick
+1652      13578.754  BUFFER_FULL        tid=5   room=A  sem=-1   msgs=0    Nick
+1653      13578.754  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Nick
+1654      13625.884  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Frank
+1655      13625.887  BUFFER_RESUME      tid=2   room=B  sem=-1   msgs=0    Frank
+1656      13625.889  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Frank
+1657      13625.890  MSG_BROADCAST      tid=2   room=B  sem=42   msgs=35   Frank
+1658      13625.892  SEM_POST           tid=2   room=-  sem=43   msgs=35   Frank
+1659      13625.900  SEM_BLOCK          tid=2   room=-  sem=43   msgs=0    about to wait
+1660      13625.906  SEM_WAIT           tid=2   room=-  sem=42   msgs=0    ADMITTED
+1661      13625.907  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Olivia
+1662      13625.907  BUFFER_FULL        tid=2   room=B  sem=-1   msgs=0    Olivia
+1663      13625.908  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Olivia
+1664      13664.456  ACQUIRED_LOCK      tid=6   room=C  sem=-1   msgs=0    Grace
+1665      13664.459  BUFFER_RESUME      tid=6   room=C  sem=-1   msgs=0    Grace
+1666      13664.463  RELEASED_LOCK      tid=6   room=C  sem=-1   msgs=0    Grace
+1667      13664.464  MSG_BROADCAST      tid=6   room=C  sem=42   msgs=33   Grace
+1668      13664.465  SEM_POST           tid=6   room=-  sem=43   msgs=33   Grace
+1669      13664.500  SEM_BLOCK          tid=6   room=-  sem=43   msgs=0    about to wait
+1670      13664.506  SEM_WAIT           tid=6   room=-  sem=42   msgs=0    ADMITTED
+1671      13664.507  ACQUIRED_LOCK      tid=6   room=C  sem=-1   msgs=0    Paul
+1672      13664.508  BUFFER_FULL        tid=6   room=C  sem=-1   msgs=0    Paul
+1673      13664.508  RELEASED_LOCK      tid=6   room=C  sem=-1   msgs=0    Paul
+1674      14074.020  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Hank
+1675      14074.022  BUFFER_RESUME      tid=4   room=A  sem=-1   msgs=0    Hank
+1676      14074.025  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Hank
+1677      14074.026  MSG_BROADCAST      tid=4   room=A  sem=42   msgs=34   Hank
+1678      14074.027  SEM_POST           tid=4   room=-  sem=43   msgs=34   Hank
+1679      14074.032  SEM_BLOCK          tid=4   room=-  sem=43   msgs=0    about to wait
+1680      14074.034  SEM_WAIT           tid=4   room=-  sem=42   msgs=0    ADMITTED
+1681      14074.035  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Quinn
+1682      14074.036  BUFFER_FULL        tid=4   room=A  sem=-1   msgs=0    Quinn
+1683      14074.036  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Quinn
+1684      14126.941  ACQUIRED_LOCK      tid=1   room=B  sem=-1   msgs=0    Iris
+1685      14126.944  BUFFER_RESUME      tid=1   room=B  sem=-1   msgs=0    Iris
+1686      14126.947  RELEASED_LOCK      tid=1   room=B  sem=-1   msgs=0    Iris
+1687      14126.948  MSG_BROADCAST      tid=1   room=B  sem=42   msgs=34   Iris
+1688      14126.949  SEM_POST           tid=1   room=-  sem=43   msgs=34   Iris
+1689      14126.955  SEM_BLOCK          tid=1   room=-  sem=43   msgs=0    about to wait
+1690      14126.959  SEM_WAIT           tid=1   room=-  sem=42   msgs=0    ADMITTED
+1691      14126.960  ACQUIRED_LOCK      tid=1   room=B  sem=-1   msgs=0    Rose
+1692      14126.960  BUFFER_FULL        tid=1   room=B  sem=-1   msgs=0    Rose
+1693      14126.960  RELEASED_LOCK      tid=1   room=B  sem=-1   msgs=0    Rose
+1694      14164.690  ACQUIRED_LOCK      tid=3   room=C  sem=-1   msgs=0    Jack
+1695      14164.692  BUFFER_RESUME      tid=3   room=C  sem=-1   msgs=0    Jack
+1696      14164.694  RELEASED_LOCK      tid=3   room=C  sem=-1   msgs=0    Jack
+1697      14164.695  MSG_BROADCAST      tid=3   room=C  sem=42   msgs=34   Jack
+1698      14164.696  SEM_POST           tid=3   room=-  sem=43   msgs=34   Jack
+1699      14171.625  SEM_BLOCK          tid=3   room=-  sem=43   msgs=0    about to wait
+1700      14171.633  SEM_WAIT           tid=3   room=-  sem=42   msgs=0    ADMITTED
+1701      14171.635  ACQUIRED_LOCK      tid=3   room=C  sem=-1   msgs=0    Sam
+1702      14171.635  BUFFER_FULL        tid=3   room=C  sem=-1   msgs=0    Sam
+1703      14171.636  RELEASED_LOCK      tid=3   room=C  sem=-1   msgs=0    Sam
+1704      14579.775  ACQUIRED_LOCK      tid=7   room=A  sem=-1   msgs=0    Karen
+1705      14579.778  BUFFER_RESUME      tid=7   room=A  sem=-1   msgs=0    Karen
+1706      14579.781  RELEASED_LOCK      tid=7   room=A  sem=-1   msgs=0    Karen
+1707      14579.782  MSG_BROADCAST      tid=7   room=A  sem=42   msgs=34   Karen
+1708      14579.783  SEM_POST           tid=7   room=-  sem=43   msgs=34   Karen
+1709      14581.400  SEM_BLOCK          tid=7   room=-  sem=43   msgs=0    about to wait
+1710      14581.402  SEM_WAIT           tid=7   room=-  sem=42   msgs=0    ADMITTED
+1711      14581.403  ACQUIRED_LOCK      tid=7   room=A  sem=-1   msgs=0    Tina
+1712      14581.403  BUFFER_FULL        tid=7   room=A  sem=-1   msgs=0    Tina
+1713      14581.403  RELEASED_LOCK      tid=7   room=A  sem=-1   msgs=0    Tina
+1714      14645.174  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Leo
+1715      14645.178  BUFFER_RESUME      tid=0   room=B  sem=-1   msgs=0    Leo
+1716      14645.181  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Leo
+1717      14645.182  MSG_BROADCAST      tid=0   room=B  sem=42   msgs=35   Leo
+1718      14645.183  SEM_POST           tid=0   room=-  sem=43   msgs=35   Leo
+1719      14645.190  SEM_BLOCK          tid=0   room=-  sem=43   msgs=0    about to wait
+1720      14645.196  SEM_WAIT           tid=0   room=-  sem=42   msgs=0    ADMITTED
+1721      14645.199  PRIVATE_MSG        tid=4   room=-  sem=-1   msgs=0    T4->T1 Alice
+1722      14645.378  PRIVATE_MSG        tid=0   room=P  sem=42   msgs=36   Alice
+1723      14645.378  SEM_POST           tid=0   room=-  sem=43   msgs=36   Alice
+1724      14645.380  SEM_BLOCK          tid=0   room=-  sem=43   msgs=0    about to wait
+1725      14645.380  SEM_WAIT           tid=0   room=-  sem=42   msgs=0    ADMITTED
+1726      14645.382  ACQUIRED_LOCK      tid=0   room=C  sem=-1   msgs=0    Bob
+1727      14645.382  BUFFER_FULL        tid=0   room=C  sem=-1   msgs=0    Bob
+1728      14645.382  RELEASED_LOCK      tid=0   room=C  sem=-1   msgs=0    Bob
+1729      14666.721  ACQUIRED_LOCK      tid=6   room=C  sem=-1   msgs=0    Paul
+1730      14666.722  BUFFER_RESUME      tid=6   room=C  sem=-1   msgs=0    Paul
+1731      14666.723  RELEASED_LOCK      tid=6   room=C  sem=-1   msgs=0    Paul
+1732      14666.723  MSG_BROADCAST      tid=6   room=C  sem=42   msgs=34   Paul
+1733      14666.724  SEM_POST           tid=6   room=-  sem=43   msgs=34   Paul
+1734      14666.729  SEM_BLOCK          tid=6   room=-  sem=43   msgs=0    about to wait
+1735      14666.731  SEM_WAIT           tid=6   room=-  sem=42   msgs=0    ADMITTED
+1736      14666.732  ACQUIRED_LOCK      tid=6   room=A  sem=-1   msgs=0    Charlie
+1737      14666.732  BUFFER_FULL        tid=6   room=A  sem=-1   msgs=0    Charlie
+1738      14666.732  RELEASED_LOCK      tid=6   room=A  sem=-1   msgs=0    Charlie
+1739      15077.484  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Nick
+1740      15077.487  BUFFER_RESUME      tid=5   room=A  sem=-1   msgs=0    Nick
+1741      15077.489  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Nick
+1742      15077.490  MSG_BROADCAST      tid=5   room=A  sem=42   msgs=35   Nick
+1743      15077.492  SEM_POST           tid=5   room=-  sem=43   msgs=35   Nick
+1744      15077.498  SEM_BLOCK          tid=5   room=-  sem=43   msgs=0    about to wait
+1745      15077.504  SEM_WAIT           tid=5   room=-  sem=42   msgs=0    ADMITTED
+1746      15077.505  ACQUIRED_LOCK      tid=5   room=B  sem=-1   msgs=0    Diana
+1747      15077.505  BUFFER_FULL        tid=5   room=B  sem=-1   msgs=0    Diana
+1748      15077.505  RELEASED_LOCK      tid=5   room=B  sem=-1   msgs=0    Diana
+1749      15143.576  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Olivia
+1750      15143.579  BUFFER_RESUME      tid=2   room=B  sem=-1   msgs=0    Olivia
+1751      15143.582  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Olivia
+1752      15143.583  MSG_BROADCAST      tid=2   room=B  sem=42   msgs=36   Olivia
+1753      15143.584  SEM_POST           tid=2   room=-  sem=43   msgs=36   Olivia
+1754      15143.590  SEM_BLOCK          tid=2   room=-  sem=43   msgs=0    about to wait
+1755      15143.594  SEM_WAIT           tid=2   room=-  sem=42   msgs=0    ADMITTED
+1756      15143.597  ACQUIRED_LOCK      tid=2   room=C  sem=-1   msgs=0    Eve
+1757      15143.597  BUFFER_FULL        tid=2   room=C  sem=-1   msgs=0    Eve
+1758      15143.597  RELEASED_LOCK      tid=2   room=C  sem=-1   msgs=0    Eve
+1759      15169.213  ACQUIRED_LOCK      tid=3   room=C  sem=-1   msgs=0    Sam
+1760      15169.214  BUFFER_RESUME      tid=3   room=C  sem=-1   msgs=0    Sam
+1761      15169.215  RELEASED_LOCK      tid=3   room=C  sem=-1   msgs=0    Sam
+1762      15169.216  MSG_BROADCAST      tid=3   room=C  sem=42   msgs=35   Sam
+1763      15169.216  SEM_POST           tid=3   room=-  sem=43   msgs=35   Sam
+1764      15169.222  SEM_BLOCK          tid=3   room=-  sem=43   msgs=0    about to wait
+1765      15169.223  SEM_WAIT           tid=3   room=-  sem=42   msgs=0    ADMITTED
+1766      15169.224  ACQUIRED_LOCK      tid=3   room=A  sem=-1   msgs=0    Frank
+1767      15169.224  BUFFER_FULL        tid=3   room=A  sem=-1   msgs=0    Frank
+1768      15169.224  RELEASED_LOCK      tid=3   room=A  sem=-1   msgs=0    Frank
+1769      15596.854  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Quinn
+1770      15596.858  BUFFER_RESUME      tid=4   room=A  sem=-1   msgs=0    Quinn
+1771      15596.860  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Quinn
+1772      15596.861  MSG_BROADCAST      tid=4   room=A  sem=42   msgs=35   Quinn
+1773      15596.862  SEM_POST           tid=4   room=-  sem=43   msgs=35   Quinn
+1774      15596.868  SEM_BLOCK          tid=4   room=-  sem=43   msgs=0    about to wait
+1775      15596.873  SEM_WAIT           tid=4   room=-  sem=42   msgs=0    ADMITTED
+1776      15596.875  ACQUIRED_LOCK      tid=4   room=B  sem=-1   msgs=0    Grace
+1777      15596.875  BUFFER_FULL        tid=4   room=B  sem=-1   msgs=0    Grace
+1778      15596.876  RELEASED_LOCK      tid=4   room=B  sem=-1   msgs=0    Grace
+1779      15641.714  ACQUIRED_LOCK      tid=1   room=B  sem=-1   msgs=0    Rose
+1780      15641.716  BUFFER_RESUME      tid=1   room=B  sem=-1   msgs=0    Rose
+1781      15641.718  RELEASED_LOCK      tid=1   room=B  sem=-1   msgs=0    Rose
+1782      15641.719  MSG_BROADCAST      tid=1   room=B  sem=42   msgs=35   Rose
+1783      15641.720  SEM_POST           tid=1   room=-  sem=43   msgs=35   Rose
+1784      15641.726  SEM_BLOCK          tid=1   room=-  sem=43   msgs=0    about to wait
+1785      15641.731  SEM_WAIT           tid=1   room=-  sem=42   msgs=0    ADMITTED
+1786      15641.733  ACQUIRED_LOCK      tid=1   room=C  sem=-1   msgs=0    Hank
+1787      15641.733  BUFFER_FULL        tid=1   room=C  sem=-1   msgs=0    Hank
+1788      15641.733  RELEASED_LOCK      tid=1   room=C  sem=-1   msgs=0    Hank
+1789      15676.757  ACQUIRED_LOCK      tid=0   room=C  sem=-1   msgs=0    Bob
+1790      15676.759  BUFFER_RESUME      tid=0   room=C  sem=-1   msgs=0    Bob
+1791      15676.763  RELEASED_LOCK      tid=0   room=C  sem=-1   msgs=0    Bob
+1792      15676.763  MSG_BROADCAST      tid=0   room=C  sem=42   msgs=37   Bob
+1793      15676.765  SEM_POST           tid=0   room=-  sem=43   msgs=37   Bob
+1794      15676.770  SEM_BLOCK          tid=0   room=-  sem=43   msgs=0    about to wait
+1795      15676.773  SEM_WAIT           tid=0   room=-  sem=42   msgs=0    ADMITTED
+1796      15676.778  PRIVATE_MSG        tid=0   room=-  sem=-1   msgs=0    T0->T7 Iris
+1797      15676.785  PRIVATE_MSG        tid=0   room=P  sem=42   msgs=38   Iris
+1798      15676.785  SEM_POST           tid=0   room=-  sem=43   msgs=38   Iris
+1799      15676.786  SEM_BLOCK          tid=0   room=-  sem=43   msgs=0    about to wait
+1800      15676.787  SEM_WAIT           tid=0   room=-  sem=42   msgs=0    ADMITTED
+1801      15676.788  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Jack
+1802      15676.788  BUFFER_FULL        tid=0   room=B  sem=-1   msgs=0    Jack
+1803      15676.788  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Jack
+1804      16093.631  ACQUIRED_LOCK      tid=7   room=A  sem=-1   msgs=0    Tina
+1805      16093.633  BUFFER_RESUME      tid=7   room=A  sem=-1   msgs=0    Tina
+1806      16093.636  RELEASED_LOCK      tid=7   room=A  sem=-1   msgs=0    Tina
+1807      16093.637  MSG_BROADCAST      tid=7   room=A  sem=42   msgs=35   Tina
+1808      16093.638  SEM_POST           tid=7   room=-  sem=43   msgs=35   Tina
+1809      16093.656  SEM_BLOCK          tid=7   room=-  sem=43   msgs=0    about to wait
+1810      16093.660  SEM_WAIT           tid=7   room=-  sem=42   msgs=0    ADMITTED
+1811      16093.662  ACQUIRED_LOCK      tid=7   room=C  sem=-1   msgs=0    Karen
+1812      16093.662  BUFFER_FULL        tid=7   room=C  sem=-1   msgs=0    Karen
+1813      16093.662  RELEASED_LOCK      tid=7   room=C  sem=-1   msgs=0    Karen
+1814      16141.604  ACQUIRED_LOCK      tid=5   room=B  sem=-1   msgs=0    Diana
+1815      16141.606  BUFFER_RESUME      tid=5   room=B  sem=-1   msgs=0    Diana
+1816      16141.607  RELEASED_LOCK      tid=5   room=B  sem=-1   msgs=0    Diana
+1817      16141.608  MSG_BROADCAST      tid=5   room=B  sem=42   msgs=36   Diana
+1818      16141.609  SEM_POST           tid=5   room=-  sem=43   msgs=36   Diana
+1819      16141.614  SEM_BLOCK          tid=5   room=-  sem=43   msgs=0    about to wait
+1820      16141.619  SEM_WAIT           tid=5   room=-  sem=42   msgs=0    ADMITTED
+1821      16141.620  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Leo
+1822      16141.620  BUFFER_FULL        tid=5   room=A  sem=-1   msgs=0    Leo
+1823      16141.620  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Leo
+1824      16182.756  ACQUIRED_LOCK      tid=2   room=C  sem=-1   msgs=0    Eve
+1825      16182.760  BUFFER_RESUME      tid=2   room=C  sem=-1   msgs=0    Eve
+1826      16182.764  RELEASED_LOCK      tid=2   room=C  sem=-1   msgs=0    Eve
+1827      16182.765  MSG_BROADCAST      tid=2   room=C  sem=42   msgs=37   Eve
+1828      16182.767  SEM_POST           tid=2   room=-  sem=43   msgs=37   Eve
+1829      16182.772  SEM_BLOCK          tid=2   room=-  sem=43   msgs=0    about to wait
+1830      16182.778  SEM_WAIT           tid=2   room=-  sem=42   msgs=0    ADMITTED
+1831      16182.780  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Mia
+1832      16182.780  BUFFER_FULL        tid=2   room=B  sem=-1   msgs=0    Mia
+1833      16182.780  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Mia
+1834      16593.655  ACQUIRED_LOCK      tid=6   room=A  sem=-1   msgs=0    Charlie
+1835      16593.658  BUFFER_RESUME      tid=6   room=A  sem=-1   msgs=0    Charlie
+1836      16593.659  RELEASED_LOCK      tid=6   room=A  sem=-1   msgs=0    Charlie
+1837      16593.660  MSG_BROADCAST      tid=6   room=A  sem=42   msgs=35   Charlie
+1838      16593.661  SEM_POST           tid=6   room=-  sem=43   msgs=35   Charlie
+1839      16593.667  SEM_BLOCK          tid=6   room=-  sem=43   msgs=0    about to wait
+1840      16593.673  SEM_WAIT           tid=6   room=-  sem=42   msgs=0    ADMITTED
+1841      16593.674  ACQUIRED_LOCK      tid=6   room=C  sem=-1   msgs=0    Nick
+1842      16593.674  BUFFER_FULL        tid=6   room=C  sem=-1   msgs=0    Nick
+1843      16593.675  RELEASED_LOCK      tid=6   room=C  sem=-1   msgs=0    Nick
+1844      16644.704  ACQUIRED_LOCK      tid=4   room=B  sem=-1   msgs=0    Grace
+1845      16644.706  BUFFER_RESUME      tid=4   room=B  sem=-1   msgs=0    Grace
+1846      16644.709  RELEASED_LOCK      tid=4   room=B  sem=-1   msgs=0    Grace
+1847      16644.710  MSG_BROADCAST      tid=4   room=B  sem=42   msgs=36   Grace
+1848      16644.712  SEM_POST           tid=4   room=-  sem=43   msgs=36   Grace
+1849      16644.718  SEM_BLOCK          tid=4   room=-  sem=43   msgs=0    about to wait
+1850      16644.722  SEM_WAIT           tid=4   room=-  sem=42   msgs=0    ADMITTED
+1851      16644.723  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Olivia
+1852      16644.723  BUFFER_FULL        tid=4   room=A  sem=-1   msgs=0    Olivia
+1853      16644.724  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Olivia
+1854      16687.392  ACQUIRED_LOCK      tid=1   room=C  sem=-1   msgs=0    Hank
+1855      16687.394  BUFFER_RESUME      tid=1   room=C  sem=-1   msgs=0    Hank
+1856      16687.396  RELEASED_LOCK      tid=1   room=C  sem=-1   msgs=0    Hank
+1857      16687.397  MSG_BROADCAST      tid=1   room=C  sem=42   msgs=36   Hank
+1858      16687.397  SEM_POST           tid=1   room=-  sem=43   msgs=36   Hank
+1859      16687.403  SEM_BLOCK          tid=1   room=-  sem=43   msgs=0    about to wait
+1860      16687.409  SEM_WAIT           tid=1   room=-  sem=42   msgs=0    ADMITTED
+1861      16687.411  ACQUIRED_LOCK      tid=1   room=B  sem=-1   msgs=0    Paul
+1862      16687.411  BUFFER_FULL        tid=1   room=B  sem=-1   msgs=0    Paul
+1863      16687.411  RELEASED_LOCK      tid=1   room=B  sem=-1   msgs=0    Paul
+1864      17100.914  ACQUIRED_LOCK      tid=3   room=A  sem=-1   msgs=0    Frank
+1865      17100.917  BUFFER_RESUME      tid=3   room=A  sem=-1   msgs=0    Frank
+1866      17100.919  RELEASED_LOCK      tid=3   room=A  sem=-1   msgs=0    Frank
+1867      17100.920  MSG_BROADCAST      tid=3   room=A  sem=42   msgs=36   Frank
+1868      17100.921  SEM_POST           tid=3   room=-  sem=43   msgs=36   Frank
+1869      17100.926  SEM_BLOCK          tid=3   room=-  sem=43   msgs=0    about to wait
+1870      17100.931  SEM_WAIT           tid=3   room=-  sem=42   msgs=0    ADMITTED
+1871      17100.934  PRIVATE_MSG        tid=6   room=-  sem=-1   msgs=0    T6->T3 Quinn
+1872      17100.941  PRIVATE_MSG        tid=3   room=P  sem=42   msgs=37   Quinn
+1873      17100.941  SEM_POST           tid=3   room=-  sem=43   msgs=37   Quinn
+1874      17100.942  SEM_BLOCK          tid=3   room=-  sem=43   msgs=0    about to wait
+1875      17100.943  SEM_WAIT           tid=3   room=-  sem=42   msgs=0    ADMITTED
+1876      17100.944  ACQUIRED_LOCK      tid=3   room=A  sem=-1   msgs=0    Rose
+1877      17100.944  BUFFER_FULL        tid=3   room=A  sem=-1   msgs=0    Rose
+1878      17100.944  RELEASED_LOCK      tid=3   room=A  sem=-1   msgs=0    Rose
+1879      17151.278  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Jack
+1880      17151.281  BUFFER_RESUME      tid=0   room=B  sem=-1   msgs=0    Jack
+1881      17151.282  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Jack
+1882      17151.283  MSG_BROADCAST      tid=0   room=B  sem=42   msgs=39   Jack
+1883      17151.284  SEM_POST           tid=0   room=-  sem=43   msgs=39   Jack
+1884      17151.289  SEM_BLOCK          tid=0   room=-  sem=43   msgs=0    about to wait
+1885      17151.293  SEM_WAIT           tid=0   room=-  sem=42   msgs=0    ADMITTED
+1886      17151.294  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Sam
+1887      17151.294  BUFFER_FULL        tid=0   room=B  sem=-1   msgs=0    Sam
+1888      17151.294  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Sam
+1889      17188.597  ACQUIRED_LOCK      tid=7   room=C  sem=-1   msgs=0    Karen
+1890      17188.598  BUFFER_RESUME      tid=7   room=C  sem=-1   msgs=0    Karen
+1891      17188.601  RELEASED_LOCK      tid=7   room=C  sem=-1   msgs=0    Karen
+1892      17188.602  MSG_BROADCAST      tid=7   room=C  sem=42   msgs=36   Karen
+1893      17188.603  SEM_POST           tid=7   room=-  sem=43   msgs=36   Karen
+1894      17189.717  SEM_BLOCK          tid=7   room=-  sem=43   msgs=0    about to wait
+1895      17189.721  SEM_WAIT           tid=7   room=-  sem=42   msgs=0    ADMITTED
+1896      17189.722  ACQUIRED_LOCK      tid=7   room=C  sem=-1   msgs=0    Tina
+1897      17189.722  BUFFER_FULL        tid=7   room=C  sem=-1   msgs=0    Tina
+1898      17189.723  RELEASED_LOCK      tid=7   room=C  sem=-1   msgs=0    Tina
+1899      17603.688  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Leo
+1900      17603.691  BUFFER_RESUME      tid=5   room=A  sem=-1   msgs=0    Leo
+1901      17603.694  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Leo
+1902      17603.695  MSG_BROADCAST      tid=5   room=A  sem=42   msgs=37   Leo
+1903      17603.696  SEM_POST           tid=5   room=-  sem=43   msgs=37   Leo
+1904      17603.702  SEM_BLOCK          tid=5   room=-  sem=43   msgs=0    about to wait
+1905      17603.707  SEM_WAIT           tid=5   room=-  sem=42   msgs=0    ADMITTED
+1906      17603.708  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Alice
+1907      17603.708  BUFFER_FULL        tid=5   room=A  sem=-1   msgs=0    Alice
+1908      17603.709  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Alice
+1909      17654.149  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Mia
+1910      17654.150  BUFFER_RESUME      tid=2   room=B  sem=-1   msgs=0    Mia
+1911      17654.151  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Mia
+1912      17654.151  MSG_BROADCAST      tid=2   room=B  sem=42   msgs=38   Mia
+1913      17654.153  SEM_POST           tid=2   room=-  sem=43   msgs=38   Mia
+1914      17654.158  SEM_BLOCK          tid=2   room=-  sem=43   msgs=0    about to wait
+1915      17654.159  SEM_WAIT           tid=2   room=-  sem=42   msgs=0    ADMITTED
+1916      17654.160  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Bob
+1917      17654.160  BUFFER_FULL        tid=2   room=B  sem=-1   msgs=0    Bob
+1918      17654.160  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Bob
+1919      17689.443  ACQUIRED_LOCK      tid=6   room=C  sem=-1   msgs=0    Nick
+1920      17689.445  BUFFER_RESUME      tid=6   room=C  sem=-1   msgs=0    Nick
+1921      17689.446  RELEASED_LOCK      tid=6   room=C  sem=-1   msgs=0    Nick
+1922      17689.447  MSG_BROADCAST      tid=6   room=C  sem=42   msgs=36   Nick
+1923      17689.448  SEM_POST           tid=6   room=-  sem=43   msgs=36   Nick
+1924      17689.453  SEM_BLOCK          tid=6   room=-  sem=43   msgs=0    about to wait
+1925      17689.456  SEM_WAIT           tid=6   room=-  sem=42   msgs=0    ADMITTED
+1926      17689.456  ACQUIRED_LOCK      tid=6   room=C  sem=-1   msgs=0    Charlie
+1927      17689.456  BUFFER_FULL        tid=6   room=C  sem=-1   msgs=0    Charlie
+1928      17689.457  RELEASED_LOCK      tid=6   room=C  sem=-1   msgs=0    Charlie
+1929      18105.450  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Olivia
+1930      18105.452  BUFFER_RESUME      tid=4   room=A  sem=-1   msgs=0    Olivia
+1931      18105.454  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Olivia
+1932      18105.454  MSG_BROADCAST      tid=4   room=A  sem=42   msgs=37   Olivia
+1933      18105.455  SEM_POST           tid=4   room=-  sem=43   msgs=37   Olivia
+1934      18105.461  SEM_BLOCK          tid=4   room=-  sem=43   msgs=0    about to wait
+1935      18105.464  SEM_WAIT           tid=4   room=-  sem=42   msgs=0    ADMITTED
+1936      18105.464  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Diana
+1937      18105.465  BUFFER_FULL        tid=4   room=A  sem=-1   msgs=0    Diana
+1938      18105.465  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Diana
+1939      18154.704  ACQUIRED_LOCK      tid=1   room=B  sem=-1   msgs=0    Paul
+1940      18154.705  BUFFER_RESUME      tid=1   room=B  sem=-1   msgs=0    Paul
+1941      18154.706  RELEASED_LOCK      tid=1   room=B  sem=-1   msgs=0    Paul
+1942      18154.707  MSG_BROADCAST      tid=1   room=B  sem=42   msgs=37   Paul
+1943      18154.708  SEM_POST           tid=1   room=-  sem=43   msgs=37   Paul
+1944      18154.713  SEM_BLOCK          tid=1   room=-  sem=43   msgs=0    about to wait
+1945      18154.714  SEM_WAIT           tid=1   room=-  sem=42   msgs=0    ADMITTED
+1946      18154.716  PRIVATE_MSG        tid=3   room=-  sem=-1   msgs=0    T3->T7 Eve
+1947      18154.720  PRIVATE_MSG        tid=1   room=P  sem=42   msgs=38   Eve
+1948      18154.720  SEM_POST           tid=1   room=-  sem=43   msgs=38   Eve
+1949      18154.721  SEM_BLOCK          tid=1   room=-  sem=43   msgs=0    about to wait
+1950      18154.721  SEM_WAIT           tid=1   room=-  sem=42   msgs=0    ADMITTED
+1951      18154.722  ACQUIRED_LOCK      tid=1   room=C  sem=-1   msgs=0    Frank
+1952      18154.722  BUFFER_FULL        tid=1   room=C  sem=-1   msgs=0    Frank
+1953      18154.723  RELEASED_LOCK      tid=1   room=C  sem=-1   msgs=0    Frank
+1954      18208.587  ACQUIRED_LOCK      tid=7   room=C  sem=-1   msgs=0    Tina
+1955      18208.590  BUFFER_RESUME      tid=7   room=C  sem=-1   msgs=0    Tina
+1956      18208.592  RELEASED_LOCK      tid=7   room=C  sem=-1   msgs=0    Tina
+1957      18208.593  MSG_BROADCAST      tid=7   room=C  sem=42   msgs=37   Tina
+1958      18208.594  SEM_POST           tid=7   room=-  sem=43   msgs=37   Tina
+1959      18209.148  SEM_BLOCK          tid=7   room=-  sem=43   msgs=0    about to wait
+1960      18209.154  SEM_WAIT           tid=7   room=-  sem=42   msgs=0    ADMITTED
+1961      18209.156  ACQUIRED_LOCK      tid=7   room=A  sem=-1   msgs=0    Grace
+1962      18209.156  BUFFER_FULL        tid=7   room=A  sem=-1   msgs=0    Grace
+1963      18209.156  RELEASED_LOCK      tid=7   room=A  sem=-1   msgs=0    Grace
+1964      18616.787  ACQUIRED_LOCK      tid=3   room=A  sem=-1   msgs=0    Rose
+1965      18616.789  BUFFER_RESUME      tid=3   room=A  sem=-1   msgs=0    Rose
+1966      18616.791  RELEASED_LOCK      tid=3   room=A  sem=-1   msgs=0    Rose
+1967      18616.792  MSG_BROADCAST      tid=3   room=A  sem=42   msgs=38   Rose
+1968      18616.793  SEM_POST           tid=3   room=-  sem=43   msgs=38   Rose
+1969      18616.799  SEM_BLOCK          tid=3   room=-  sem=43   msgs=0    about to wait
+1970      18616.803  SEM_WAIT           tid=3   room=-  sem=42   msgs=0    ADMITTED
+1971      18616.804  ACQUIRED_LOCK      tid=3   room=B  sem=-1   msgs=0    Hank
+1972      18616.804  BUFFER_FULL        tid=3   room=B  sem=-1   msgs=0    Hank
+1973      18616.805  RELEASED_LOCK      tid=3   room=B  sem=-1   msgs=0    Hank
+1974      18659.743  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Sam
+1975      18659.745  BUFFER_RESUME      tid=0   room=B  sem=-1   msgs=0    Sam
+1976      18659.747  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Sam
+1977      18659.747  MSG_BROADCAST      tid=0   room=B  sem=42   msgs=40   Sam
+1978      18659.748  SEM_POST           tid=0   room=-  sem=43   msgs=40   Sam
+1979      18659.754  SEM_BLOCK          tid=0   room=-  sem=43   msgs=0    about to wait
+1980      18659.759  SEM_WAIT           tid=0   room=-  sem=42   msgs=0    ADMITTED
+1981      18659.761  ACQUIRED_LOCK      tid=0   room=C  sem=-1   msgs=0    Iris
+1982      18659.761  BUFFER_FULL        tid=0   room=C  sem=-1   msgs=0    Iris
+1983      18659.761  RELEASED_LOCK      tid=0   room=C  sem=-1   msgs=0    Iris
+1984      18708.118  ACQUIRED_LOCK      tid=6   room=C  sem=-1   msgs=0    Charlie
+1985      18708.120  BUFFER_RESUME      tid=6   room=C  sem=-1   msgs=0    Charlie
+1986      18708.125  RELEASED_LOCK      tid=6   room=C  sem=-1   msgs=0    Charlie
+1987      18708.126  MSG_BROADCAST      tid=6   room=C  sem=42   msgs=37   Charlie
+1988      18708.128  SEM_POST           tid=6   room=-  sem=43   msgs=37   Charlie
+1989      18708.134  SEM_BLOCK          tid=6   room=-  sem=43   msgs=0    about to wait
+1990      18708.136  SEM_WAIT           tid=6   room=-  sem=42   msgs=0    ADMITTED
+1991      18708.138  ACQUIRED_LOCK      tid=6   room=A  sem=-1   msgs=0    Jack
+1992      18708.138  BUFFER_FULL        tid=6   room=A  sem=-1   msgs=0    Jack
+1993      18708.138  RELEASED_LOCK      tid=6   room=A  sem=-1   msgs=0    Jack
+1994      19116.751  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Alice
+1995      19116.751  BUFFER_RESUME      tid=5   room=A  sem=-1   msgs=0    Alice
+1996      19116.753  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Alice
+1997      19116.754  MSG_BROADCAST      tid=5   room=A  sem=42   msgs=38   Alice
+1998      19116.754  SEM_POST           tid=5   room=-  sem=43   msgs=38   Alice
+1999      19116.759  SEM_BLOCK          tid=5   room=-  sem=43   msgs=0    about to wait
+2000      19116.759  SEM_WAIT           tid=5   room=-  sem=42   msgs=0    ADMITTED
+2001      19116.760  ACQUIRED_LOCK      tid=5   room=B  sem=-1   msgs=0    Karen
+2002      19116.760  BUFFER_FULL        tid=5   room=B  sem=-1   msgs=0    Karen
+2003      19116.761  RELEASED_LOCK      tid=5   room=B  sem=-1   msgs=0    Karen
+2004      19174.521  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Bob
+2005      19174.524  BUFFER_RESUME      tid=2   room=B  sem=-1   msgs=0    Bob
+2006      19174.528  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Bob
+2007      19174.529  MSG_BROADCAST      tid=2   room=B  sem=42   msgs=39   Bob
+2008      19174.530  SEM_POST           tid=2   room=-  sem=43   msgs=39   Bob
+2009      19174.537  SEM_BLOCK          tid=2   room=-  sem=43   msgs=0    about to wait
+2010      19174.544  SEM_WAIT           tid=2   room=-  sem=42   msgs=0    ADMITTED
+2011      19174.546  ACQUIRED_LOCK      tid=2   room=C  sem=-1   msgs=0    Leo
+2012      19174.546  BUFFER_FULL        tid=2   room=C  sem=-1   msgs=0    Leo
+2013      19174.546  RELEASED_LOCK      tid=2   room=C  sem=-1   msgs=0    Leo
+2014      19209.386  ACQUIRED_LOCK      tid=1   room=C  sem=-1   msgs=0    Frank
+2015      19209.389  BUFFER_RESUME      tid=1   room=C  sem=-1   msgs=0    Frank
+2016      19209.393  RELEASED_LOCK      tid=1   room=C  sem=-1   msgs=0    Frank
+2017      19209.394  MSG_BROADCAST      tid=1   room=C  sem=42   msgs=39   Frank
+2018      19209.395  SEM_POST           tid=1   room=-  sem=43   msgs=39   Frank
+2019      19209.403  SEM_BLOCK          tid=1   room=-  sem=43   msgs=0    about to wait
+2020      19209.407  SEM_WAIT           tid=1   room=-  sem=42   msgs=0    ADMITTED
+2021      19209.411  PRIVATE_MSG        tid=6   room=-  sem=-1   msgs=0    T6->T2 Mia
+2022      19209.421  PRIVATE_MSG        tid=1   room=P  sem=42   msgs=40   Mia
+2023      19209.422  SEM_POST           tid=1   room=-  sem=43   msgs=40   Mia
+2024      19209.424  SEM_BLOCK          tid=1   room=-  sem=43   msgs=0    about to wait
+2025      19209.424  SEM_WAIT           tid=1   room=-  sem=42   msgs=0    ADMITTED
+2026      19209.427  ACQUIRED_LOCK      tid=1   room=B  sem=-1   msgs=0    Nick
+2027      19209.427  BUFFER_FULL        tid=1   room=B  sem=-1   msgs=0    Nick
+2028      19209.427  RELEASED_LOCK      tid=1   room=B  sem=-1   msgs=0    Nick
+2029      19623.213  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Diana
+2030      19623.216  BUFFER_RESUME      tid=4   room=A  sem=-1   msgs=0    Diana
+2031      19623.219  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Diana
+2032      19623.220  MSG_BROADCAST      tid=4   room=A  sem=42   msgs=38   Diana
+2033      19623.221  SEM_POST           tid=4   room=-  sem=43   msgs=38   Diana
+2034      19623.227  SEM_BLOCK          tid=4   room=-  sem=43   msgs=0    about to wait
+2035      19623.233  SEM_WAIT           tid=4   room=-  sem=42   msgs=0    ADMITTED
+2036      19623.235  ACQUIRED_LOCK      tid=4   room=C  sem=-1   msgs=0    Olivia
+2037      19623.235  BUFFER_FULL        tid=4   room=C  sem=-1   msgs=0    Olivia
+2038      19623.235  RELEASED_LOCK      tid=4   room=C  sem=-1   msgs=0    Olivia
+2039      19663.456  ACQUIRED_LOCK      tid=3   room=B  sem=-1   msgs=0    Hank
+2040      19663.459  BUFFER_RESUME      tid=3   room=B  sem=-1   msgs=0    Hank
+2041      19663.461  RELEASED_LOCK      tid=3   room=B  sem=-1   msgs=0    Hank
+2042      19663.462  MSG_BROADCAST      tid=3   room=B  sem=42   msgs=39   Hank
+2043      19663.463  SEM_POST           tid=3   room=-  sem=43   msgs=39   Hank
+2044      19663.469  SEM_BLOCK          tid=3   room=-  sem=43   msgs=0    about to wait
+2045      19663.475  SEM_WAIT           tid=3   room=-  sem=42   msgs=0    ADMITTED
+2046      19663.477  ACQUIRED_LOCK      tid=3   room=A  sem=-1   msgs=0    Paul
+2047      19663.477  BUFFER_FULL        tid=3   room=A  sem=-1   msgs=0    Paul
+2048      19663.477  RELEASED_LOCK      tid=3   room=A  sem=-1   msgs=0    Paul
+2049      19711.589  ACQUIRED_LOCK      tid=0   room=C  sem=-1   msgs=0    Iris
+2050      19711.592  BUFFER_RESUME      tid=0   room=C  sem=-1   msgs=0    Iris
+2051      19711.594  RELEASED_LOCK      tid=0   room=C  sem=-1   msgs=0    Iris
+2052      19711.594  MSG_BROADCAST      tid=0   room=C  sem=42   msgs=41   Iris
+2053      19711.595  SEM_POST           tid=0   room=-  sem=43   msgs=41   Iris
+2054      19711.600  SEM_BLOCK          tid=0   room=-  sem=43   msgs=0    about to wait
+2055      19711.604  SEM_WAIT           tid=0   room=-  sem=42   msgs=0    ADMITTED
+2056      19711.606  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Quinn
+2057      19711.606  BUFFER_FULL        tid=0   room=B  sem=-1   msgs=0    Quinn
+2058      19711.606  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Quinn
+2059      20121.308  ACQUIRED_LOCK      tid=7   room=A  sem=-1   msgs=0    Grace
+2060      20121.309  BUFFER_RESUME      tid=7   room=A  sem=-1   msgs=0    Grace
+2061      20121.311  RELEASED_LOCK      tid=7   room=A  sem=-1   msgs=0    Grace
+2062      20121.311  MSG_BROADCAST      tid=7   room=A  sem=42   msgs=38   Grace
+2063      20121.312  SEM_POST           tid=7   room=-  sem=43   msgs=38   Grace
+2064      20121.316  SEM_BLOCK          tid=7   room=-  sem=43   msgs=0    about to wait
+2065      20121.318  SEM_WAIT           tid=7   room=-  sem=42   msgs=0    ADMITTED
+2066      20121.319  ACQUIRED_LOCK      tid=7   room=C  sem=-1   msgs=0    Rose
+2067      20121.319  BUFFER_FULL        tid=7   room=C  sem=-1   msgs=0    Rose
+2068      20121.319  RELEASED_LOCK      tid=7   room=C  sem=-1   msgs=0    Rose
+2069      20172.110  ACQUIRED_LOCK      tid=5   room=B  sem=-1   msgs=0    Karen
+2070      20172.113  BUFFER_RESUME      tid=5   room=B  sem=-1   msgs=0    Karen
+2071      20172.118  RELEASED_LOCK      tid=5   room=B  sem=-1   msgs=0    Karen
+2072      20172.119  MSG_BROADCAST      tid=5   room=B  sem=42   msgs=39   Karen
+2073      20172.120  SEM_POST           tid=5   room=-  sem=43   msgs=39   Karen
+2074      20174.511  SEM_BLOCK          tid=5   room=-  sem=43   msgs=0    about to wait
+2075      20174.517  SEM_WAIT           tid=5   room=-  sem=42   msgs=0    ADMITTED
+2076      20174.520  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Sam
+2077      20174.520  BUFFER_FULL        tid=5   room=A  sem=-1   msgs=0    Sam
+2078      20174.520  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Sam
+2079      20211.946  ACQUIRED_LOCK      tid=2   room=C  sem=-1   msgs=0    Leo
+2080      20211.949  BUFFER_RESUME      tid=2   room=C  sem=-1   msgs=0    Leo
+2081      20211.953  RELEASED_LOCK      tid=2   room=C  sem=-1   msgs=0    Leo
+2082      20211.953  MSG_BROADCAST      tid=2   room=C  sem=42   msgs=40   Leo
+2083      20211.955  SEM_POST           tid=2   room=-  sem=43   msgs=40   Leo
+2084      20211.960  SEM_BLOCK          tid=2   room=-  sem=43   msgs=0    about to wait
+2085      20211.966  SEM_WAIT           tid=2   room=-  sem=42   msgs=0    ADMITTED
+2086      20211.968  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Tina
+2087      20211.968  BUFFER_FULL        tid=2   room=B  sem=-1   msgs=0    Tina
+2088      20211.968  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Tina
+2089      20625.592  ACQUIRED_LOCK      tid=6   room=A  sem=-1   msgs=0    Jack
+2090      20625.593  BUFFER_RESUME      tid=6   room=A  sem=-1   msgs=0    Jack
+2091      20625.594  RELEASED_LOCK      tid=6   room=A  sem=-1   msgs=0    Jack
+2092      20625.594  MSG_BROADCAST      tid=6   room=A  sem=42   msgs=38   Jack
+2093      20625.595  SEM_POST           tid=6   room=-  sem=43   msgs=38   Jack
+2094      20625.599  SEM_BLOCK          tid=6   room=-  sem=43   msgs=0    about to wait
+2095      20625.600  SEM_WAIT           tid=6   room=-  sem=42   msgs=0    ADMITTED
+2096      20625.602  PRIVATE_MSG        tid=2   room=-  sem=-1   msgs=0    T2->T5 Alice
+2097      20625.605  PRIVATE_MSG        tid=6   room=P  sem=42   msgs=39   Alice
+2098      20625.605  SEM_POST           tid=6   room=-  sem=43   msgs=39   Alice
+2099      20625.606  SEM_BLOCK          tid=6   room=-  sem=43   msgs=0    about to wait
+2100      20625.607  SEM_WAIT           tid=6   room=-  sem=42   msgs=0    ADMITTED
+2101      20625.607  ACQUIRED_LOCK      tid=6   room=A  sem=-1   msgs=0    Bob
+2102      20625.607  BUFFER_FULL        tid=6   room=A  sem=-1   msgs=0    Bob
+2103      20625.607  RELEASED_LOCK      tid=6   room=A  sem=-1   msgs=0    Bob
+2104      20683.502  ACQUIRED_LOCK      tid=1   room=B  sem=-1   msgs=0    Nick
+2105      20683.505  BUFFER_RESUME      tid=1   room=B  sem=-1   msgs=0    Nick
+2106      20683.508  RELEASED_LOCK      tid=1   room=B  sem=-1   msgs=0    Nick
+2107      20683.510  MSG_BROADCAST      tid=1   room=B  sem=42   msgs=41   Nick
+2108      20683.511  SEM_POST           tid=1   room=-  sem=43   msgs=41   Nick
+2109      20683.517  SEM_BLOCK          tid=1   room=-  sem=43   msgs=0    about to wait
+2110      20683.524  SEM_WAIT           tid=1   room=-  sem=42   msgs=0    ADMITTED
+2111      20683.525  ACQUIRED_LOCK      tid=1   room=B  sem=-1   msgs=0    Charlie
+2112      20683.525  BUFFER_FULL        tid=1   room=B  sem=-1   msgs=0    Charlie
+2113      20683.525  RELEASED_LOCK      tid=1   room=B  sem=-1   msgs=0    Charlie
+2114      20725.403  ACQUIRED_LOCK      tid=4   room=C  sem=-1   msgs=0    Olivia
+2115      20725.407  BUFFER_RESUME      tid=4   room=C  sem=-1   msgs=0    Olivia
+2116      20725.409  RELEASED_LOCK      tid=4   room=C  sem=-1   msgs=0    Olivia
+2117      20725.410  MSG_BROADCAST      tid=4   room=C  sem=42   msgs=39   Olivia
+2118      20725.411  SEM_POST           tid=4   room=-  sem=43   msgs=39   Olivia
+2119      20725.417  SEM_BLOCK          tid=4   room=-  sem=43   msgs=0    about to wait
+2120      20725.423  SEM_WAIT           tid=4   room=-  sem=42   msgs=0    ADMITTED
+2121      20725.425  ACQUIRED_LOCK      tid=4   room=C  sem=-1   msgs=0    Diana
+2122      20725.425  BUFFER_FULL        tid=4   room=C  sem=-1   msgs=0    Diana
+2123      20725.425  RELEASED_LOCK      tid=4   room=C  sem=-1   msgs=0    Diana
+2124      21132.118  ACQUIRED_LOCK      tid=3   room=A  sem=-1   msgs=0    Paul
+2125      21132.120  BUFFER_RESUME      tid=3   room=A  sem=-1   msgs=0    Paul
+2126      21132.122  RELEASED_LOCK      tid=3   room=A  sem=-1   msgs=0    Paul
+2127      21132.123  MSG_BROADCAST      tid=3   room=A  sem=42   msgs=40   Paul
+2128      21132.124  SEM_POST           tid=3   room=-  sem=43   msgs=40   Paul
+2129      21132.129  SEM_BLOCK          tid=3   room=-  sem=43   msgs=0    about to wait
+2130      21132.135  SEM_WAIT           tid=3   room=-  sem=42   msgs=0    ADMITTED
+2131      21132.136  ACQUIRED_LOCK      tid=3   room=A  sem=-1   msgs=0    Eve
+2132      21132.136  BUFFER_FULL        tid=3   room=A  sem=-1   msgs=0    Eve
+2133      21132.136  RELEASED_LOCK      tid=3   room=A  sem=-1   msgs=0    Eve
+2134      21173.904  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Quinn
+2135      21173.905  BUFFER_RESUME      tid=0   room=B  sem=-1   msgs=0    Quinn
+2136      21173.908  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Quinn
+2137      21173.908  MSG_BROADCAST      tid=0   room=B  sem=42   msgs=42   Quinn
+2138      21173.910  SEM_POST           tid=0   room=-  sem=43   msgs=42   Quinn
+2139      21173.918  SEM_BLOCK          tid=0   room=-  sem=43   msgs=0    about to wait
+2140      21173.920  SEM_WAIT           tid=0   room=-  sem=42   msgs=0    ADMITTED
+2141      21173.921  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Frank
+2142      21173.921  BUFFER_FULL        tid=0   room=B  sem=-1   msgs=0    Frank
+2143      21173.921  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Frank
+2144      21227.181  ACQUIRED_LOCK      tid=7   room=C  sem=-1   msgs=0    Rose
+2145      21227.184  BUFFER_RESUME      tid=7   room=C  sem=-1   msgs=0    Rose
+2146      21227.188  RELEASED_LOCK      tid=7   room=C  sem=-1   msgs=0    Rose
+2147      21227.189  MSG_BROADCAST      tid=7   room=C  sem=42   msgs=39   Rose
+2148      21227.190  SEM_POST           tid=7   room=-  sem=43   msgs=39   Rose
+2149      21227.196  SEM_BLOCK          tid=7   room=-  sem=43   msgs=0    about to wait
+2150      21227.201  SEM_WAIT           tid=7   room=-  sem=42   msgs=0    ADMITTED
+2151      21227.202  ACQUIRED_LOCK      tid=7   room=C  sem=-1   msgs=0    Grace
+2152      21227.202  BUFFER_FULL        tid=7   room=C  sem=-1   msgs=0    Grace
+2153      21227.202  RELEASED_LOCK      tid=7   room=C  sem=-1   msgs=0    Grace
+2154      21632.603  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Sam
+2155      21632.605  BUFFER_RESUME      tid=5   room=A  sem=-1   msgs=0    Sam
+2156      21632.606  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Sam
+2157      21632.607  MSG_BROADCAST      tid=5   room=A  sem=42   msgs=40   Sam
+2158      21632.608  SEM_POST           tid=5   room=-  sem=43   msgs=40   Sam
+2159      21632.613  SEM_BLOCK          tid=5   room=-  sem=43   msgs=0    about to wait
+2160      21632.617  SEM_WAIT           tid=5   room=-  sem=42   msgs=0    ADMITTED
+2161      21632.618  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Hank
+2162      21632.618  BUFFER_FULL        tid=5   room=A  sem=-1   msgs=0    Hank
+2163      21632.618  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Hank
+2164      21674.944  ACQUIRED_LOCK      tid=2   room=B  sem=-1   msgs=0    Tina
+2165      21674.945  BUFFER_RESUME      tid=2   room=B  sem=-1   msgs=0    Tina
+2166      21674.948  RELEASED_LOCK      tid=2   room=B  sem=-1   msgs=0    Tina
+2167      21674.948  MSG_BROADCAST      tid=2   room=B  sem=42   msgs=41   Tina
+2168      21674.949  SEM_POST           tid=2   room=-  sem=43   msgs=41   Tina
+2169      21674.953  SEM_BLOCK          tid=2   room=-  sem=43   msgs=0    about to wait
+2170      21674.955  SEM_WAIT           tid=2   room=-  sem=42   msgs=0    ADMITTED
+2171      21674.957  PRIVATE_MSG        tid=7   room=-  sem=-1   msgs=0    T7->T6 Iris
+2172      21674.961  PRIVATE_MSG        tid=2   room=P  sem=42   msgs=42   Iris
+2173      21674.961  SEM_POST           tid=2   room=-  sem=43   msgs=42   Iris
+2174      21734.379  ACQUIRED_LOCK      tid=4   room=C  sem=-1   msgs=0    Diana
+2175      21734.383  BUFFER_RESUME      tid=4   room=C  sem=-1   msgs=0    Diana
+2176      21734.385  RELEASED_LOCK      tid=4   room=C  sem=-1   msgs=0    Diana
+2177      21734.386  MSG_BROADCAST      tid=4   room=C  sem=42   msgs=40   Diana
+2178      21734.387  SEM_POST           tid=4   room=-  sem=44   msgs=40   Diana
+2179      22133.689  ACQUIRED_LOCK      tid=6   room=A  sem=-1   msgs=0    Bob
+2180      22133.692  BUFFER_RESUME      tid=6   room=A  sem=-1   msgs=0    Bob
+2181      22133.693  RELEASED_LOCK      tid=6   room=A  sem=-1   msgs=0    Bob
+2182      22133.694  MSG_BROADCAST      tid=6   room=A  sem=42   msgs=40   Bob
+2183      22133.695  SEM_POST           tid=6   room=-  sem=45   msgs=40   Bob
+2184      22133.895  SEM_BLOCK          tid=2   room=-  sem=45   msgs=0    about to wait
+2185      22133.897  SEM_WAIT           tid=2   room=-  sem=44   msgs=0    ADMITTED
+2186      22133.897  ACQUIRED_LOCK      tid=2   room=C  sem=-1   msgs=0    Jack
+2187      22133.897  BUFFER_FULL        tid=2   room=C  sem=-1   msgs=0    Jack
+2188      22133.897  RELEASED_LOCK      tid=2   room=C  sem=-1   msgs=0    Jack
+2189      22176.112  ACQUIRED_LOCK      tid=1   room=B  sem=-1   msgs=0    Charlie
+2190      22176.114  BUFFER_RESUME      tid=1   room=B  sem=-1   msgs=0    Charlie
+2191      22176.115  RELEASED_LOCK      tid=1   room=B  sem=-1   msgs=0    Charlie
+2192      22176.116  MSG_BROADCAST      tid=1   room=B  sem=42   msgs=42   Charlie
+2193      22176.117  SEM_POST           tid=1   room=-  sem=45   msgs=42   Charlie
+2194      22241.814  ACQUIRED_LOCK      tid=7   room=C  sem=-1   msgs=0    Grace
+2195      22241.817  BUFFER_RESUME      tid=7   room=C  sem=-1   msgs=0    Grace
+2196      22241.820  RELEASED_LOCK      tid=7   room=C  sem=-1   msgs=0    Grace
+2197      22241.820  MSG_BROADCAST      tid=7   room=C  sem=42   msgs=40   Grace
+2198      22241.821  SEM_POST           tid=7   room=-  sem=46   msgs=40   Grace
+2199      22636.721  ACQUIRED_LOCK      tid=3   room=A  sem=-1   msgs=0    Eve
+2200      22636.723  BUFFER_RESUME      tid=3   room=A  sem=-1   msgs=0    Eve
+2201      22636.724  RELEASED_LOCK      tid=3   room=A  sem=-1   msgs=0    Eve
+2202      22636.725  MSG_BROADCAST      tid=3   room=A  sem=42   msgs=41   Eve
+2203      22636.726  SEM_POST           tid=3   room=-  sem=47   msgs=41   Eve
+2204      22679.040  ACQUIRED_LOCK      tid=0   room=B  sem=-1   msgs=0    Frank
+2205      22679.043  BUFFER_RESUME      tid=0   room=B  sem=-1   msgs=0    Frank
+2206      22679.045  RELEASED_LOCK      tid=0   room=B  sem=-1   msgs=0    Frank
+2207      22679.045  MSG_BROADCAST      tid=0   room=B  sem=42   msgs=43   Frank
+2208      22679.047  SEM_POST           tid=0   room=-  sem=48   msgs=43   Frank
+2209      22743.645  ACQUIRED_LOCK      tid=2   room=C  sem=-1   msgs=0    Jack
+2210      22743.648  BUFFER_RESUME      tid=2   room=C  sem=-1   msgs=0    Jack
+2211      22743.650  RELEASED_LOCK      tid=2   room=C  sem=-1   msgs=0    Jack
+2212      22743.651  MSG_BROADCAST      tid=2   room=C  sem=44   msgs=43   Jack
+2213      22743.652  SEM_POST           tid=2   room=-  sem=49   msgs=43   Jack
+2214      23135.042  SEM_BLOCK          tid=4   room=-  sem=49   msgs=0    about to wait
+2215      23135.045  SEM_WAIT           tid=4   room=-  sem=48   msgs=0    ADMITTED
+2216      23135.046  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Karen
+2217      23135.046  BUFFER_FULL        tid=4   room=A  sem=-1   msgs=0    Karen
+2218      23135.046  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Karen
+2219      23150.644  ACQUIRED_LOCK      tid=5   room=A  sem=-1   msgs=0    Hank
+2220      23150.647  BUFFER_RESUME      tid=5   room=A  sem=-1   msgs=0    Hank
+2221      23150.648  RELEASED_LOCK      tid=5   room=A  sem=-1   msgs=0    Hank
+2222      23150.649  MSG_BROADCAST      tid=5   room=A  sem=42   msgs=41   Hank
+2223      23150.650  SEM_POST           tid=5   room=-  sem=49   msgs=41   Hank
+2224      23649.898  ACQUIRED_LOCK      tid=4   room=A  sem=-1   msgs=0    Karen
+2225      23649.901  BUFFER_RESUME      tid=4   room=A  sem=-1   msgs=0    Karen
+2226      23649.903  RELEASED_LOCK      tid=4   room=A  sem=-1   msgs=0    Karen
+2227      23649.904  MSG_BROADCAST      tid=4   room=A  sem=48   msgs=41   Karen
+2228      23649.905  SEM_POST           tid=4   room=-  sem=50   msgs=41   Karen
+2229      24140.415  SEM_BLOCK          tid=6   room=-  sem=50   msgs=0    about to wait
+2230      24140.419  SEM_WAIT           tid=6   room=-  sem=49   msgs=0    ADMITTED
+2231      24140.421  ACQUIRED_LOCK      tid=6   room=B  sem=-1   msgs=0    Leo
+2232      24140.422  RELEASED_LOCK      tid=6   room=B  sem=-1   msgs=0    Leo
+2233      24140.422  MSG_BROADCAST      tid=6   room=B  sem=49   msgs=41   Leo
+2234      24140.422  SEM_POST           tid=6   room=-  sem=50   msgs=41   Leo
+2235      25139.593  SEM_BLOCK          tid=1   room=-  sem=50   msgs=0    about to wait
+2236      25139.597  SEM_WAIT           tid=1   room=-  sem=49   msgs=0    ADMITTED
+2237      25139.599  ACQUIRED_LOCK      tid=1   room=C  sem=-1   msgs=0    Mia
+2238      25139.600  RELEASED_LOCK      tid=1   room=C  sem=-1   msgs=0    Mia
+2239      25139.600  MSG_BROADCAST      tid=1   room=C  sem=49   msgs=43   Mia
+2240      25139.601  SEM_POST           tid=1   room=-  sem=50   msgs=43   Mia
+2241      26141.592  SEM_BLOCK          tid=7   room=-  sem=50   msgs=0    about to wait
+2242      26141.596  SEM_WAIT           tid=7   room=-  sem=49   msgs=0    ADMITTED
+2243      26141.597  ACQUIRED_LOCK      tid=7   room=A  sem=-1   msgs=0    Nick
+2244      26141.597  RELEASED_LOCK      tid=7   room=A  sem=-1   msgs=0    Nick
+2245      26141.598  MSG_BROADCAST      tid=7   room=A  sem=49   msgs=41   Nick
+2246      26141.598  SEM_POST           tid=7   room=-  sem=50   msgs=41   Nick
+2247      27143.435  SEM_BLOCK          tid=3   room=-  sem=50   msgs=0    about to wait
+2248      27143.439  SEM_WAIT           tid=3   room=-  sem=49   msgs=0    ADMITTED
+2249      27143.441  ACQUIRED_LOCK      tid=3   room=B  sem=-1   msgs=0    Olivia
+2250      27143.442  RELEASED_LOCK      tid=3   room=B  sem=-1   msgs=0    Olivia
+2251      27143.442  MSG_BROADCAST      tid=3   room=B  sem=49   msgs=42   Olivia
+2252      27143.442  SEM_POST           tid=3   room=-  sem=50   msgs=42   Olivia
+2253      28151.511  SEM_BLOCK          tid=0   room=-  sem=50   msgs=0    about to wait
+2254      28151.518  SEM_WAIT           tid=0   room=-  sem=49   msgs=0    ADMITTED
+2255      28151.520  ACQUIRED_LOCK      tid=0   room=C  sem=-1   msgs=0    Paul
+2256      28151.520  RELEASED_LOCK      tid=0   room=C  sem=-1   msgs=0    Paul
+2257      28151.520  MSG_BROADCAST      tid=0   room=C  sem=49   msgs=44   Paul
+2258      28151.521  SEM_POST           tid=0   room=-  sem=50   msgs=44   Paul
+2259      29155.312  SEM_BLOCK          tid=2   room=-  sem=50   msgs=0    about to wait
+2260      29155.314  SEM_WAIT           tid=2   room=-  sem=49   msgs=0    ADMITTED
+2261      29155.315  PRIVATE_MSG        tid=0   room=-  sem=-1   msgs=0    T0->T1 Quinn
+2262      29155.317  PRIVATE_MSG        tid=2   room=P  sem=49   msgs=44   Quinn
+2263      29155.317  SEM_POST           tid=2   room=-  sem=50   msgs=44   Quinn
+2264      30216.629  THREAD_EXIT        tid=4   room=-  sem=0    msgs=41   normal exit
+2265      30216.673  THREAD_EXIT        tid=5   room=-  sem=0    msgs=41   normal exit
+2266      30216.751  THREAD_EXIT        tid=1   room=-  sem=0    msgs=43   normal exit
+2267      30216.821  THREAD_EXIT        tid=0   room=-  sem=0    msgs=44   normal exit
+2268      30216.945  THREAD_EXIT        tid=2   room=-  sem=0    msgs=44   normal exit
+2269      30216.978  THREAD_EXIT        tid=0   room=-  sem=0    msgs=44   shutdown
+2270      30217.109  THREAD_EXIT        tid=3   room=-  sem=0    msgs=42   normal exit
+2271      30217.455  THREAD_EXIT        tid=1   room=-  sem=0    msgs=43   shutdown
+2272      30217.468  THREAD_EXIT        tid=2   room=-  sem=0    msgs=44   shutdown
+2273      30217.482  THREAD_EXIT        tid=3   room=-  sem=0    msgs=42   shutdown
+2274      30217.492  THREAD_EXIT        tid=4   room=-  sem=0    msgs=41   shutdown
+2275      30217.502  THREAD_EXIT        tid=6   room=-  sem=0    msgs=41   normal exit
+2276      30217.781  THREAD_EXIT        tid=5   room=-  sem=0    msgs=41   shutdown
+2277      30217.793  THREAD_EXIT        tid=7   room=-  sem=0    msgs=41   normal exit
+2278      30218.011  THREAD_EXIT        tid=6   room=-  sem=0    msgs=41   shutdown
+2279      30218.139  THREAD_EXIT        tid=7   room=-  sem=0    msgs=41   shutdown
